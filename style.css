@@ -130,16 +130,7 @@ header .logo h1 img {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* -------------------- Menu Hamburguesa -------------------- */
 
-.menu-hamburguesa {
-    display: none;  /* Ocultar por defecto */
-    font-size: 30px;
-    color: white;
-    background: none;
-    border: none;
-    cursor: pointer;
-}
 /* -------------------- NAVEGACIÓN -------------------- */
 header nav {
     position: relative;
@@ -540,65 +531,131 @@ footer nav a:hover {
     text-decoration: underline;
 }
 
+/* -------------------- Menu Hamburguesa -------------------- */
+
+.menu-hamburguesa {
+    display: none;  /* Ocultar por defecto */
+    font-size: 30px;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
 /* -------------------- RESPONSIVE -------------------- */
-@media screen and (max-width: 768px) {
-    /* Ajustes para el Header */
+
+
+/* -------------------- HEADER -------------------- */
+@media (max-width: 768px) {
     header {
-        padding: 10px 20px;
+        height: auto;
+        padding: 10px;
     }
 
     header .logo h1 {
         font-size: 1.2em;
     }
 
-    header .logo img {
-        display: block; /* Mostrar la imagen del logo en pantallas pequeñas */
-        max-width: 150px;
-    }
-
     nav ul {
-        flex-direction: column;
-        display: none;
-        width: 100%;
-        background-color: #333;
-        text-align: center;
-    }
-
-    nav ul.active {
         display: flex;
+        flex-direction: column;
+        padding: 10px;
+        align-items: center;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background-color: #333;
+        display: none;
     }
 
     nav ul li {
         margin: 10px 0;
     }
 
-    nav ul li a {
-        padding: 10px;
+    .menu-hamburguesa {
         display: block;
-        font-size: 16px;
+    }
+
+    /* Mostrar el menú cuando el usuario haga clic */
+    nav.open {
+        display: flex;
+    }
+}
+
+/* -------------------- MODAL -------------------- */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 90%;
+        max-width: 90%;
+        margin: 0 5%;
+    }
+
+    .game-card {
+        width: 100%;
+    }
+
+    header .logo h1 {
+        font-size: 1.2em;
+    }
+
+    nav ul {
+        display: none;
+    }
+
+    nav.open ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background-color: #333;
     }
 
     .menu-hamburguesa {
         display: block;
-        cursor: pointer;
-        font-size: 30px;
-        color: white;
-        background: none;
-        border: none;
+    }
+
+    .carrusel {
+        gap: 5px;
+        flex-wrap: nowrap;
+    }
+
+    .carrusel img {
+        max-width: 180px;
     }
 }
 
-@media screen and (max-width: 480px) {
-    /* Ajustes para el Header */
+/* -------------------- PANTALLAS MUY PEQUEÑAS -------------------- */
+@media (max-width: 480px) {
     header .logo h1 {
         font-size: 1.1em;
     }
 
-    nav ul li a {
-        font-size: 14px;
+    .Contenedor-videojuegos-populares {
+        grid-template-columns: repeat(1, 1fr); /* Una columna */
+    }
+
+    .Contenedor-videojuegos {
+        grid-template-columns: repeat(1, 1fr); /* Una columna */
     }
 
     .game-card img {
-        height: 220px; /* Hacer las imágenes de los juegos más pequeñas */
+        width: 100%;
+        height: auto;
+    }
+
+    .modal-content {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .modal-body {
+        gap: 5px;
+    }
+
+    .carrusel img {
+        width: 70%;
     }
 }
