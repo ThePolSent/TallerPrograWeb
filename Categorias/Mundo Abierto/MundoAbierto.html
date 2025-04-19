@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MundoAbierto</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Cabecera -->
+    <header>
+        <div class="logo">
+            <h1>
+                <img src="https://img.freepik.com/vector-premium/icono-joystick-pixel-art-juego-8-bits-sobre-fondo-blanco_360488-222.jpg?w=740" alt="Logo de PlaySent">
+                PlaySent
+            </h1>
+        </div>
+        <!-- Menu de navegación -->
+                <div class="container">
+            <nav>
+                <ul id="nav-list">
+                    <li><a href="/../../index.html">Inicio</a></li>
+                    <li class="has-submenu">
+                        <a href="#Noticias" toggleSubmenu(event)>Noticias</a>
+                        <ul class="submenu">
+                            <li><a href="#ultimas">Últimas Noticias</a></li>
+                            <li><a href="#populares">Populares</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-submenu">
+                        <a href="# onclick="toggleSubmenu(event)>Categorías</a>
+                        <ul class="submenu">
+                            <li><a href="/../../Categorias/Accion/Accion.html">Accion</a></li>
+                            <li><a href="/../../Categorias/Aventura/Aventura.html">Aventura</a></li>
+                            <li><a href="/../../Categorias/Simulacion/Simulacion.html">Simulacion</a></li>
+                            <li><a href="/../../Categorias/Estrategia/Estrategia.html">Estrategia</a></li>
+                            <li><a href="/../../Categorias/Mundo Abierto/MundoAbierto.html">Mundo Abierto</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#Solicitud">Reporte</a></li>
+                    <li class="has-submenu">
+                        <a href="# onclick="toggleSubmenu(event)>Redes Sociales</a>
+                        <ul class="submenu">
+                            <li><a href="#accion">Facebook</a></li>
+                            <li><a href="#aventura">Twitter</a></li>
+                            <li><a href="#deportes">Instagram</a></li>
+                        </ul>
+                    </li>
+                    
+                </ul>
+                <!-- Menú hamburguesa -->
+                <div id="menu-toggle" class="menu-hamburguesa">&#9776;</div>
+            </nav>
+        </div>
+        <div class="login">
+            <button id="theme-toggle" class="btn-theme">🌙</button>
+            <button id="login-btn" onclick="toggleLoginForm()">Iniciar sesión</button>
+            <div id="login-form" class="login-form">
+                <input type="text" id="username" placeholder="Usuario" required>
+                <input type="password" id="password" placeholder="Contraseña" required>
+                <button onclick="login()">Ingresar</button>
+            </div>
+        </div>
+    </header>
+
+
+
+<!-- Cuerpo -->
+<main class ="mostrador">
+    <section id="VideojuegosCategoriaMundoAbierto">
+        <h2>Los mejores juegos de Mundo Abierto</h2>
+        <div class="carrusel-wrapper">
+            <button class="btn-izq">&#10094;</button>
+            <div class="carrusel-track" id="carruselTrack">
+                
+                <div class="videojuego">
+                    <div class="game-card">
+                        <img src="https://i.pinimg.com/736x/f9/12/f7/f912f7125d3ab1fabdd965e6dc479093.jpg" 
+                        data-title="Grand Theft Auto V"
+                        alt="Videojuego-gtav" 
+                        class="image-carrusel"
+                        data-description="Grand Theft Auto V (GTA V) es un juego de acción y mundo abierto que sigue la historia de tres criminales muy diferentes: 
+                        Michael, un ex ladrón de bancos retirado; Franklin, un joven ambicioso del barrio; y Trevor, un violento y caótico fugitivo. Ambientado en la ciudad 
+                        ficticia de Los Santos, el juego combina sus vidas mientras realizan atracos arriesgados, enfrentan traiciones y luchan contra enemigos del bajo mundo 
+                        y del gobierno. La historia mezcla crimen, humor negro y crítica social, todo dentro de un mundo abierto lleno de actividades y libertad para explorar."
+                        data-details-link="detalle-cod.html">
+                        <div class="overlay-text">Grand Theft Auto V</div>
+                    </div>
+                </div>
+                <div class="videojuego">
+                    <div class="game-card">
+                        <img src="https://i.pinimg.com/736x/57/5b/2e/575b2e4fd17a2221649700af93b8895e.jpg" 
+                        data-title="Grand Theft Auto San Andreas"
+                        alt="Videojuego-gtasa" 
+                        class="image-carrusel"
+                        data-description= "CJ Johnson, quien regresa a su ciudad natal, Los Santos, después de la muerte de su madre. A lo largo del juego, CJ se ve 
+                        involucrado en una serie de eventos que incluyen la lucha por recuperar el control de su barrio, enfrentarse a bandas rivales y desmantelar una red 
+                        de corrupción dentro de la policía. Ambientado en el estado ficticio de San Andreas, que incluye tres ciudades principales, el juego combina acción, 
+                        crimen, y una narrativa profunda que explora temas de familia, lealtad y poder. Además, ofrece un mundo abierto lleno de misiones, actividades y una 
+                        gran libertad para explorar."
+                        data-details-link="detalle-cod.html">
+                        <div class="overlay-text">Grand Theft Auto San Andreas</div>
+                    </div>
+                </div>
+                <div class="videojuego">
+                    <div class ="game-card">
+                        <img src="https://i.pinimg.com/736x/c8/cc/44/c8cc44624d8cf36ecf08f5fcafad57b4.jpg" 
+                        data-title="Minecraft"
+                        alt="Videojuego-Minecraft" 
+                        class="image-carrusel"
+                        data-description="Minecraft es un juego de mundo abierto donde los jugadores pueden explorar, construir, recolectar recursos y sobrevivir en un entorno 
+                        generado aleatoriamente. Sin una historia lineal, ofrece libertad total para crear estructuras, combatir criaturas y descubrir biomas. Su estilo visual 
+                        en bloques y su jugabilidad creativa lo convierten en una experiencia única para jugadores de todas las edades."
+                        data-details-link="detalle-cod.html">
+                        <div class="overlay-text">Minecraft (2009)</div>
+                    </div>
+                </div>
+                <div class="videojuego">
+                    <div class="game-card">
+                        <img src="https://i.pinimg.com/736x/24/52/58/245258e0624bd3e6d505a767927472c0.jpg" 
+                        data-title="The Legend of Zelda: Breath of the Wild"
+                        alt="Videojuego-thelegendofzelda:breathofthewild" 
+                        class="image-carrusel"
+                        data-description= "CThe Legend of Zelda: Breath of the Wild presenta un vasto mundo abierto donde el héroe Link despierta tras cien años de letargo para 
+                        enfrentar al mal ancestral conocido como Ganon. Sin recuerdos de su pasado, debe explorar el reino de Hyrule, escalar montañas, cruzar bosques y resolver
+                        santuarios para recuperar su fuerza y detener la destrucción. La historia mezcla libertad total de exploración con una narrativa épica sobre valentía, 
+                        legado y redención, ofreciendo una experiencia envolvente que reinventa la fórmula clásica de la saga Zelda."
+                        data-details-link="detalle-cod.html">
+                        <div class="overlay-text">The Legend of Zelda: Breath of the Wild</div>
+                    </div>
+                </div>
+                <div class="videojuego">
+                    <div class="game-card">
+                        <img src="https://i.pinimg.com/736x/b5/a8/13/b5a81352a32f59e86029a2a1ae0c5326.jpg" 
+                        data-title="Just Cause 4"
+                        alt="Videojuego-gtasa" 
+                        class="image-carrusel"
+                        data-description= "Just Cause 4 sigue a Rico Rodríguez mientras viaja a Solís, una nación ficticia de Sudamérica, para descubrir la verdad detrás de 
+                        la muerte de su padre y enfrentarse a una organización militar conocida como la Mano Negra. Equipado con su característico gancho, paracaídas y 
+                        traje aéreo, Rico desata el caos en un mundo abierto lleno de explosiones, climas extremos y acción desenfrenada. La historia gira en torno a 
+                        conspiraciones, tecnología climática y rebelión, combinando una narrativa sencilla con mecánicas de destrucción y libertad total para causar estragos."
+                        data-details-link="detalle-cod.html">
+                        <div class="overlay-text">Just Cause 4</div>
+                    </div>
+                </div>
+                <div class="videojuego">
+                    <div class="game-card">
+                        <img src="https://i.pinimg.com/736x/07/7d/53/077d53471564546215aaadcf7e89093f.jpg" 
+                        data-title="Terraria"
+                        alt="Videojuego-terraria" 
+                        class="image-carrusel"
+                        data-description= "Terraria es un juego de aventuras y supervivencia en 2D que combina exploración, construcción, combate y recolección de recursos en un 
+                        mundo generado aleatoriamente. El jugador comienza con herramientas básicas y debe excavar, construir refugios, enfrentarse a monstruos y jefes poderosos, 
+                        y descubrir secretos ocultos bajo tierra. Con un enfoque en la creatividad y el progreso, Terraria permite personalizar el entorno, fabricar objetos y mejorar 
+                        al personaje a lo largo de la partida. Su estilo pixel art y su profundidad jugable lo han convertido en un clásico del género sandbox."
+                        data-details-link="detalle-cod.html">
+                        <div class="overlay-text">Terraria</div>
+                    </div>
+                </div>
+                <div class="videojuego">
+                    <div class="game-card">
+                        <img src="https://i.pinimg.com/736x/b8/81/dd/b881ddb7451b4fc4070863e6202b58e5.jpg" 
+                        data-title="No Mans Sky"
+                        alt="Videojuego-nomansky" 
+                        class="image-carrusel"
+                        data-description= "No Man's Sky es un juego de exploración y supervivencia espacial en un universo generado proceduralmente con miles de millones de planetas 
+                        únicos. El jugador asume el rol de un viajero interestelar que puede explorar mundos, recolectar recursos, comerciar, construir bases y descubrir formas de vida 
+                        alienígena. La historia gira en torno a desentrañar los misterios del universo y del ente conocido como Atlas. Con un enfoque en la libertad total, el juego 
+                        ofrece una experiencia en constante evolución gracias a sus expansiones, que han añadido multijugador, mejoras gráficas y nuevas mecánicas de juego."
+                        data-details-link="detalle-cod.html">
+                        <div class="overlay-text">No Mans Sky</div>
+                    </div>
+                </div>
+                <div class="videojuego">
+                    <div class="game-card">
+                        <img src="https://i.pinimg.com/736x/34/1b/d1/341bd153d1a6d1f72b16296a8ee570da.jpg" 
+                        data-title="Ark: Survival Evolved"
+                        alt="Videojuego-arksurivalevolved" 
+                        class="image-carrusel"
+                        data-description= "ARK: Survival Evolved es un juego de supervivencia en mundo abierto donde los jugadores despiertan en una misteriosa isla habitada por 
+                        dinosaurios y otras criaturas prehistóricas. Para sobrevivir, deben recolectar recursos, construir refugios, fabricar herramientas, domesticar animales y 
+                        defenderse de amenazas tanto naturales como humanas. El juego combina acción, exploración y estrategia, permitiendo formar tribus con otros jugadores, 
+                        conquistar territorios y descubrir los secretos detrás del origen de la isla y su tecnología. La narrativa se desarrolla a través de notas y artefactos 
+                        repartidos por el mundo.
+                        data-details-link="detalle-cod.html">
+                        <div class="overlay-text">Ark: Survival Evolved</div>
+                    </div>
+                </div>
+                <div class="videojuego">
+                    <div class="game-card">
+                        <img src="https://i.pinimg.com/736x/71/c2/6f/71c26f9f38ca627583cbece4a1a2e0e1.jpg" 
+                        data-title="Watch Dogs 2"
+                        alt="Videojuego-watchdogs2" 
+                        class="image-carrusel"
+                        data-description= "Watch Dogs 2 sigue a Marcus Holloway, un joven hacker de San Francisco que se une al grupo hacktivista DedSec para exponer la corrupción 
+                        y el abuso de poder que se esconden tras el sistema operativo ctOS 2.0, utilizado para vigilar y controlar a la población. A través de misiones de infiltración, 
+                        sabotaje y manipulación digital, Marcus enfrenta a grandes corporaciones y agencias gubernamentales. La historia combina humor, crítica social y tecnología, 
+                        en un mundo abierto dinámico donde el jugador puede usar herramientas de hackeo para alterar el entorno y cumplir sus objetivos.
+                        data-details-link="detalle-cod.html">
+                        <div class="overlay-text">Watch Dogs 2</div>
+                    </div>
+                </div>
+                <div class="videojuego">
+                    <div class="game-card">
+                        <img src="https://i.pinimg.com/736x/e8/db/1d/e8db1d01cfa8c52561c2631f48321cc7.jpg" 
+                        data-title="Elden Ring"
+                        alt="Videojuego-eldenring" 
+                        class="image-carrusel"
+                        data-description= "Elden Ring se desarrolla en las Tierras Intermedias, un mundo vasto y fragmentado tras la destrucción del Círculo de Elden y la desaparición 
+                        de la Reina Márika. El jugador encarna a un Sinluz, un exiliado que regresa para reclamar su destino y convertirse en el Señor del Círculo. A lo largo del viaje, 
+                        debe enfrentarse a semidioses corrompidos, explorar reinos llenos de secretos, y descubrir el misterio detrás del poder del Círculo. Con una narrativa críptica 
+                        y profunda, el juego mezcla fantasía oscura, libertad de exploración y combates desafiantes en un mundo abierto interconectado."
+                        data-details-link="detalle-cod.html">
+                        <div class="overlay-text">Elden Ring</div>
+                    </div>
+                </div>
+            </div>
+            <button class="btn-der">&#10095;</button>
+        </div>
+    </section>
+</main>
+<!-- Footer -->
+<footer>
+    <p>&copy; PlaySent. Todos los derechos reservados.</p>
+    <nav>
+        <a href="#">Política de Privacidad</a> |
+        <a href="#">Términos y Condiciones</a>
+    </nav>
+</footer>
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h3 id="modal-title"></h3>
+        <div class="modal-body">
+            <img src="" alt="Imagen Modal" id="modal-image">
+            <div class="info-container"> 
+                <div class="description">
+                    <p id="modal-description"></p>
+                </div>
+                <a href="#" class="btn-details" id="modal-button">Más detalles</a>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="javaScript.js"></script>
+</body>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</html>

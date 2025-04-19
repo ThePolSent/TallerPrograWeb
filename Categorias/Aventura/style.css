@@ -113,7 +113,7 @@ header .logo h1 {
     gap: 10px;
     font-size: 1em;
     font-family: 'Press Start 2P', cursive;
-    background: linear-gradient(to right, rgb(255, 255, 255) 66%, rgb(0, 140, 255) 0%);
+    background: linear-gradient(to right, rgb(255, 255, 255) 66%, rgb(255, 255, 255) 0%);
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
@@ -362,40 +362,14 @@ body.modal-open {
 }
 
 /* -------------------- CATÁLOGO -------------------- */
-#VideojuegosPopulares h2,
-#VideojuegosCategoriaAccion,
-#VideojuegosCategoriaAventura,
-#VideojuegosCategoriaSimulacion,
-#VideojuegosCategoriaEstrategia,
-#VideojuegosCategoriaMundoAbierto {
+#VideojuegosCategoriaAventura {
     font-size: 2em;
     margin-bottom: 20px;
     text-align: center;
 }
 
-#VideojuegosCategoriaAccion,
-#VideojuegosCategoriaAventura,
-#VideojuegosCategoriaSimulacion,
-#VideojuegosCategoriaEstrategia,
-#VideojuegosCategoriaMundoAbierto {
+#VideojuegosCategoriaAventura {
     font-size: 1.5em;
-}
-
-.Contenedor-videojuegos-populares {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    margin-top: 20px;
-    max-width: 1000px;
-    margin: 0 auto;
-    justify-items: center;
-}
-
-.image-popular {
-    width: 100%;
-    height: 400px;
-    object-fit: cover;
-    border-radius: 8px;
 }
 
 .Contenedor-videojuegos {
@@ -459,33 +433,32 @@ section h2 {
 
 /* -------------------- CARRUSEL -------------------- */
 .carrusel-wrapper {
-    display: flex;
-    justify-content: flex-start;
     overflow: hidden;
-    width: 100%;
     position: relative;
-    margin-top: 40px;
-    margin-bottom: 40px;
+    width: 100%;
+    margin: 40px 0;
 }
-
 .carrusel-track {
-    display: flex;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: repeat(3, auto); /* 3 filas */
     gap: 20px;
     transition: transform 0.5s ease;
 }
 
 .videojuego {
+    width: 250px;
+    height: auto;
     flex-shrink: 0;
-    width: calc(25% - 20px);
-    max-width: 250px;
-    margin: 0;
 }
 
 .videojuego img {
     width: 100%;
-    height: 400px;
+    height: 450px; /* <-- Ajustado desde los 400px originales */
     object-fit: cover;
+    border-radius: 8px;
 }
+
 
 .btn-izq,
 .btn-der {
@@ -500,16 +473,16 @@ section h2 {
     cursor: pointer;
     z-index: 10;
     border-radius: 50%;
-    user-select: none;
 }
 
 .btn-izq {
-    left: 5%;
+    left: 10px;
 }
 
 .btn-der {
-    right: 5%;
+    right: 10px;
 }
+
 
 /* -------------------- FOOTER -------------------- */
 footer {

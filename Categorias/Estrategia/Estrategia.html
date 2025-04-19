@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estrategia</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Cabecera -->
+    <header>
+        <div class="logo">
+            <h1>
+                <img src="https://img.freepik.com/vector-premium/icono-joystick-pixel-art-juego-8-bits-sobre-fondo-blanco_360488-222.jpg?w=740" alt="Logo de PlaySent">
+                PlaySent
+            </h1>
+        </div>
+        <!-- Menu de navegación -->
+                <div class="container">
+            <nav>
+                <ul id="nav-list">
+                    <li><a href="/../../index.html">Inicio</a></li>
+                    <li class="has-submenu">
+                        <a href="#Noticias" toggleSubmenu(event)>Noticias</a>
+                        <ul class="submenu">
+                            <li><a href="#ultimas">Últimas Noticias</a></li>
+                            <li><a href="#populares">Populares</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-submenu">
+                        <a href="# onclick="toggleSubmenu(event)>Categorías</a>
+                        <ul class="submenu">
+                            <li><a href="/../../Categorias/Accion/Accion.html">Accion</a></li>
+                            <li><a href="/../../Categorias/Aventura/Aventura.html">Aventura</a></li>
+                            <li><a href="/../../Categorias/Simulacion/Simulacion.html">Simulacion</a></li>
+                            <li><a href="/../../Categorias/Estrategia/Estrategia.html">Estrategia</a></li>
+                            <li><a href="/../../Categorias/Mundo Abierto/MundoAbierto.html">Mundo Abierto</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#Solicitud">Reporte</a></li>
+                    <li class="has-submenu">
+                        <a href="# onclick="toggleSubmenu(event)>Redes Sociales</a>
+                        <ul class="submenu">
+                            <li><a href="#accion">Facebook</a></li>
+                            <li><a href="#aventura">Twitter</a></li>
+                            <li><a href="#deportes">Instagram</a></li>
+                        </ul>
+                    </li>
+                    
+                </ul>
+                <!-- Menú hamburguesa -->
+                <div id="menu-toggle" class="menu-hamburguesa">&#9776;</div>
+            </nav>
+        </div>
+        <div class="login">
+            <button id="theme-toggle" class="btn-theme">🌙</button>
+            <button id="login-btn" onclick="toggleLoginForm()">Iniciar sesión</button>
+            <div id="login-form" class="login-form">
+                <input type="text" id="username" placeholder="Usuario" required>
+                <input type="password" id="password" placeholder="Contraseña" required>
+                <button onclick="login()">Ingresar</button>
+            </div>
+        </div>
+    </header>
+
+
+
+<!-- Cuerpo -->
+<main class ="mostrador">
+    <section id="VideojuegosCategoriaEstrategia">
+        <h2>Los mejores juegos de Estrategia</h2>
+        <div class="carrusel-wrapper">
+            <button class="btn-izq">&#10094;</button>
+            <div class="carrusel-track" id="carruselTrack">
+                <div class="videojuego">
+                    <div class = "game-card">
+                        <img src="https://i.pinimg.com/736x/42/d2/04/42d20445fec9f40cb648d585a318ab58.jpg" 
+                        data-title="Portal 2"
+                        alt="Videojuego-portal2" 
+                        class= "image-carrusel"
+                        data-description="Portal 2 es un juego de acertijos en primera persona donde el jugador, como Chell, debe escapar de las instalaciones de Aperture Science usando un arma que crea 
+                        portales. La inteligencia artificial GLaDOS regresa como antagonista, mientras que Wheatley, otro robot, se convierte en un inesperado compañero. A medida que avanza la historia, 
+                        los jugadores exploran áreas ocultas del complejo y descubren su oscuro pasado. La narrativa mezcla humor, ciencia ficción y crítica tecnológica, todo con mecánicas ingeniosas que desafían la lógica espacial."
+                        data-details-link="detalle-cod.html">
+                        <div class="overlay-text">Portal 2</div>
+                    </div>
+                </div>
+                <div class="videojuego">
+                    <div class="game-card">
+                        <img src="https://i.pinimg.com/736x/2b/6b/ea/2b6beaa33fda1853d9559da5e275b7d0.jpg" 
+                        data-title="Civilization VI"
+                        alt="Videojuego-civilizationvi" 
+                        class="image-carrusel"
+                        data-description="Civilization VI es un juego de estrategia por turnos en el que el jugador lidera una civilización desde la era antigua hasta el futuro. El objetivo es expandirse, investigar tecnologías, 
+                        establecer gobiernos, comerciar y conquistar para dominar el mundo por medios militares, culturales o científicos. Cada partida es única, con líderes históricos y mapas generados aleatoriamente. Las decisiones 
+                        influyen en el rumbo de la historia, permitiendo experimentar el ascenso de un imperio. Con un enfoque profundo y rejugable, Civilization VI ofrece una experiencia estratégica envolvente a lo largo de los siglos."
+                        data-details-link="detalle-cod.html">
+                        <div class="overlay-text">Civilization VI</div>
+                    </div>
+                </div>
+                <div class="videojuego">
+                    <div class="game-card">
+                        <img src="https://i.pinimg.com/736x/51/b2/52/51b252465ca85ffecace8287e1388230.jpg" 
+                        data-title="Factorio"
+                        alt="Videojuego-factorio"
+                        class= "image-carrusel"
+                        data-description="Factorio es un juego de simulación y estrategia en el que el jugador debe construir y optimizar fábricas automatizadas en un planeta alienígena. Comenzando con recursos básicos, se desarrollan 
+                        tecnologías, se crean sistemas logísticos complejos y se defienden las instalaciones de criaturas nativas. El objetivo es lanzar un cohete espacial, lo que requiere una cadena de producción eficiente y bien planificada. 
+                        La jugabilidad se basa en la automatización, la gestión de recursos y la resolución de problemas técnicos, ofreciendo una experiencia desafiante y adictiva para los amantes de la ingeniería y la eficiencia."
+                        data-details-link="">
+                        <div class="overlay-text">Factorio</div>
+                    </div>
+                </div>
+                <div class="videojuego">
+                    <div class="game-card">
+                        <img src="https://i.pinimg.com/736x/a0/97/95/a09795fa4bdb9d824a354023f5ff1ade.jpg" 
+                        data-title="Into The Breach"
+                        alt="Videojuego-intothebreach" 
+                        class="image-carrusel"
+                        data-description= "Into the Breach es un juego de estrategia por turnos donde el jugador controla mecas futuristas para defender ciudades de ataques de criaturas gigantes llamadas Vek. Cada nivel es una batalla 
+                        táctica en una cuadrícula pequeña, donde los movimientos precisos y la planificación anticipada son clave para minimizar daños. Con una narrativa centrada en viajes temporales, los pilotos pueden retroceder en el 
+                        tiempo para cambiar el curso de la guerra. El juego combina combates intensos, decisiones estratégicas y gestión de recursos en partidas cortas pero desafiantes, con un estilo visual retro y mecánicas profundas."
+                        data-details-link="detalle-cod.html">
+                        <div class="overlay-text">Into the breach</div>
+                    </div>
+                </div>
+                <div class="videojuego">
+                    <div class = "game-card">
+                        <img src="https://i.pinimg.com/736x/65/4f/f6/654ff60ca55904d4b7ccfdb713b74b62.jpg" 
+                        data-title=""
+                        alt="Videojuego-babaisyou" 
+                        class="image-carrusel"
+                        data-description="Baba Is You es un innovador juego de rompecabezas donde las reglas del mundo son bloques de texto que el jugador puede mover y reorganizar. Encarnas a Baba, una criatura sencilla, y puedes 
+                        cambiar cómo funciona el entorno escribiendo nuevas reglas como “Baba Is Win” o “Wall Is Push”. Cada nivel propone desafíos lógicos que requieren pensamiento lateral y creatividad extrema. Con una estética minimalista 
+                        y mecánicas únicas, el juego transforma la resolución de acertijos en un ejercicio de manipulación del lenguaje y la lógica, ofreciendo una experiencia original, desafiante y sorprendente."
+                        data-details-link="detalle-cod.html">
+                        <div class ="overlay-text">Baba is You</div>
+                    </div>
+                </div>
+                <div class="videojuego">
+                    <div class = "game-card">
+                        <img src="https://i.pinimg.com/736x/4a/c8/d1/4ac8d10aa0028c08c372c918f92b958a.jpg" 
+                        data-title="Slay the Spire"
+                        alt="Videojuego-slythespire" 
+                        class="image-carrusel"
+                        data-description="Slay the Spire combina la estrategia de los juegos de cartas con la progresión tipo roguelike. El jugador elige entre varios personajes con estilos únicos y construye 
+                        un mazo de cartas mientras asciende por una torre llena de enemigos, tesoros y decisiones clave. Cada partida es diferente, con cartas, reliquias y rutas aleatorias que obligan a adaptarse 
+                        constantemente. Las decisiones estratégicas, tanto en combate como en la construcción del mazo, son fundamentales para sobrevivir y derrotar a los jefes de cada nivel. Su jugabilidad profunda y 
+                        rejugabilidad lo han convertido en un referente del género."
+                        data-details-link="detalle-cod.html">
+                        <div class ="overlay-text">Slay The Spire</div>
+                    </div>
+                </div>
+                <div class="videojuego">
+                    <div class="game-card">
+                        <img src="https://i.pinimg.com/736x/82/5f/4e/825f4e914f5875c31e0ffa55e1dfcfb5.jpg" 
+                        data-title="Tetris"
+                        alt="Tetris" 
+                        class="image-carrusel"
+                        data-description="Tetris es un clásico juego de rompecabezas donde los jugadores deben encajar piezas geométricas llamadas tetriminos que caen desde 
+                        la parte superior de la pantalla. Cada pieza tiene una forma distinta y puede rotarse para ajustarse al espacio disponible. El objetivo es formar líneas 
+                        horizontales completas, que desaparecen al ser completadas, permitiendo ganar puntos y evitar que las piezas se acumulen hasta llegar al tope. Con una 
+                        jugabilidad simple pero adictiva, Tetris ha trascendido generaciones, convirtiéndose en un ícono de la historia de los videojuegos por su diseño atemporal 
+                        y su desafío mental.">
+                        <div class ="overlay-text">Tetris</div>
+                    </div>
+                </div>
+                <div class="videojuego">
+                    <div class="game-card">
+                        <img src="https://i.pinimg.com/736x/c7/9c/46/c79c46f14bd0e6dd9a28b7450eaf2134.jpg" 
+                        data-title="XCOM 2"
+                        alt="Videojuego-xcom2" 
+                        class="image-carrusel"
+                        data-description="XCOM 2 es un juego de estrategia táctica por turnos ambientado en un futuro donde la Tierra ha sido conquistada por una fuerza alienígena. 
+                        Los jugadores lideran a la resistencia XCOM, un grupo rebelde que lucha por liberar al planeta. Combinando combate estratégico con gestión de recursos y 
+                        desarrollo tecnológico, el juego exige decisiones difíciles en el campo de batalla y fuera de él. Cada soldado puede ">
+                        <div class="overlay-text">XCOM 2</div>
+                    </div>
+                </div>
+                <div class="videojuego">
+                    <div class ="game-card">
+                        <img src="https://i.pinimg.com/736x/54/e8/5b/54e85b45486dcb495b02944162fe44da.jpg" 
+                        data-title="Mini Metro"
+                        alt="Videojuego-minimetro" 
+                        class="image-carrusel"
+                        data-description="Mini Metro es un juego de simulación y estrategia minimalista en el que el jugador diseña y gestiona una red de metro para una ciudad 
+                        en crecimiento. A medida que aparecen nuevas estaciones, el jugador debe trazar líneas eficientes que conecten los puntos y transporten a los pasajeros de 
+                        forma rápida. El ritmo se intensifica con el tiempo, exigiendo planificación y adaptabilidad para evitar la congestión. Con un estilo visual simple pero elegante, 
+                        el juego ofrece una experiencia relajante y desafiante, donde cada decisión puede marcar la diferencia entre un sistema fluido o el colapso total del transporte."
+                        data-details-link="detalle-cod.html">
+                        <div class="overlay-text">Mini Metro</div>
+                    </div>
+                </div>
+                <div class="videojuego">
+                    <div class ="game-card">
+                        <img src="https://i.pinimg.com/736x/fb/ab/20/fbab208d45bd60c6a4a33f1b583c7478.jpg" 
+                        data-title="The Talos Principle"
+                        alt="Videojuego-thetalosprinciple" 
+                        class="image-carrusel"
+                        data-description="HThe Talos Principle es un juego de puzles en primera persona que mezcla desafíos lógicos con profundas cuestiones filosóficas. El jugador asume 
+                        el papel de un androide guiado por una voz divina llamada Elohim, que lo invita a resolver enigmas en ruinas antiguas llenas de tecnología avanzada. A medida que 
+                        avanza, el jugador descubre textos y terminales que plantean preguntas sobre la conciencia, la existencia y la libertad. Con una narrativa envolvente y un diseño 
+                        inteligente de niveles, el juego invita a reflexionar sobre qué significa ser humano en un mundo dominado por la inteligencia artificial."
+                        data-details-link="detalle-cod.html">
+                        <div class="overlay-text">The Talos Principle</div>
+                    </div>
+                </div>
+            </div>
+            <button class="btn-der">&#10095;</button>
+        </div>
+    </section>
+</main>
+<!-- Footer -->
+<footer>
+    <p>&copy; PlaySent. Todos los derechos reservados.</p>
+    <nav>
+        <a href="#">Política de Privacidad</a> |
+        <a href="#">Términos y Condiciones</a>
+    </nav>
+</footer>
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h3 id="modal-title"></h3>
+        <div class="modal-body">
+            <img src="" alt="Imagen Modal" id="modal-image">
+            <div class="info-container"> 
+                <div class="description">
+                    <p id="modal-description"></p>
+                </div>
+                <a href="#" class="btn-details" id="modal-button">Más detalles</a>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="javaScript.js"></script>
+</body>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</html>
