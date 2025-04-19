@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>detalle-cod</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Cabecera -->
+    <header>
+            <div class="logo">
+                <h1>
+                    <img src="https://img.freepik.com/vector-premium/icono-joystick-pixel-art-juego-8-bits-sobre-fondo-blanco_360488-222.jpg?w=740" alt="Logo de PlaySent">
+                    PlaySent
+                </h1>
+            </div>
+            <!-- Menu de navegación -->
+            <div class="container">
+        <nav>
+            <ul id="nav-list">
+                <li class="has-submenu">
+                    <a href="#Noticias" toggleSubmenu(event)>Noticias</a>
+                    <ul class="submenu">
+                        <li><a href="#ultimas">Últimas Noticias</a></li>
+                        <li><a href="#populares">Populares</a></li>
+                    </ul>
+                </li>
+                <li><a href="#Inicio">Inicio</a></li>
+                <li class="has-submenu">
+                    <a href="# onclick="toggleSubmenu(event)>Categorías</a>
+                    <ul class="submenu">
+                        <li><a href="#accion">Acción</a></li>
+                        <li><a href="#aventura">Aventura</a></li>
+                        <li><a href="#deportes">Deportes</a></li>
+                    </ul>
+                </li>
+                <li><a href="#Solicitud">Reporte</a></li>
+                <li class="has-submenu">
+                    <a href="# onclick="toggleSubmenu(event)>Redes Sociales</a>
+                    <ul class="submenu">
+                        <li><a href="#accion">Facebook</a></li>
+                        <li><a href="#aventura">Twitter</a></li>
+                        <li><a href="#deportes">Instagram</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- Menú hamburguesa -->
+            <div id="menu-toggle" class="menu-hamburguesa">&#9776;</div>
+        </nav>
+    </div>
+    <div class="login">
+        <button id="login-btn" onclick="toggleLoginForm()">Iniciar sesión</button>
+        <div id="login-form" class="login-form">
+            <input type="text" id="username" placeholder="Usuario" required>
+            <input type="password" id="password" placeholder="Contraseña" required>
+            <button onclick="login()">Ingresar</button>
+        </div>
+    </div>
+    </header>
+
+
+    <!-- Cuerpo -->
+    <main>
+        <section id="Videojuegos">
+            <h2>Explora Nuestros Ultimos Videojuegos Agregados</h2>
+            <div class="Contenedor-videojuegos">
+                <div class="videojuego">
+                    <div class = "game-card">
+                        <img src="https://i.pinimg.com/736x/d1/8f/62/d18f62a446033026053339394944c1fb.jpg" 
+                        alt="Videojuego-codblackopsII" 
+                        class= "game-image"
+                        data-description="Call of Duty: Black Ops II sigue dos líneas temporales: la Guerra Fría en los años 80, con Alex Mason enfrentándose a un enemigo soviético, 
+                        y el futuro distópico de 2025, donde su hijo, David Mason, lucha contra el terrorista Raul Menendez, quien busca desestabilizar el mundo mediante ciberataques. 
+                        Las decisiones del jugador afectan el curso de la historia, lo que lleva a diferentes finales y desenlaces en una narrativa de guerra y tecnología."
+                        data-details-link="DetalleJuegos/Detalle-Cod/detalle-cod.html">
+                        <div class="overlay-text">Call of Duty: Black Ops II</div>
+                    </div>
+                </div>
+                
+                <div class="videojuego">
+                    <div class="game-card">
+                        <img src="https://i.pinimg.com/736x/f9/12/f7/f912f7125d3ab1fabdd965e6dc479093.jpg" 
+                        alt="Videojuego-gtav" 
+                        class="game-image"
+                        data-description="Grand Theft Auto V (GTA V) es un juego de acción y mundo abierto que sigue la historia de tres criminales muy diferentes: 
+                        Michael, un ex ladrón de bancos retirado; Franklin, un joven ambicioso del barrio; y Trevor, un violento y caótico fugitivo. Ambientado en la ciudad 
+                        ficticia de Los Santos, el juego combina sus vidas mientras realizan atracos arriesgados, enfrentan traiciones y luchan contra enemigos del bajo mundo 
+                        y del gobierno. La historia mezcla crimen, humor negro y crítica social, todo dentro de un mundo abierto lleno de actividades y libertad para explorar."
+                        data-details-link="detalle-cod.html">
+                        <div class="overlay-text">Grand Theft Auto V</div>
+                    </div>
+                </div>
+                <div class="videojuego">
+                    <div class="game-card">
+                        <img src="https://i.pinimg.com/736x/93/57/62/935762480e67e4b749994a315b4f7e8f.jpg" 
+                        alt="Videojuego-stardewvalley"
+                        class= "game-image"
+                        data-description="Stardew Valley es un juego de simulación en el que el jugador hereda una granja en ruinas y debe restaurarla a su antigua gloria. 
+                        A lo largo del juego, los jugadores cultivan, crían animales, exploran minas y forjan relaciones con los habitantes del pueblo. La historia se centra 
+                        en la vida en la granja, pero también incluye elementos de aventura y misterio. Con un enfoque relajante y de ritmo lento, Stardew Valley ofrece un 
+                        mundo abierto lleno de actividades y posibilidades."
+                        data-details-link="">
+                        <div class="overlay-text">Stardew Valley</div>
+                    </div>
+                </div>
+                <div class="videojuego">
+                    <div class="game-card">
+                        <img src="https://i.pinimg.com/736x/57/5b/2e/575b2e4fd17a2221649700af93b8895e.jpg" 
+                        alt="Videojuego-gtasa" 
+                        class="game-image"
+                        data-description= "CJ Johnson, quien regresa a su ciudad natal, Los Santos, después de la muerte de su madre. A lo largo del juego, CJ se ve 
+                        involucrado en una serie de eventos que incluyen la lucha por recuperar el control de su barrio, enfrentarse a bandas rivales y desmantelar una red 
+                        de corrupción dentro de la policía. Ambientado en el estado ficticio de San Andreas, que incluye tres ciudades principales, el juego combina acción, 
+                        crimen, y una narrativa profunda que explora temas de familia, lealtad y poder. Además, ofrece un mundo abierto lleno de misiones, actividades y una 
+                        gran libertad para explorar."
+                        data-details-link="detalle-cod.html">
+                        <div class="overlay-text">Grand Theft Auto San Andreas</div>
+                    </div>
+                </div>
+                <div class="videojuego">
+                    <div class = "game-card">
+                        <img src="https://i.pinimg.com/736x/a5/c5/29/a5c529a21b85c978bd4e1874762d29d3.jpg" 
+                        alt="Videojuego-cs2" 
+                        class="game-image"
+                        data-description="Counter-Strike 2 es un juego de disparos en primera persona basado en equipos, donde los jugadores se dividen en dos bandos: los 
+                        terroristas, que intentan plantar una bomba o tomar rehenes, y los antiterroristas, que deben evitarlo. El juego se centra en la estrategia, la 
+                        cooperación en equipo y la habilidad individual, ofreciendo partidas rápidas y competitivas. Counter-Strike 2 es la secuela de Counter-Strike, 
+                        mejorando la jugabilidad, los gráficos y añadiendo nuevas características mientras conserva la esencia del juego original."
+                        data-details-link="detalle-cod.html">
+                        <div class ="overlay-text">Counter-Strike 2</div>
+                    </div>
+                </div>
+                <div class="videojuego">
+                    <div class = "game-card">
+                        <img src="https://i.pinimg.com/736x/4c/00/c8/4c00c8895cac1c65ceb3b2ae3f1e3f7e.jpg" 
+                        alt="Videojuego-tlou" 
+                        class="game-image"
+                        data-description="The Last of Us sigue a Joel, un hombre endurecido por la pérdida, y Ellie, una adolescente inmune a un hongo mortal que ha 
+                        devastado a la humanidad. Juntos cruzan un Estados Unidos postapocalíptico en busca de una posible cura, enfrentando peligros tanto humanos como 
+                        infectados. La historia combina acción, supervivencia y una fuerte carga emocional, explorando el vínculo entre los protagonistas en un mundo brutal 
+                        y desesperado."
+                        data-details-link="detalle-cod.html">
+                        <div class ="overlay-text">The Last Of Us</div>
+                    </div>
+                </div>
+                <div class="videojuego">
+                    <div class="game-card">
+                        <img src="https://i.pinimg.com/736x/91/b8/a4/91b8a4d87176bce81989f7fbed39d6ee.jpg" 
+                        alt="Videojuego-tlou2" 
+                        class="game-image"
+                        data-description="The Last of Us Part II sigue a Ellie varios años después de los eventos del primer juego, en un mundo aún devastado por la infección. 
+                        Impulsada por la ira y el deseo de venganza tras una tragedia personal, Ellie emprende un viaje oscuro y emocional que la enfrenta a las consecuencias 
+                        de sus actos. La historia explora temas como el odio, la pérdida y la redención, en una narrativa intensa y cargada de tensión."
+                        data-details-link="detalle-cod.html">
+                        <div class ="overlay-text">The Last Of Us II</div>
+                    </div>
+                </div>
+                <div class="videojuego">
+                    <div class="game-card">
+                        <img src="https://i.pinimg.com/736x/c4/34/72/c4347248cba1e95286e35bc442111c50.jpg" 
+                        alt="Videojuego-godofwarragnarok" 
+                        class="game-image"
+                        data-description="God of War (2018) sigue a Kratos, un guerrero espartano que ahora vive en los reinos nórdicos junto a su hijo Atreus. Tras la muerte de 
+                        su esposa, emprenden un viaje para esparcir sus cenizas en la montaña más alta, enfrentándose a dioses, monstruos y su propio pasado. La historia mezcla 
+                        acción, mitología nórdica y una profunda relación padre-hijo en un mundo lleno de desafíos y secretos."
+                        data-details-link="detalle-cod.html">
+                        <div class="overlay-text">God Of War Ragnarok (2018)</div>
+                    </div>
+                </div>
+                <div class="videojuego">
+                    <div class ="game-card">
+                        <img src="https://i.pinimg.com/736x/c8/cc/44/c8cc44624d8cf36ecf08f5fcafad57b4.jpg" 
+                        alt="Videojuego-Minecraft" 
+                        class="game-image"
+                        data-description="Minecraft es un juego de mundo abierto donde los jugadores pueden explorar, construir, recolectar recursos y sobrevivir en un entorno 
+                        generado aleatoriamente. Sin una historia lineal, ofrece libertad total para crear estructuras, combatir criaturas y descubrir biomas. Su estilo visual 
+                        en bloques y su jugabilidad creativa lo convierten en una experiencia única para jugadores de todas las edades."
+                        data-details-link="detalle-cod.html">
+                        <div class="overlay-text">Minecraft(2009)</div>
+                    </div>
+                </div>
+                <div class="videojuego">
+                    <div class ="game-card">
+                        <img src="https://i.pinimg.com/736x/52/fd/b8/52fdb8076d506ae4ab3d0438df0b3bd0.jpg" 
+                        alt="Videojuego-hollowknight" 
+                        class="game-image"
+                        data-description="Hollow Knight es un juego de aventuras y exploración en 2D que sigue a un misterioso guerrero 
+                        sin nombre que viaja al reino subterráneo de Hallownest. Allí, debe enfrentarse a criaturas corrompidas, descubrir 
+                        secretos ocultos y desentrañar una antigua tragedia que amenaza con destruirlo todo. Con una atmósfera oscura, combates 
+                        desafiantes y un mundo interconectado, el juego ofrece una experiencia profunda y emotiva."
+                        data-details-link="detalle-cod.html">
+                        <div class="overlay-text">Hollow Knight</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="Videojuegos">
+            <h2>Explora Nuestros Ultimos Videojuegos Agregados</h2>
+            <div class="carrusel-wrapper">
+                <button class="btn-izq">&#10094;</button>
+                <div class="carrusel-track" id="carruselTrack">
+                    <div class="videojuego">
+                        <div class = "game-card">
+                            <img src="https://i.pinimg.com/736x/d1/8f/62/d18f62a446033026053339394944c1fb.jpg" 
+                            alt="Videojuego-codblackopsII" 
+                            class= "game-image"
+                            data-description="Call of Duty: Black Ops II sigue dos líneas temporales: la Guerra Fría en los años 80, con Alex Mason enfrentándose a un enemigo soviético, 
+                            y el futuro distópico de 2025, donde su hijo, David Mason, lucha contra el terrorista Raul Menendez, quien busca desestabilizar el mundo mediante ciberataques. 
+                            Las decisiones del jugador afectan el curso de la historia, lo que lleva a diferentes finales y desenlaces en una narrativa de guerra y tecnología."
+                            data-details-link="detalle-cod.html">
+                            <div class="overlay-text">Call of Duty: Black Ops II</div>
+                        </div>
+                    </div>
+                    
+                    <div class="videojuego">
+                        <div class="game-card">
+                            <img src="https://i.pinimg.com/736x/f9/12/f7/f912f7125d3ab1fabdd965e6dc479093.jpg" 
+                            alt="Videojuego-gtav" 
+                            class="game-image"
+                            data-description="Grand Theft Auto V (GTA V) es un juego de acción y mundo abierto que sigue la historia de tres criminales muy diferentes: 
+                            Michael, un ex ladrón de bancos retirado; Franklin, un joven ambicioso del barrio; y Trevor, un violento y caótico fugitivo. Ambientado en la ciudad 
+                            ficticia de Los Santos, el juego combina sus vidas mientras realizan atracos arriesgados, enfrentan traiciones y luchan contra enemigos del bajo mundo 
+                            y del gobierno. La historia mezcla crimen, humor negro y crítica social, todo dentro de un mundo abierto lleno de actividades y libertad para explorar."
+                            data-details-link="detalle-cod.html">
+                            <div class="overlay-text">Grand Theft Auto V</div>
+                        </div>
+                    </div>
+                    <div class="videojuego">
+                        <div class="game-card">
+                            <img src="https://i.pinimg.com/736x/93/57/62/935762480e67e4b749994a315b4f7e8f.jpg" 
+                            alt="Videojuego-stardewvalley"
+                            class= "game-image"
+                            data-description="Stardew Valley es un juego de simulación en el que el jugador hereda una granja en ruinas y debe restaurarla a su antigua gloria. 
+                            A lo largo del juego, los jugadores cultivan, crían animales, exploran minas y forjan relaciones con los habitantes del pueblo. La historia se centra 
+                            en la vida en la granja, pero también incluye elementos de aventura y misterio. Con un enfoque relajante y de ritmo lento, Stardew Valley ofrece un 
+                            mundo abierto lleno de actividades y posibilidades."
+                            data-details-link="">
+                            <div class="overlay-text">Stardew Valley</div>
+                        </div>
+                    </div>
+                    <div class="videojuego">
+                        <div class="game-card">
+                            <img src="https://i.pinimg.com/736x/57/5b/2e/575b2e4fd17a2221649700af93b8895e.jpg" 
+                            alt="Videojuego-gtasa" 
+                            class="game-image"
+                            data-description= "CJ Johnson, quien regresa a su ciudad natal, Los Santos, después de la muerte de su madre. A lo largo del juego, CJ se ve 
+                            involucrado en una serie de eventos que incluyen la lucha por recuperar el control de su barrio, enfrentarse a bandas rivales y desmantelar una red 
+                            de corrupción dentro de la policía. Ambientado en el estado ficticio de San Andreas, que incluye tres ciudades principales, el juego combina acción, 
+                            crimen, y una narrativa profunda que explora temas de familia, lealtad y poder. Además, ofrece un mundo abierto lleno de misiones, actividades y una 
+                            gran libertad para explorar."
+                            data-details-link="detalle-cod.html">
+                            <div class="overlay-text">Grand Theft Auto San Andreas</div>
+                        </div>
+                    </div>
+                    <div class="videojuego">
+                        <div class = "game-card">
+                            <img src="https://i.pinimg.com/736x/a5/c5/29/a5c529a21b85c978bd4e1874762d29d3.jpg" 
+                            alt="Videojuego-cs2" 
+                            class="game-image"
+                            data-description="Counter-Strike 2 es un juego de disparos en primera persona basado en equipos, donde los jugadores se dividen en dos bandos: los 
+                            terroristas, que intentan plantar una bomba o tomar rehenes, y los antiterroristas, que deben evitarlo. El juego se centra en la estrategia, la 
+                            cooperación en equipo y la habilidad individual, ofreciendo partidas rápidas y competitivas. Counter-Strike 2 es la secuela de Counter-Strike, 
+                            mejorando la jugabilidad, los gráficos y añadiendo nuevas características mientras conserva la esencia del juego original."
+                            data-details-link="detalle-cod.html">
+                            <div class ="overlay-text">Counter-Strike 2</div>
+                        </div>
+                    </div>
+                    <div class="videojuego">
+                        <div class = "game-card">
+                            <img src="https://i.pinimg.com/736x/4c/00/c8/4c00c8895cac1c65ceb3b2ae3f1e3f7e.jpg" 
+                            alt="Videojuego-tlou" 
+                            class="game-image"
+                            data-description="The Last of Us sigue a Joel, un hombre endurecido por la pérdida, y Ellie, una adolescente inmune a un hongo mortal que ha 
+                            devastado a la humanidad. Juntos cruzan un Estados Unidos postapocalíptico en busca de una posible cura, enfrentando peligros tanto humanos como 
+                            infectados. La historia combina acción, supervivencia y una fuerte carga emocional, explorando el vínculo entre los protagonistas en un mundo brutal 
+                            y desesperado."
+                            data-details-link="detalle-cod.html">
+                            <div class ="overlay-text">The Last Of Us</div>
+                        </div>
+                    </div>
+                    <div class="videojuego">
+                        <div class="game-card">
+                            <img src="https://i.pinimg.com/736x/91/b8/a4/91b8a4d87176bce81989f7fbed39d6ee.jpg" 
+                            alt="Videojuego-tlou2" 
+                            class="game-image"
+                            data-description="The Last of Us Part II sigue a Ellie varios años después de los eventos del primer juego, en un mundo aún devastado por la infección. 
+                            Impulsada por la ira y el deseo de venganza tras una tragedia personal, Ellie emprende un viaje oscuro y emocional que la enfrenta a las consecuencias 
+                            de sus actos. La historia explora temas como el odio, la pérdida y la redención, en una narrativa intensa y cargada de tensión."
+                            data-details-link="detalle-cod.html">
+                            <div class ="overlay-text">The Last Of Us II</div>
+                        </div>
+                    </div>
+                    <div class="videojuego">
+                        <div class="game-card">
+                            <img src="https://i.pinimg.com/736x/c4/34/72/c4347248cba1e95286e35bc442111c50.jpg" 
+                            alt="Videojuego-godofwarragnarok" 
+                            class="game-image"
+                            data-description="God of War (2018) sigue a Kratos, un guerrero espartano que ahora vive en los reinos nórdicos junto a su hijo Atreus. Tras la muerte de 
+                            su esposa, emprenden un viaje para esparcir sus cenizas en la montaña más alta, enfrentándose a dioses, monstruos y su propio pasado. La historia mezcla 
+                            acción, mitología nórdica y una profunda relación padre-hijo en un mundo lleno de desafíos y secretos."
+                            data-details-link="detalle-cod.html">
+                            <div class="overlay-text">God Of War Ragnarok (2018)</div>
+                        </div>
+                    </div>
+                    <div class="videojuego">
+                        <div class ="game-card">
+                            <img src="https://i.pinimg.com/736x/c8/cc/44/c8cc44624d8cf36ecf08f5fcafad57b4.jpg" 
+                            alt="Videojuego-Minecraft" 
+                            class="game-image"
+                            data-description="Minecraft es un juego de mundo abierto donde los jugadores pueden explorar, construir, recolectar recursos y sobrevivir en un entorno 
+                            generado aleatoriamente. Sin una historia lineal, ofrece libertad total para crear estructuras, combatir criaturas y descubrir biomas. Su estilo visual 
+                            en bloques y su jugabilidad creativa lo convierten en una experiencia única para jugadores de todas las edades."
+                            data-details-link="detalle-cod.html">
+                            <div class="overlay-text">Minecraft(2009)</div>
+                        </div>
+                    </div>
+                    <div class="videojuego">
+                        <div class ="game-card">
+                            <img src="https://i.pinimg.com/736x/52/fd/b8/52fdb8076d506ae4ab3d0438df0b3bd0.jpg" 
+                            alt="Videojuego-hollowknight" 
+                            class="game-image"
+                            data-description="Hollow Knight es un juego de aventuras y exploración en 2D que sigue a un misterioso guerrero 
+                            sin nombre que viaja al reino subterráneo de Hallownest. Allí, debe enfrentarse a criaturas corrompidas, descubrir 
+                            secretos ocultos y desentrañar una antigua tragedia que amenaza con destruirlo todo. Con una atmósfera oscura, combates 
+                            desafiantes y un mundo interconectado, el juego ofrece una experiencia profunda y emotiva."
+                            data-details-link="detalle-cod.html">
+                            <div class="overlay-text">Hollow Knight</div>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn-der">&#10095;</button>
+            </div>
+        </section>
+        <section id="Videojuegos">
+            <h2>Explora Nuestros Ultimos Videojuegos Agregados</h2>
+            <div class="carrusel-wrapper">
+                <button class="btn-izq">&#10094;</button>
+                <div class="carrusel-track" id="carruselTrack">
+                    <div class="videojuego">
+                        <div class = "game-card">
+                            <img src="https://i.pinimg.com/736x/d1/8f/62/d18f62a446033026053339394944c1fb.jpg" 
+                            alt="Videojuego-codblackopsII" 
+                            class= "game-image"
+                            data-description="Call of Duty: Black Ops II sigue dos líneas temporales: la Guerra Fría en los años 80, con Alex Mason enfrentándose a un enemigo soviético, 
+                            y el futuro distópico de 2025, donde su hijo, David Mason, lucha contra el terrorista Raul Menendez, quien busca desestabilizar el mundo mediante ciberataques. 
+                            Las decisiones del jugador afectan el curso de la historia, lo que lleva a diferentes finales y desenlaces en una narrativa de guerra y tecnología."
+                            data-details-link="detalle-cod.html">
+                            <div class="overlay-text">Call of Duty: Black Ops II</div>
+                        </div>
+                    </div>
+                    
+                    <div class="videojuego">
+                        <div class="game-card">
+                            <img src="https://i.pinimg.com/736x/f9/12/f7/f912f7125d3ab1fabdd965e6dc479093.jpg" 
+                            alt="Videojuego-gtav" 
+                            class="game-image"
+                            data-description="Grand Theft Auto V (GTA V) es un juego de acción y mundo abierto que sigue la historia de tres criminales muy diferentes: 
+                            Michael, un ex ladrón de bancos retirado; Franklin, un joven ambicioso del barrio; y Trevor, un violento y caótico fugitivo. Ambientado en la ciudad 
+                            ficticia de Los Santos, el juego combina sus vidas mientras realizan atracos arriesgados, enfrentan traiciones y luchan contra enemigos del bajo mundo 
+                            y del gobierno. La historia mezcla crimen, humor negro y crítica social, todo dentro de un mundo abierto lleno de actividades y libertad para explorar."
+                            data-details-link="detalle-cod.html">
+                            <div class="overlay-text">Grand Theft Auto V</div>
+                        </div>
+                    </div>
+                    <div class="videojuego">
+                        <div class="game-card">
+                            <img src="https://i.pinimg.com/736x/93/57/62/935762480e67e4b749994a315b4f7e8f.jpg" 
+                            alt="Videojuego-stardewvalley"
+                            class= "game-image"
+                            data-description="Stardew Valley es un juego de simulación en el que el jugador hereda una granja en ruinas y debe restaurarla a su antigua gloria. 
+                            A lo largo del juego, los jugadores cultivan, crían animales, exploran minas y forjan relaciones con los habitantes del pueblo. La historia se centra 
+                            en la vida en la granja, pero también incluye elementos de aventura y misterio. Con un enfoque relajante y de ritmo lento, Stardew Valley ofrece un 
+                            mundo abierto lleno de actividades y posibilidades."
+                            data-details-link="">
+                            <div class="overlay-text">Stardew Valley</div>
+                        </div>
+                    </div>
+                    <div class="videojuego">
+                        <div class="game-card">
+                            <img src="https://i.pinimg.com/736x/57/5b/2e/575b2e4fd17a2221649700af93b8895e.jpg" 
+                            alt="Videojuego-gtasa" 
+                            class="game-image"
+                            data-description= "CJ Johnson, quien regresa a su ciudad natal, Los Santos, después de la muerte de su madre. A lo largo del juego, CJ se ve 
+                            involucrado en una serie de eventos que incluyen la lucha por recuperar el control de su barrio, enfrentarse a bandas rivales y desmantelar una red 
+                            de corrupción dentro de la policía. Ambientado en el estado ficticio de San Andreas, que incluye tres ciudades principales, el juego combina acción, 
+                            crimen, y una narrativa profunda que explora temas de familia, lealtad y poder. Además, ofrece un mundo abierto lleno de misiones, actividades y una 
+                            gran libertad para explorar."
+                            data-details-link="detalle-cod.html">
+                            <div class="overlay-text">Grand Theft Auto San Andreas</div>
+                        </div>
+                    </div>
+                    <div class="videojuego">
+                        <div class = "game-card">
+                            <img src="https://i.pinimg.com/736x/a5/c5/29/a5c529a21b85c978bd4e1874762d29d3.jpg" 
+                            alt="Videojuego-cs2" 
+                            class="game-image"
+                            data-description="Counter-Strike 2 es un juego de disparos en primera persona basado en equipos, donde los jugadores se dividen en dos bandos: los 
+                            terroristas, que intentan plantar una bomba o tomar rehenes, y los antiterroristas, que deben evitarlo. El juego se centra en la estrategia, la 
+                            cooperación en equipo y la habilidad individual, ofreciendo partidas rápidas y competitivas. Counter-Strike 2 es la secuela de Counter-Strike, 
+                            mejorando la jugabilidad, los gráficos y añadiendo nuevas características mientras conserva la esencia del juego original."
+                            data-details-link="detalle-cod.html">
+                            <div class ="overlay-text">Counter-Strike 2</div>
+                        </div>
+                    </div>
+                    <div class="videojuego">
+                        <div class = "game-card">
+                            <img src="https://i.pinimg.com/736x/4c/00/c8/4c00c8895cac1c65ceb3b2ae3f1e3f7e.jpg" 
+                            alt="Videojuego-tlou" 
+                            class="game-image"
+                            data-description="The Last of Us sigue a Joel, un hombre endurecido por la pérdida, y Ellie, una adolescente inmune a un hongo mortal que ha 
+                            devastado a la humanidad. Juntos cruzan un Estados Unidos postapocalíptico en busca de una posible cura, enfrentando peligros tanto humanos como 
+                            infectados. La historia combina acción, supervivencia y una fuerte carga emocional, explorando el vínculo entre los protagonistas en un mundo brutal 
+                            y desesperado."
+                            data-details-link="detalle-cod.html">
+                            <div class ="overlay-text">The Last Of Us</div>
+                        </div>
+                    </div>
+                    <div class="videojuego">
+                        <div class="game-card">
+                            <img src="https://i.pinimg.com/736x/91/b8/a4/91b8a4d87176bce81989f7fbed39d6ee.jpg" 
+                            alt="Videojuego-tlou2" 
+                            class="game-image"
+                            data-description="The Last of Us Part II sigue a Ellie varios años después de los eventos del primer juego, en un mundo aún devastado por la infección. 
+                            Impulsada por la ira y el deseo de venganza tras una tragedia personal, Ellie emprende un viaje oscuro y emocional que la enfrenta a las consecuencias 
+                            de sus actos. La historia explora temas como el odio, la pérdida y la redención, en una narrativa intensa y cargada de tensión."
+                            data-details-link="detalle-cod.html">
+                            <div class ="overlay-text">The Last Of Us II</div>
+                        </div>
+                    </div>
+                    <div class="videojuego">
+                        <div class="game-card">
+                            <img src="https://i.pinimg.com/736x/c4/34/72/c4347248cba1e95286e35bc442111c50.jpg" 
+                            alt="Videojuego-godofwarragnarok" 
+                            class="game-image"
+                            data-description="God of War (2018) sigue a Kratos, un guerrero espartano que ahora vive en los reinos nórdicos junto a su hijo Atreus. Tras la muerte de 
+                            su esposa, emprenden un viaje para esparcir sus cenizas en la montaña más alta, enfrentándose a dioses, monstruos y su propio pasado. La historia mezcla 
+                            acción, mitología nórdica y una profunda relación padre-hijo en un mundo lleno de desafíos y secretos."
+                            data-details-link="detalle-cod.html">
+                            <div class="overlay-text">God Of War Ragnarok (2018)</div>
+                        </div>
+                    </div>
+                    <div class="videojuego">
+                        <div class ="game-card">
+                            <img src="https://i.pinimg.com/736x/c8/cc/44/c8cc44624d8cf36ecf08f5fcafad57b4.jpg" 
+                            alt="Videojuego-Minecraft" 
+                            class="game-image"
+                            data-description="Minecraft es un juego de mundo abierto donde los jugadores pueden explorar, construir, recolectar recursos y sobrevivir en un entorno 
+                            generado aleatoriamente. Sin una historia lineal, ofrece libertad total para crear estructuras, combatir criaturas y descubrir biomas. Su estilo visual 
+                            en bloques y su jugabilidad creativa lo convierten en una experiencia única para jugadores de todas las edades."
+                            data-details-link="detalle-cod.html">
+                            <div class="overlay-text">Minecraft(2009)</div>
+                        </div>
+                    </div>
+                    <div class="videojuego">
+                        <div class ="game-card">
+                            <img src="https://i.pinimg.com/736x/52/fd/b8/52fdb8076d506ae4ab3d0438df0b3bd0.jpg" 
+                            alt="Videojuego-hollowknight" 
+                            class="game-image"
+                            data-description="Hollow Knight es un juego de aventuras y exploración en 2D que sigue a un misterioso guerrero 
+                            sin nombre que viaja al reino subterráneo de Hallownest. Allí, debe enfrentarse a criaturas corrompidas, descubrir 
+                            secretos ocultos y desentrañar una antigua tragedia que amenaza con destruirlo todo. Con una atmósfera oscura, combates 
+                            desafiantes y un mundo interconectado, el juego ofrece una experiencia profunda y emotiva."
+                            data-details-link="detalle-cod.html">
+                            <div class="overlay-text">Hollow Knight</div>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn-der">&#10095;</button>
+            </div>
+        </section>
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; PlaySent. Todos los derechos reservados.</p>
+        <nav>
+            <a href="#">Política de Privacidad</a> |
+            <a href="#">Términos y Condiciones</a>
+        </nav>
+    </footer>
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div class="modal-body">
+                <img src="" alt="Imagen Modal" id="modal-image">
+                <div class="info-container"> 
+                    <div class="description">
+                        <p id="modal-description"></p>
+                    </div>
+                    <a href="#" class="btn-details" id="modal-button">Más detalles</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    
+    <script src="javaScript.js"></script>
+
+</body>
+
+</html>
