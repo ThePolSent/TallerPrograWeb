@@ -552,9 +552,26 @@ footer nav a:hover {
         align-items: flex-start;
     }
 
+    header .logo {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
     header .logo h1 {
         font-size: 1em;
         margin-left: 10px;
+    }
+
+    .menu-hamburguesa {
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        font-size: 28px;
+        cursor: pointer;
+        z-index: 1001;
     }
 
     nav {
@@ -563,7 +580,7 @@ footer nav a:hover {
 
     nav ul {
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
         background-color: #333;
         width: 100%;
         display: none;
@@ -576,14 +593,8 @@ footer nav a:hover {
 
     nav ul li {
         margin: 10px 0;
-    }
-
-    .menu-hamburguesa {
-        display: block;
-        position: absolute;
-        top: 15px;
-        right: 20px;
-        z-index: 1001;
+        padding: 0 20px;
+        width: 100%;
     }
 
     .has-submenu .submenu {
@@ -594,10 +605,23 @@ footer nav a:hover {
         border-radius: 0;
         background-color: #444;
         width: 100%;
+        display: none;
+        flex-direction: column;
+        padding: 0;
     }
 
     .has-submenu.open .submenu {
+        display: flex;
+    }
+
+    .submenu li {
+        padding: 10px 20px;
+    }
+
+    .submenu li a {
+        padding: 8px 0;
         display: block;
+        width: 100%;
     }
 }
 
@@ -657,6 +681,18 @@ footer nav a:hover {
     }
 }
 
+/* -------------------- VIDEOJUEGOS POPULARES -------------------- */
+@media (max-width: 768px) {
+    .Contenedor-videojuegos-populares {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .image-popular {
+        height: 220px;
+    }
+}
+
 /* -------------------- PANTALLAS MUY PEQUEÑAS -------------------- */
 @media (max-width: 480px) {
     header .logo h1 {
@@ -672,7 +708,7 @@ footer nav a:hover {
     }
 
     .image-popular {
-        height: 250px;
+        height: 180px;
     }
 
     .game-card img {
