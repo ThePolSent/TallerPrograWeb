@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accion</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Cabecera -->
+    <header>
+        <div class="logo">
+            <h1>
+                    <img src="https://img.freepik.com/vector-premium/icono-joystick-pixel-art-juego-8-bits-sobre-fondo-blanco_360488-222.jpg?w=740" alt="Logo de PlaySent">
+                    PlaySent
+            </h1>
+        </div>
+        <!-- Menu de navegación -->
+                <div class="container">
+            <nav>
+                <ul id="nav-list">
+                    <li><a href="../../index.html">Inicio</a></li>
+                    <li class="has-submenu">
+                        <a href="#Noticias" toggleSubmenu(event)>Noticias</a>
+                        <ul class="submenu">
+                            <li><a href="#ultimas">Últimas Noticias</a></li>
+                            <li><a href="#populares">Populares</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-submenu">
+                        <a href="# onclick="toggleSubmenu(event)>Categorías</a>
+                        <ul class="submenu">
+                            <li><a href="../../categorias/accion/accion.html">Accion</a></li>
+                            <li><a href="../../categorias/aventura/aventura.html">Aventura</a></li>
+                            <li><a href="../../categorias/simulacion/simulacion.html">Simulacion</a></li>
+                            <li><a href="../../categorias/estrategia/estrategia.html">Estrategia</a></li>
+                            <li><a href="../../categorias/mundoabierto/mundoabierto.html">Mundo Abierto</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#Solicitud">Reporte</a></li>
+                    <li class="has-submenu">
+                        <a href="# onclick="toggleSubmenu(event)>Redes Sociales</a>
+                        <ul class="submenu">
+                            <li><a href="#accion">Facebook</a></li>
+                            <li><a href="#aventura">Twitter</a></li>
+                            <li><a href="#deportes">Instagram</a></li>
+                        </ul>
+                    </li>
+                    
+                </ul>
+                <!-- Menú hamburguesa -->
+                <div id="menu-toggle" class="menu-hamburguesa">&#9776;</div>
+            </nav>
+        </div>
+        <div class="login">
+            <button id="theme-toggle" class="btn-theme">🌙</button>
+            <button id="login-btn" onclick="toggleLoginForm()">Iniciar sesión</button>
+            <div id="login-form" class="login-form">
+                <input type="text" id="username" placeholder="Usuario" required>
+                <input type="password" id="password" placeholder="Contraseña" required>
+                <button onclick="login()">Ingresar</button>
+            </div>
+        </div>
+    </header>
+
+
+
+<!-- Cuerpo -->
+<main class ="mostrador">
+    <section id="VideojuegosCategoriaAccion">
+        <h2>Los mejores juegos de Accion</h2>
+        <div class="carrusel-wrapper">
+            <button class="btn-izq">&#10094;</button>
+            <div class="carrusel-track" id="carruselTrack">
+                <div class="videojuego">
+                    
+                    <div class = "game-card">
+                        <img src="https://i.pinimg.com/736x/d1/8f/62/d18f62a446033026053339394944c1fb.jpg" 
+                        alt="Videojuego-codblackopsII" 
+                        class= "image-carrusel"
+                        data-title="Call of Duty: Black Ops II"
+                        data-description="Call of Duty: Black Ops II sigue dos líneas temporales: la Guerra Fría en los años 80, con Alex Mason enfrentándose a un enemigo soviético, 
+                        y el futuro distópico de 2025, donde su hijo, David Mason, lucha contra el terrorista Raul Menendez, quien busca desestabilizar el mundo mediante ciberataques. 
+                        Las decisiones del jugador afectan el curso de la historia, lo que lleva a diferentes finales y desenlaces en una narrativa de guerra y tecnología."
+                        data-details-link="DetalleJuegos/Detalle-Cod/detalle-cod.html">
+                        <div class="overlay-text">Call of Duty: Black Ops II</div>
+                    </div>
+                </div>
+                
+                <div class="videojuego">
+                    <div class = "game-card">
+                        <img src="https://i.pinimg.com/736x/a5/c5/29/a5c529a21b85c978bd4e1874762d29d3.jpg" 
+                        data-title="Counter Strike 2"
+                        alt="Videojuego-cs2" 
+                        class="image-carrusel"
+                        data-description="Counter-Strike 2 es un juego de disparos en primera persona basado en equipos, donde los jugadores se dividen en dos bandos: los 
+                        terroristas, que intentan plantar una bomba o tomar rehenes, y los antiterroristas, que deben evitarlo. El juego se centra en la estrategia, la 
+                        cooperación en equipo y la habilidad individual, ofreciendo partidas rápidas y competitivas. Counter-Strike 2 es la secuela de Counter-Strike, 
+                        mejorando la jugabilidad, los gráficos y añadiendo nuevas características mientras conserva la esencia del juego original."
+                        data-details-link="detalle-cod.html">
+                        <div class ="overlay-text">Counter-Strike 2</div>
+                    </div>
+                </div>
+                <div class="videojuego">
+                    <div class="game-card">
+                        <img src="https://i.pinimg.com/736x/c4/34/72/c4347248cba1e95286e35bc442111c50.jpg" 
+                        data-title="God Of War Ragnarok"
+                        alt="Videojuego-godofwarragnarok" 
+                        class="image-carrusel"
+                        data-description="God of War (2018) sigue a Kratos, un guerrero espartano que ahora vive en los reinos nórdicos junto a su hijo Atreus. Tras la muerte de 
+                        su esposa, emprenden un viaje para esparcir sus cenizas en la montaña más alta, enfrentándose a dioses, monstruos y su propio pasado. La historia mezcla 
+                        acción, mitología nórdica y una profunda relación padre-hijo en un mundo lleno de desafíos y secretos."
+                        data-details-link="detalle-cod.html">
+                        <div class="overlay-text">God Of War Ragnarok (2018)</div>
+                    </div>
+                </div>
+                <div class="videojuego">
+                    <div class="game-card">
+                        <img src="https://i.pinimg.com/736x/49/6d/8f/496d8f4a6009aca8bc03131098f3d533.jpg" 
+                        data-title="DOOM Eternal"
+                        alt="Videojuego-doomternal" 
+                        class="image-carrusel"
+                        data-description="Doom Eternal continúa la lucha del Doom Slayer contra las fuerzas del Infierno que han invadido la Tierra, desatando el caos y la 
+                        destrucción en todo el planeta. A lo largo de la historia, el Slayer viaja por diferentes mundos para detener la invasión demoníaca, enfrentándose a 
+                        hordas de enemigos con un arsenal brutal y un ritmo frenético. A medida que avanza, descubre secretos sobre su origen y su conexión con los demonios. 
+                        La narrativa combina acción intensa con mitología oscura, en una batalla épica por la supervivencia de la humanidad y el destino del universo."
+                        data-details-link="detalle-cod.html">
+                        <div class="overlay-text">DOOM Eternal</div>
+                    </div>
+                </div>
+                <div class="videojuego">
+                    <div class="game-card">
+                        <img src="https://i.pinimg.com/736x/76/f6/b0/76f6b0e9659ab189f5dd994e4ef471e5.jpg" 
+                        data-title="Devil May Cry 5"
+                        alt="Videojuego-devilmaycry5" 
+                        class="image-carrusel"
+                        data-description="Devil May Cry 5 sigue a tres cazadores de demonios: Nero, Dante y V, que luchan contra una invasión demoníaca provocada por el 
+                        crecimiento de un misterioso árbol infernal en Red Grave City. Cada personaje aporta un estilo de combate único mientras enfrentan hordas de enemigos 
+                        y desvelan secretos del pasado. Nero busca respuestas sobre su brazo demoníaco perdido, Dante enfrenta su destino como hijo de Sparda, y V oculta un 
+                        vínculo profundo con el enemigo. La historia mezcla acción intensa, humor y drama sobrenatural, en una batalla por salvar el mundo del caos."
+                        data-details-link="detalle-cod.html">
+                        <div class="overlay-text">Devil May Cray 5</div>
+                    </div>
+                </div>
+                <div class="videojuego">
+                    <div class="game-card">
+                        <img src="https://i.pinimg.com/736x/f1/b8/65/f1b865229294c81a2827f807012052f8.jpg" 
+                        data-title="Resident Evil 4 Remake"
+                        alt="Videojuego-residentevil4" 
+                        class="image-carrusel"
+                        data-description="Resident Evil 4 sigue a Leon S. Kennedy, un agente especial enviado a un remoto pueblo europeo para rescatar a Ashley Graham, la 
+                        hija del presidente de EE.UU. Allí descubre que los habitantes han sido infectados por un parásito conocido como Las Plagas, controlado por un culto 
+                        siniestro. Leon deberá enfrentarse a enemigos mutados, resolver acertijos y sobrevivir a múltiples amenazas mientras intenta cumplir su misión. La 
+                        historia combina acción intensa, terror y tensión constante, redefiniendo el género con un enfoque más dinámico y cinematográfico."
+                        data-details-link="detalle-cod.html">
+                        <div class="overlay-text">Resident Evil 4 Remake</div>
+                    </div>
+                </div>
+                <div class="videojuego">
+                    <div class="game-card">
+                        <img src="https://i.pinimg.com/736x/ed/c0/7f/edc07f0993fbf3c50cec24147ec10ec8.jpg" 
+                        data-title="Uncharted 4"
+                        alt="Videojuego-uncharted4" 
+                        class="image-carrusel"
+                        data-description="Uncharted 4: A Thief's End narra la última aventura de Nathan Drake, quien ha dejado atrás la vida de cazador de tesoros. Cuando 
+                        su hermano Sam, dado por muerto, reaparece en busca de ayuda, Nathan se ve arrastrado nuevamente al mundo de la exploración y el peligro. Juntos, 
+                        emprenden la búsqueda del tesoro perdido del capitán Henry Avery, enfrentándose a piratas, rivales y desafíos personales. La historia combina acción, 
+                        drama y exploración en escenarios impresionantes, mientras se profundiza en los lazos familiares y el costo de la obsesión."
+                        data-details-link="detalle-cod.html">
+                        <div class="overlay-text">Uncharted 4</div>
+                    </div>
+                </div>
+                <div class="videojuego">
+                    <div class="game-card">
+                        <img src="https://i.pinimg.com/736x/aa/11/18/aa11186dc69287ff7192992845d8585b.jpg" 
+                        data-title="Call of Duty: Moder Warfare 2 (2022)"
+                        alt="Videojuego-callofdutymoderwarfare2" 
+                        class="image-carrusel"
+                        data-description="Call of Duty: Modern Warfare 2 sigue a un grupo de élite de la Fuerza de Operaciones Especiales liderada por el capitán Soap MacTavish, 
+                        en una misión para detener a un líder terrorista ruso, Makarov, que amenaza con desestabilizar el orden mundial. La historia aborda la lucha global contra 
+                        el terrorismo, con intensas batallas en diversas ubicaciones del mundo. Mientras tanto, el equipo se enfrenta a traiciones, alianzas rotas y una serie de 
+                        eventos que ponen a prueba su lealtad y moralidad en un conflicto cada vez más personal.">
+                        <div class="overlay-text">Call of Duty: Moder Warfare 2 (2022)</div>
+                    </div>
+                </div>
+                <div class="videojuego">
+                    <div class="game-card">
+                        <img src="https://i.pinimg.com/736x/0f/36/f8/0f36f8e8301782de08d1d6f93d4f91c9.jpg" 
+                        data-title="Sekiro: Shadows Die Twice"
+                        alt="Videojuego-sekiroshadowdietwice" 
+                        class="image-carrusel"
+                        data-description="Sekiro: Shadows Die Twice sigue la historia de un samurái llamado Wolf, que busca vengar la muerte de su señor y recuperar a un joven 
+                        noble que ha sido secuestrado. Ambientado en un Japón feudal, el juego mezcla acción y sigilo en un entorno lleno de desafíos. A medida que avanza, Wolf 
+                        se enfrenta a enemigos letales y seres mitológicos, utilizando una mecánica de combate de alto riesgo y alta recompensa. Con una narrativa profunda sobre el honor, 
+                        la venganza y la redención, el jugador debe tomar decisiones difíciles mientras explora un mundo brutal y fascinante."
+                        data-details-link="detalle-cod.html">
+                        <div class="overlay-text">Sekiro: Shadow Die Twice</div>
+                    </div>
+                </div>
+                <div class="videojuego">
+                    <div class="game-card">
+                        <img src="https://i.pinimg.com/736x/fe/5f/16/fe5f168cf2487f48374a620adedbe082.jpg" 
+                        data-title="Metal Gear Rising: Revengeance"
+                        alt="Videojuego-metalgearrisingrevengeance" 
+                        class="image-carrusel"
+                        data-description="Metal Gear Rising: Revengeance se centra en Raiden, un cyborg samurái que trabaja como mercenario para una organización privada de seguridad. 
+                        Después de un violento ataque a su equipo, Raiden se ve envuelto en una conspiración global que involucra a poderosas corporaciones, terroristas y secretos del pasado. 
+                        A lo largo del juego, Raiden lucha con una espada de alta frecuencia, enfrentándose a enemigos mecánicos y humanos en combates rápidos y desafiantes. La narrativa explora 
+                        temas como la venganza, la moralidad y la naturaleza de la guerra, mientras Raiden busca la justicia y la redención en un mundo lleno de corrupción y caos.">
+                        <div class="overlay-text">Metal Gear Rising: Revengeance</div>
+                    </div>
+                </div>
+            </div>
+            <button class="btn-der">&#10095;</button>
+        </div>
+    </section>
+</main>
+<!-- Footer -->
+<footer>
+    <p>&copy; PlaySent. Todos los derechos reservados.</p>
+    <nav>
+        <a href="#">Política de Privacidad</a> |
+        <a href="#">Términos y Condiciones</a>
+    </nav>
+</footer>
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h3 id="modal-title"></h3>
+        <div class="modal-body">
+            <img src="" alt="Imagen Modal" id="modal-image">
+            <div class="info-container"> 
+                <div class="description">
+                    <p id="modal-description"></p>
+                </div>
+                <a href="#" class="btn-details" id="modal-button">Más detalles</a>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="javaScript.js"></script>
+</body>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</html>
