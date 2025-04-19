@@ -260,7 +260,7 @@ nav ul li a:hover {
 .modal.show {
     display: block;
     opacity: 1;
-    animation: slide-down 0.2s ease;
+    animation: slide-down 0.5s ease;
 }
 
 .modal-content {
@@ -276,6 +276,7 @@ nav ul li a:hover {
     overflow: auto;
     max-height: 90vh;
     text-align: center; /* Alinea todo el contenido al centro */
+    animation: fadeIn 0.5s ease-out; /* Animación para el contenido */
 }
 
 /* Asegurarse de que el título esté centrado */
