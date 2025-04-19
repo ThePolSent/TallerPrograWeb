@@ -130,6 +130,16 @@ header .logo h1 img {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/* -------------------- Menu Hamburguesa -------------------- */
+
+.menu-hamburguesa {
+    display: none;  /* Ocultar por defecto */
+    font-size: 30px;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
 /* -------------------- NAVEGACIÓN -------------------- */
 header nav {
     position: relative;
@@ -531,10 +541,6 @@ footer nav a:hover {
 }
 
 /* -------------------- RESPONSIVE -------------------- */
-/* -------------------- RESPONSIVE -------------------- */
-
-/* -------------------- RESPONSIVE -------------------- */
-
 @media screen and (max-width: 768px) {
     /* Ajustes para el Header */
     header {
@@ -545,7 +551,11 @@ footer nav a:hover {
         font-size: 1.2em;
     }
 
-    /* Menú de navegación */
+    header .logo img {
+        display: block; /* Mostrar la imagen del logo en pantallas pequeñas */
+        max-width: 150px;
+    }
+
     nav ul {
         flex-direction: column;
         display: none;
@@ -576,65 +586,10 @@ footer nav a:hover {
         background: none;
         border: none;
     }
-
-    /* Ajustes al Carrusel */
-    .carrusel-wrapper {
-        margin: 20px 0;
-    }
-
-    .carrusel-track {
-        grid-template-rows: 1fr; /* Asegura que las imágenes se ajusten en una fila */
-        gap: 10px;
-    }
-
-    .videojuego img {
-        height: 300px; /* Ajustar el tamaño de las imágenes */
-    }
-
-    /* Ajustes al Modal */
-    .modal-content {
-        width: 90%;
-        margin: 5% auto;
-        max-width: 400px;
-    }
-
-    .modal-body {
-        flex-direction: column;
-    }
-
-    .modal-body img {
-        width: 100%;
-        height: auto;
-        margin-bottom: 10px;
-    }
-
-    /* Ajustes en los botones */
-    .btn-der, .btn-izq {
-        font-size: 1.5rem;
-        padding: 8px;
-    }
-
-    /* Ajustes en las tarjetas del catálogo */
-    .Contenedor-videojuegos {
-        grid-template-columns: repeat(2, 1fr); /* Dos columnas en pantallas medianas */
-    }
-
-    .game-card {
-        margin: 0 auto;
-    }
-
-    .game-card img {
-        height: 250px; /* Ajustar imágenes en el catálogo */
-    }
-
-    /* Hacer más pequeño el texto en el header */
-    header .logo h1 {
-        font-size: 1.2em;
-    }
 }
 
 @media screen and (max-width: 480px) {
-    /* Ajustes en el header */
+    /* Ajustes para el Header */
     header .logo h1 {
         font-size: 1.1em;
     }
@@ -644,50 +599,6 @@ footer nav a:hover {
     }
 
     .game-card img {
-        height: 200px; /* Hacer las imágenes de los juegos más pequeñas */
-    }
-
-    .carrusel-wrapper {
-        margin: 20px 0;
-    }
-
-    .carrusel-track {
-        gap: 5px;
-    }
-
-    /* Ajustes en el modal */
-    .modal-content {
-        width: 90%;
-        max-width: 330px;
-    }
-
-    .modal-body img {
-        width: 100%;
-        height: auto;
-        max-width: 250px; /* Limitar el tamaño de la imagen del modal */
-    }
-
-    /* Botones */
-    .btn-der, .btn-izq {
-        font-size: 1.2rem;
-        padding: 6px;
-    }
-
-    .menu-hamburguesa {
-        display: block;
-    }
-}
-
-@media screen and (max-width: 320px) {
-    .game-card img {
-        height: 180px; /* Imágenes más pequeñas para pantallas muy pequeñas */
-    }
-
-    .carrusel-wrapper {
-        margin: 10px 0;
-    }
-
-    .carrusel-track {
-        gap: 5px;
+        height: 220px; /* Hacer las imágenes de los juegos más pequeñas */
     }
 }
