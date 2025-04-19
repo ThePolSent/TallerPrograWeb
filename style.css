@@ -633,6 +633,7 @@ footer nav a:hover {
         margin: 30px auto;
         padding: 15px;
         border-radius: 10px;
+        position: relative;
     }
 
     .modal-body {
@@ -656,6 +657,22 @@ footer nav a:hover {
 
     .btn-details {
         margin: 10px auto 0 auto;
+    }
+
+    /* Botón "X" para cerrar el modal */
+    .modal-content .close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 25px;
+        color: #fff;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
+
+    .modal-content .close:hover {
+        color: #f00;
     }
 }
 
@@ -684,12 +701,28 @@ footer nav a:hover {
 /* -------------------- VIDEOJUEGOS POPULARES -------------------- */
 @media (max-width: 768px) {
     .Contenedor-videojuegos-populares {
-        grid-template-columns: repeat(2, 1fr);
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
         gap: 10px;
     }
 
     .image-popular {
-        height: 220px;
+        height: 250px;  /* Igual que en el carrusel */
+        width: auto;
+        object-fit: cover;
+    }
+
+    /* Asegurando que las imágenes no se apilen de manera incorrecta */
+    .game-card {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    .game-card img {
+        max-width: 100%;
+        height: auto;
     }
 }
 
