@@ -877,43 +877,43 @@ footer nav a:hover {
 /* -------------------- MODAL -------------------- */
 @media (max-width: 768px) {
     .modal-content {
-        width: 85%;
-        max-width: 400px;
-        margin: 15px auto;
-        padding: 10px;
-        border-radius: 10px;
+        width: 75%;
+        max-width: 320px;
+        margin: 10px auto;
+        padding: 8px;
+        border-radius: 8px;
         position: relative;
     }
 
     .modal-body {
         flex-direction: column;
-        gap: 10px;
+        gap: 8px;
         align-items: center;
     }
 
     .modal-body img {
-        max-width: 90%;
+        max-width: 85%;
         height: auto;
     }
 
     .info-container {
-        padding: 8px;
+        padding: 5px;
     }
 
     .description {
-        padding: 10px;
-        font-size: 0.9em;
+        padding: 8px;
+        font-size: 0.85em;
     }
 
     .btn-details {
-        margin: 10px auto 0 auto;
+        margin: 8px auto 0 auto;
     }
 
     .modal-content .close {
         position: absolute;
-        top: 8px;
-        right: 8px;
-        font-size: 22px;
+        top: 6px;
+        right: 6px;
+        font-size: 20px;
         color: #fff;
         background-color: transparent;
         border: none;
@@ -985,30 +985,34 @@ footer nav a:hover {
         flex-direction: column;
         padding: 10px;
         gap: 10px;
+        align-items: center;
     }
 
     .detalle-juego .media {
         display: flex;
         flex-direction: column;
         align-items: center;
+        width: 100%;
     }
 
     .detalle-juego img {
-        width: 90%;
+        width: 85%;
         height: auto;
     }
 
     .detalle-juego iframe {
-        width: 95%;
-        height: 240px;
+        width: 90%;
+        height: 180px;
         margin-top: 10px;
-        border-radius: 8px;
+        border-radius: 6px;
         object-fit: cover;
         display: block;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .detalle-juego h5 {
-        font-size: 1rem;
+        font-size: 0.95rem;
         text-align: center;
     }
 
@@ -1016,61 +1020,35 @@ footer nav a:hover {
     .detalle-juego .requisitos,
     .detalle-juego .categorias {
         width: 100%;
-        font-size: 0.9em;
-        padding: 10px;
+        font-size: 0.85em;
+        padding: 8px;
     }
 }
 
 /* -------------------- PANTALLAS MUY PEQUEÑAS -------------------- */
 @media (max-width: 480px) {
-    header .logo h1 {
-        font-size: 0.9em;
-    }
-
-    .Contenedor-videojuegos-populares,
-    .Contenedor-videojuegos {
-        grid-template-columns: 1fr;
-    }
-
-    .image-popular {
-        height: 180px;
-    }
-
-    .game-card img {
-        height: auto;
-    }
-
     .modal-content {
-        padding: 8px;
-        width: 90%;
-        max-width: 360px;
+        width: 85%;
+        max-width: 300px;
+        padding: 6px;
     }
 
     .modal-body {
-        gap: 8px;
-    }
-
-    .videojuego img {
-        height: 180px;
-    }
-
-    .description {
-        font-size: 0.85em;
+        gap: 6px;
     }
 
     .detalle-juego iframe {
-        width: 100%;
-        height: 220px;
-        object-fit: cover;
+        width: 95%;
+        height: 170px;
     }
 
     .detalle-juego .descripcion,
     .detalle-juego .requisitos,
     .detalle-juego .categorias {
-        font-size: 0.85em;
+        font-size: 0.8em;
     }
 
     .detalle-juego h5 {
-        font-size: 0.95rem;
+        font-size: 0.9rem;
     }
 }
