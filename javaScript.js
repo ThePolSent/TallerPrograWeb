@@ -74,14 +74,10 @@ document.addEventListener('click', function (event) {
 //        MENÚ HAMBURGUESA
 // ============================
 
-const menuHamburguesa = document.querySelector('.menu-hamburguesa');
-
-if (menuHamburguesa) {
-    menuHamburguesa.addEventListener('click', () => {
-        const navList = document.querySelector('nav ul');
-        navList.classList.toggle('active');
-    });
-}
+menuHamburguesa.addEventListener('click', () => {
+    const navList = document.querySelector('nav ul');
+    navList.classList.toggle('active'); // Esto no coincide con tu CSS
+});
 
 
 // ============================
