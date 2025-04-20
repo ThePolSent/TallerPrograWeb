@@ -929,8 +929,8 @@ footer nav a:hover {
 /* -------------------- MODAL -------------------- */
 @media (max-width: 768px) {
     .modal-content {
-        width: 65%;
-        max-width: 280px;
+        width: 70%; /* Aumentado para agrandar más el modal */
+        max-width: 320px; /* Ajuste máximo para evitar que el modal se haga demasiado grande */
         padding: 12px;
         border-radius: 10px;
         position: fixed;
@@ -1065,8 +1065,8 @@ footer nav a:hover {
 @media (min-width: 768px) and (orientation: landscape) {
     /* Modal */
     .modal-content {
-        width: 50%; /* Ajusta el modal a un 50% del ancho */
-        max-width: 600px; /* Limita el tamaño máximo */
+        width: 65%; /* Agrandado aún más el modal */
+        max-width: 700px; /* Aumentado para hacerlo aún más ancho */
         padding: 20px; /* Más padding para mejorar la apariencia */
     }
 
