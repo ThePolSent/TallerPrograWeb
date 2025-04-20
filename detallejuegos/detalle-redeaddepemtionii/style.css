@@ -982,13 +982,12 @@ footer nav a:hover {
     }
 }
 
-
 /* -------------------- MODAL -------------------- */
 @media (max-width: 768px) {
     .modal-content {
-        width: 80%;
-        max-width: 380px; /* Hacerlo un poco más pequeño */
-        padding: 12px;
+        width: 85%;  /* Ajustar el tamaño del modal */
+        max-width: 320px;  /* Máximo tamaño en pantallas móviles */
+        padding: 8px;
         border-radius: 10px;
         position: fixed;
         top: 50%;
@@ -1001,7 +1000,7 @@ footer nav a:hover {
 
     .modal-body {
         flex-direction: column;
-        gap: 10px;
+        gap: 8px;
         align-items: center;
     }
 
@@ -1056,14 +1055,14 @@ footer nav a:hover {
     }
 
     .detalle-juego img {
-        width: 85%;
+        width: 80%;  /* Reducido un poco */
         height: auto;
     }
 
     .detalle-juego iframe {
-        width: 60%; /* Reducido para hacerlo más pequeño */
+        width: 70%; /* Ajustado aún más para pantallas móviles */
         height: auto;
-        max-width: 350px; /* Tamaño ajustado */
+        max-width: 300px;  /* Reducción aún mayor para pantallas pequeñas */
         aspect-ratio: 16 / 9;
         margin-top: 10px;
         border-radius: 6px;
@@ -1073,7 +1072,7 @@ footer nav a:hover {
     }
 
     .detalle-juego h5 {
-        font-size: 0.95rem;
+        font-size: 0.9rem;
         text-align: center;
     }
 
@@ -1090,7 +1089,7 @@ footer nav a:hover {
 @media (max-width: 480px) {
     .modal-content {
         width: 85%;
-        max-width: 320px;
+        max-width: 280px;  /* Más pequeño para pantallas de smartphones */
         padding: 8px;
         top: 58%;
         left: 50%;
@@ -1102,9 +1101,9 @@ footer nav a:hover {
     }
 
     .detalle-juego iframe {
-        width: 75%; /* Reducido más */
+        width: 60%; /* Aumentado para pantallas muy pequeñas */
         height: auto;
-        max-width: 320px;
+        max-width: 250px;
         aspect-ratio: 16 / 9;
     }
 
@@ -1115,6 +1114,6 @@ footer nav a:hover {
     }
 
     .detalle-juego h5 {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
     }
 }
