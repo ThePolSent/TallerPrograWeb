@@ -1060,9 +1060,9 @@ footer nav a:hover {
     }
 
     .detalle-juego iframe {
-        width: 70%; /* Ajustado aún más para pantallas móviles */
+        width: 50%; /* Mucho más pequeño horizontalmente */
         height: auto;
-        max-width: 300px;  /* Reducción aún mayor para pantallas pequeñas */
+        max-width: 220px;  /* Reducción aún mayor para pantallas pequeñas */
         aspect-ratio: 16 / 9;
         margin-top: 10px;
         border-radius: 6px;
@@ -1101,9 +1101,9 @@ footer nav a:hover {
     }
 
     .detalle-juego iframe {
-        width: 60%; /* Aumentado para pantallas muy pequeñas */
+        width: 45%; /* Aumentado para pantallas muy pequeñas */
         height: auto;
-        max-width: 250px;
+        max-width: 200px;
         aspect-ratio: 16 / 9;
     }
 
