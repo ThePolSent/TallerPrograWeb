@@ -558,13 +558,14 @@ footer nav a:hover {
         right: 0;
         background-color: #333;
         display: none; /* Inicialmente oculto */
+        z-index: 100; /* Asegurarse de que el menú no quede detrás de otros elementos */
     }
 
     nav ul li {
         margin: 10px 0;
+        width: 100%; /* Asegurarse de que los elementos del menú ocupen todo el ancho */
     }
 
-    /* Menú hamburguesa */
     .menu-hamburguesa {
         display: block;
         cursor: pointer;
@@ -572,13 +573,12 @@ footer nav a:hover {
 
     /* Mostrar el menú cuando el usuario haga clic */
     nav.open ul {
-        display: flex; /* Solo cuando la clase 'open' se activa */
+        display: flex;
     }
 }
 
 /* -------------------- MENÚ DESPLEGABLE -------------------- */
 @media (max-width: 768px) {
-    /* Submenú desplegable */
     .has-submenu {
         position: relative;
     }
@@ -607,7 +607,6 @@ footer nav a:hover {
         margin: 0;
     }
 
-    /* Diseño del submenú */
     .has-submenu a {
         padding: 10px;
         color: white;
