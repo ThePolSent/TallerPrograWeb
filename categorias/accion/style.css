@@ -536,7 +536,6 @@ footer nav a:hover {
 }
 /* -------------------- RESPONSIVE -------------------- */
 
-
 /* -------------------- HEADER -------------------- */
 @media (max-width: 768px) {
     header {
@@ -558,22 +557,25 @@ footer nav a:hover {
         left: 0;
         right: 0;
         background-color: #333;
-        display: none;
+        display: none; /* Inicialmente oculto */
     }
 
     nav ul li {
         margin: 10px 0;
     }
 
+    /* Menú hamburguesa */
     .menu-hamburguesa {
         display: block;
+        cursor: pointer;
     }
 
     /* Mostrar el menú cuando el usuario haga clic */
-    nav.open {
-        display: flex;
+    nav.open ul {
+        display: flex; /* Solo cuando la clase 'open' se activa */
     }
 }
+
 /* -------------------- MENÚ DESPLEGABLE -------------------- */
 @media (max-width: 768px) {
     /* Submenú desplegable */
@@ -616,7 +618,6 @@ footer nav a:hover {
         background-color: #444;
     }
 }
-
 
 /* -------------------- MODAL -------------------- */
 @media (max-width: 768px) {
