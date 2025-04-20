@@ -75,10 +75,9 @@ document.addEventListener('click', function (event) {
 // ============================
 
 document.querySelector('.menu-hamburguesa').addEventListener('click', function () {
-    const navList = document.querySelector('nav ul');
-    navList.classList.toggle('active');
+    const nav = document.querySelector('nav');
+    nav.classList.toggle('open');
 });
-
 // ============================
 //        MODAL DE JUEGO
 // ============================
