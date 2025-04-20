@@ -877,10 +877,10 @@ footer nav a:hover {
 /* -------------------- MODAL -------------------- */
 @media (max-width: 768px) {
     .modal-content {
-        width: 90%;
-        max-width: 500px;
-        margin: 20px auto;
-        padding: 12px;
+        width: 85%;
+        max-width: 400px;
+        margin: 15px auto;
+        padding: 10px;
         border-radius: 10px;
         position: relative;
     }
@@ -888,6 +888,7 @@ footer nav a:hover {
     .modal-body {
         flex-direction: column;
         gap: 10px;
+        align-items: center;
     }
 
     .modal-body img {
@@ -896,11 +897,11 @@ footer nav a:hover {
     }
 
     .info-container {
-        padding: 10px;
+        padding: 8px;
     }
 
     .description {
-        padding: 15px;
+        padding: 10px;
         font-size: 0.9em;
     }
 
@@ -910,9 +911,9 @@ footer nav a:hover {
 
     .modal-content .close {
         position: absolute;
-        top: 10px;
-        right: 10px;
-        font-size: 25px;
+        top: 8px;
+        right: 8px;
+        font-size: 22px;
         color: #fff;
         background-color: transparent;
         border: none;
@@ -998,11 +999,12 @@ footer nav a:hover {
     }
 
     .detalle-juego iframe {
-        width: 90%;
-        height: 180px;
+        width: 95%;
+        height: 240px;
         margin-top: 10px;
         border-radius: 8px;
         object-fit: cover;
+        display: block;
     }
 
     .detalle-juego h5 {
@@ -1041,6 +1043,7 @@ footer nav a:hover {
     .modal-content {
         padding: 8px;
         width: 90%;
+        max-width: 360px;
     }
 
     .modal-body {
@@ -1056,17 +1059,18 @@ footer nav a:hover {
     }
 
     .detalle-juego iframe {
-        height: 160px;
         width: 100%;
-    }
-
-    .detalle-juego h5 {
-        font-size: 0.95rem;
+        height: 220px;
+        object-fit: cover;
     }
 
     .detalle-juego .descripcion,
     .detalle-juego .requisitos,
     .detalle-juego .categorias {
         font-size: 0.85em;
+    }
+
+    .detalle-juego h5 {
+        font-size: 0.95rem;
     }
 }
