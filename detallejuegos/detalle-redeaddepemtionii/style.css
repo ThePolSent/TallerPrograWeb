@@ -786,9 +786,7 @@ footer nav a:hover {
     border: none;
     cursor: pointer;
 }
-
 /* -------------------- RESPONSIVE -------------------- */
-
 
 /* -------------------- HEADER -------------------- */
 @media (max-width: 768px) {
@@ -927,6 +925,7 @@ footer nav a:hover {
         padding: 5px;
     }
 }
+
 /* -------------------- MODAL -------------------- */
 @media (max-width: 768px) {
     .modal-content {
@@ -1059,5 +1058,23 @@ footer nav a:hover {
 
     .detalle-juego h5 {
         font-size: 0.9rem;
+    }
+}
+
+/* -------------------- MODO HORIZONTAL (Pantallas grandes) -------------------- */
+@media (min-width: 768px) and (orientation: landscape) {
+    /* Modal */
+    .modal-content {
+        width: 50%; /* Ajusta el modal a un 50% del ancho */
+        max-width: 600px; /* Limita el tamaño máximo */
+        padding: 20px; /* Más padding para mejorar la apariencia */
+    }
+
+    /* Video (iframe) */
+    .detalle-juego iframe {
+        width: 70%; /* Reduce el tamaño del video */
+        max-width: 480px; /* Limita el máximo del ancho */
+        height: auto;
+        aspect-ratio: 16 / 9; /* Mantén la relación de aspecto */
     }
 }
