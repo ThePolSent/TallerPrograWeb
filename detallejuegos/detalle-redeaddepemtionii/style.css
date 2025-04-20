@@ -1060,10 +1060,10 @@ footer nav a:hover {
     }
 
     .detalle-juego iframe {
-        width: 30%; /* Reducción mucho más extrema horizontalmente */
-        height: auto;
-        max-width: 150px;  /* Mucho más pequeño */
-        aspect-ratio: 16 / 9;
+        width: 80%; /* Se hace más pequeño pero mantiene su proporción */
+        height: 150px;
+        max-width: 250px; /* Restringimos su tamaño máximo */
+        object-fit: cover; /* Asegura que el video se recorte adecuadamente */
         margin-top: 10px;
         border-radius: 6px;
         display: block;
@@ -1101,10 +1101,10 @@ footer nav a:hover {
     }
 
     .detalle-juego iframe {
-        width: 25%; /* Reducción extrema aún más para pantallas muy pequeñas */
-        height: auto;
-        max-width: 120px;  /* Mucho más pequeño en pantallas muy pequeñas */
-        aspect-ratio: 16 / 9;
+        width: 70%; /* Reducción extrema para pantallas muy pequeñas */
+        height: 120px;
+        max-width: 220px;
+        object-fit: cover;
     }
 
     .detalle-juego .descripcion,
