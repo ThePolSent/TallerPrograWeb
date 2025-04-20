@@ -74,10 +74,15 @@ document.addEventListener('click', function (event) {
 //        MENÚ HAMBURGUESA
 // ============================
 
-document.querySelector('.menu-hamburguesa').addEventListener('click', function () {
-    const navList = document.querySelector('nav ul');
-    navList.classList.toggle('active');
-});
+const menuHamburguesa = document.querySelector('.menu-hamburguesa');
+
+if (menuHamburguesa) {
+    menuHamburguesa.addEventListener('click', () => {
+        const nav = document.querySelector('nav');
+        nav.classList.toggle('open');
+    });
+}
+
 
 // ============================
 //        MODAL DE JUEGO

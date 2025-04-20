@@ -77,8 +77,8 @@ const menuHamburguesa = document.querySelector('.menu-hamburguesa');
 
 if (menuHamburguesa) {
     menuHamburguesa.addEventListener('click', () => {
-        const navList = document.querySelector('nav ul');
-        navList.classList.toggle('active');
+        const nav = document.querySelector('nav');
+        nav.classList.toggle('open');
     });
 }
 
