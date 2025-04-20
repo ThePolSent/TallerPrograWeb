@@ -52,6 +52,25 @@ body.dark-mode .btn-details {
     background-color: #9ca0a3;
 }
 
+body.dark-mode .close-btn {
+    color: #fff; /* Color blanco para cerrar en modo oscuro */
+    background-color: #333; /* Fondo oscuro para el botón en modo oscuro */
+}
+
+body.dark-mode .close-btn:hover {
+    color: red;
+}
+
+/* -------------------- MODO CLARO (BLANCO) -------------------- */
+body:not(.dark-mode) .close-btn {
+    color: #000; /* Color negro para cerrar en modo blanco */
+    background-color: #f1f1f1; /* Fondo claro para el botón en modo blanco */
+}
+
+body:not(.dark-mode) .close-btn:hover {
+    color: red;
+}
+
 /* -------------------- TRANSICIONES -------------------- */
 body,
 header,
@@ -65,6 +84,7 @@ input,
 .description {
     transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
 }
+
 
 /* -------------------- TIPOGRAFÍA RETRO -------------------- */
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
