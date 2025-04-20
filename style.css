@@ -303,6 +303,7 @@ nav ul li a:hover {
 .modal-content h2 {
     margin: 0; /* Elimina márgenes innecesarios */
     font-size: 1.5em; /* Ajusta el tamaño del título si es necesario */
+    
 }
 
 .close-btn {
@@ -340,6 +341,7 @@ nav ul li a:hover {
     object-fit: contain;
     
 }
+
 
 .info-container {
     display: flex;
@@ -456,6 +458,8 @@ section {
 section h2 {
     text-align: center;
     margin-bottom: 20px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 25px;
 }
 
 .overlay-text {

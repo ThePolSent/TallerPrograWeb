@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body>    
     <!-- Cabecera -->
     <header>
             <div class="logo">
@@ -17,12 +17,13 @@
                     PlaySent
                 </h1>
             </div>
-            <!-- Menu de navegación -->
-            <div class="container">
+    <!-- Menu de navegación -->
+    <div class="container">
         <nav>
             <ul id="nav-list">
                 <li><a href="../../index.html">Inicio</a></li>
                 <li class="has-submenu">
+
                     <a href="#Noticias" toggleSubmenu(event)>Noticias</a>
                     <ul class="submenu">
                         <li><a href="#ultimas">Últimas Noticias</a></li>
@@ -79,7 +80,7 @@
                 </section>
 
                 <!-- Descripción del juego -->
-                <h2>Juegos Mas Usados</h2>
+                <h2>Descripcion</h2>
                 <section class="descripcion-juego" 
                     <p>
                         <strong>Red Dead Redemption II</strong> Un oeste que muere. Un forajido que duda. Una lealtad que se rompe.
@@ -106,32 +107,45 @@
 
                 <!-- Requisitos del sistema -->
                 <h2>Requisitos</h2>
-                <section class="requisitos">
+                <section class="requisitos-tabla">
 
-                    <div class="minimos">
-                        
-                        <h3>Requisitos Mínimos</h3>
-                        <ul>
-                            <li>SO: Windows 7</li>
-                            <li>Procesador: Intel Core i5-2500K / AMD FX-6300</li>
-                            <li>Memoria: 8 GB de RAM</li>
-                            <li>Gráficos: Nvidia GTX 770 2GB / AMD Radeon R9 280</li>
-                            <li>Almacenamiento: 150 GB disponibles</li>
-                        </ul>
-                    </div>
-
-                    <div class="recomendados">
-                        <h3>Requisitos Recomendados</h3>
-                        <ul>
-                            <li>SO: Windows 10</li>
-                            <li>Procesador: Intel Core i7-4770K / AMD Ryzen 5 1500X</li>
-                            <li>Memoria: 12 GB de RAM</li>
-                            <li>Gráficos: Nvidia GTX 1060 6GB / AMD Radeon RX 480 4GB</li>
-                            <li>Almacenamiento: 150 GB disponibles</li>
-                        </ul>
-                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Requisitos</th>
+                                <th>Mínimo</th>
+                                <th>Recomendado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Sistema Operativo</td>
+                                <td>Windows 7/8/10 (64 bits)</td>
+                                <td>Windows 10 (64 bits)</td>
+                            </tr>
+                            <tr>
+                                <td>Procesador</td>
+                                <td>Intel Core i5-2500K / AMD Phenom II X4 940</td>
+                                <td>Intel Core i7 3770 / AMD FX-8350</td>
+                            </tr>
+                            <tr>
+                                <td>RAM</td>
+                                <td>6 GB</td>
+                                <td>8 GB</td>
+                            </tr>
+                            <tr>
+                                <td>Tarjeta Gráfica</td>
+                                <td>NVIDIA GTX 660 / AMD Radeon HD 7870</td>
+                                <td>NVIDIA GTX 770 / AMD Radeon R9 290</td>
+                            </tr>
+                            <tr>
+                                <td>Espacio en disco</td>
+                                <td colspan="2">35 GB disponibles</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </section>
-
+                
                 <!-- Categorías -->
                 <section class="categorias-juego">
                     <h3>Categorías</h3>

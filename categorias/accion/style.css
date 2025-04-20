@@ -150,6 +150,7 @@ header .logo h1 img {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+
 /* -------------------- NAVEGACIÓN -------------------- */
 header nav {
     position: relative;
@@ -220,46 +221,6 @@ nav ul li a:hover {
     to {
         opacity: 1;
     }
-}
-
-/* -------------------- LOGIN -------------------- */
-.login-form {
-    display: none;
-    background-color: #444;
-    padding: 20px;
-    position: absolute;
-    top: 60px;
-    right: 20px;
-    width: 300px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    z-index: 200;
-    color: white;
-}
-
-.login-form input {
-    width: 100%;
-    margin-bottom: 15px;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #888;
-    background-color: #333;
-    color: white;
-}
-
-.login-form button {
-    width: 100%;
-    background-color: #28a745;
-    color: white;
-    padding: 12px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-.login-form button:hover {
-    background-color: #218838;
 }
 
 /* -------------------- MODAL -------------------- */
@@ -534,39 +495,186 @@ footer nav a:hover {
     border: none;
     cursor: pointer;
 }
+
+/* -------------------- RESPONSIVE -------------------- */
+
+/* -------------------- HEADER -------------------- */
+@media (max-width: 768px) {
+    header {
+        height: auto;
+        padding: 10px;
+    }
+
+    header .logo h1 {
+        font-size: 1.2em;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        align-items: center;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background-color: #333;
+        display: none; /* Asegúrate de que el menú esté oculto inicialmente */
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .menu-hamburguesa {
+        display: block;
+    }
+
+    /* Mostrar el menú cuando el usuario haga clic */
+    nav.open ul {
+        display: flex; /* Solo mostrar cuando se agregue la clase .open */
+    }
+}
+
+/* -------------------- MODAL -------------------- */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 95%;
+        max-width: 95%;
+        margin: 30px auto;
+        padding: 15px;
+        border-radius: 10px;
+        position: relative;
+    }
+
+    .modal-body {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .modal-body img {
+        max-width: 90%;
+        height: auto;
+    }
+
+    .info-container {
+        padding: 10px;
+    }
+
+    .description {
+        padding: 15px;
+        font-size: 0.9em;
+    }
+
+    .btn-details {
+        margin: 10px auto 0 auto;
+    }
+
+    .modal-content .close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 25px;
+        color: #fff;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
+
+    .modal-content .close:hover {
+        color: #f00;
+    }
+}
+
+/* -------------------- CARRUSEL -------------------- */
+@media (max-width: 768px) {
+    .carrusel-track {
+        gap: 10px;
+    }
+
+    .videojuego {
+        width: 45%;
+        max-width: none;
+    }
+
+    .videojuego img {
+        height: 250px;
+    }
+
+    .btn-izq,
+    .btn-der {
+        font-size: 1.5rem;
+        padding: 6px;
+    }
+}
+
+/* -------------------- VIDEOJUEGOS POPULARES -------------------- */
+@media (max-width: 768px) {
+    .Contenedor-videojuegos-populares {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+
+    .image-popular {
+        height: 250px;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .game-card {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    .overlay-text {
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        color: white;
+        font-size: 1rem;
+        background: rgba(0, 0, 0, 0.6);
+        padding: 5px;
+    }
+}
+
+
+
 /* -------------------- PANTALLAS MUY PEQUEÑAS -------------------- */
 @media (max-width: 480px) {
     header .logo h1 {
-        font-size: 1.1em;
+        font-size: 0.9em;
     }
 
-    header .logo p {
-        font-size: 0.7em; /* Texto aún más pequeño */
-    }
-
-    .Contenedor-videojuegos-populares {
-        grid-template-columns: repeat(1, 1fr); /* Una columna */
-    }
-
+    .Contenedor-videojuegos-populares,
     .Contenedor-videojuegos {
-        grid-template-columns: repeat(1, 1fr); /* Una columna */
+        grid-template-columns: 1fr;
+    }
+
+    .image-popular {
+        height: 180px;
     }
 
     .game-card img {
-        width: 100%;
         height: auto;
     }
 
     .modal-content {
-        width: 100%;
         padding: 10px;
+        width: 95%;
     }
 
     .modal-body {
-        gap: 5px;
+        gap: 8px;
     }
 
-    .carrusel img {
-        width: 70%;
+    .videojuego img {
+        height: 180px;
+    }
+
+    .description {
+        font-size: 0.85em;
     }
 }
