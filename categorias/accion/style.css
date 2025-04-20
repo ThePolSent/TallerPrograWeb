@@ -574,6 +574,49 @@ footer nav a:hover {
         display: flex;
     }
 }
+/* -------------------- MENÚ DESPLEGABLE -------------------- */
+@media (max-width: 768px) {
+    /* Submenú desplegable */
+    .has-submenu {
+        position: relative;
+    }
+
+    .has-submenu > a {
+        cursor: pointer;
+    }
+
+    .has-submenu ul {
+        display: none;
+        position: absolute;
+        left: 100%; /* Asegura que los submenús se muestren hacia la derecha */
+        top: 0;
+        padding: 0;
+        margin: 0;
+        background-color: #333;
+        min-width: 150px;
+        z-index: 100;
+    }
+
+    .has-submenu.open > ul {
+        display: block; /* Muestra el submenú cuando se agrega la clase 'open' */
+    }
+
+    .has-submenu ul li {
+        margin: 0;
+    }
+
+    /* Diseño del submenú */
+    .has-submenu a {
+        padding: 10px;
+        color: white;
+        text-decoration: none;
+    }
+
+    .has-submenu a:hover {
+        background-color: #444;
+    }
+}
+
 
 /* -------------------- MODAL -------------------- */
 @media (max-width: 768px) {
