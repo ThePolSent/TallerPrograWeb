@@ -74,9 +74,8 @@ document.addEventListener('click', function (event) {
 //        MENÚ HAMBURGUESA
 // ============================
 
-// Mostrar/ocultar el menú hamburguesa
-document.querySelector('.menu-hamburguesa').addEventListener('click', function (event) {
-    event.stopPropagation();  // Prevenir que el clic se propague
+// Mostrar/ocultar el menú de navegación al hacer clic en el ícono de hamburguesa
+document.querySelector('.menu-hamburguesa').addEventListener('click', function () {
     const nav = document.querySelector('nav');
     nav.classList.toggle('open');  // Alternar la clase "open" en el menú
 });
@@ -84,18 +83,9 @@ document.querySelector('.menu-hamburguesa').addEventListener('click', function (
 // Mostrar/ocultar submenús al hacer clic en ellos
 function toggleSubmenu(event) {
     event.preventDefault();
-    event.stopPropagation();  // Prevenir que el clic se propague
+    event.stopPropagation();
 
     const parentLi = event.currentTarget.parentElement;
-
-    // Cerrar todos los demás submenús
-    document.querySelectorAll('.has-submenu').forEach(item => {
-        if (item !== parentLi) {
-            item.classList.remove('open');
-        }
-    });
-
-    // Alternar el estado del submenú clickeado
     parentLi.classList.toggle('open');
 }
 
@@ -110,7 +100,6 @@ document.addEventListener('click', function (event) {
     const isMenu = event.target.closest('nav');
     const isHamburger = event.target.closest('.menu-hamburguesa');
 
-    // Si el clic no se hizo dentro del menú, submenú o el icono de hamburguesa, cierra el menú
     if (!isSubmenu && !isMenu && !isHamburger) {
         document.querySelector('nav').classList.remove('open');
     }
