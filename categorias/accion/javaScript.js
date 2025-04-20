@@ -83,6 +83,15 @@ if (menuHamburguesa) {
     });
 }
 
+document.querySelectorAll("nav ul li").forEach(item => {
+    item.addEventListener("click", () => {
+        const submenu = item.querySelector(".submenu");
+        if (submenu) {
+            submenu.classList.toggle("open");
+        }
+    });
+});
+
 
 // ============================
 //        MODAL DE JUEGO
