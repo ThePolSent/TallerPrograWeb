@@ -75,19 +75,47 @@ document.addEventListener('click', function (event) {
 // ============================
 
 // Mostrar/ocultar el menú hamburguesa
-document.querySelector('.menu-hamburguesa').addEventListener('click', function () {
+document.querySelector('.menu-hamburguesa').addEventListener('click', function (event) {
+    event.stopPropagation();  // Prevenir que el clic se propague
     const nav = document.querySelector('nav');
-    nav.classList.toggle('open'); // Toggle para agregar o eliminar la clase "open"
+    nav.classList.toggle('open');  // Alternar la clase "open" en el menú
 });
 
-document.addEventListener('click', function (event) {
-    const isNav = event.target.closest('nav');
-    const isHamburguesa = event.target.closest('.menu-hamburguesa');
+// Mostrar/ocultar submenús al hacer clic en ellos
+function toggleSubmenu(event) {
+    event.preventDefault();
+    event.stopPropagation();  // Prevenir que el clic se propague
 
-    if (!isNav && !isHamburguesa) {
+    const parentLi = event.currentTarget.parentElement;
+
+    // Cerrar todos los demás submenús
+    document.querySelectorAll('.has-submenu').forEach(item => {
+        if (item !== parentLi) {
+            item.classList.remove('open');
+        }
+    });
+
+    // Alternar el estado del submenú clickeado
+    parentLi.classList.toggle('open');
+}
+
+// Asignar eventos a enlaces con submenús
+document.querySelectorAll('.has-submenu > a').forEach(link => {
+    link.addEventListener('click', toggleSubmenu);
+});
+
+// Cerrar el menú al hacer clic fuera de él
+document.addEventListener('click', function (event) {
+    const isSubmenu = event.target.closest('.has-submenu');
+    const isMenu = event.target.closest('nav');
+    const isHamburger = event.target.closest('.menu-hamburguesa');
+
+    // Si el clic no se hizo dentro del menú, submenú o el icono de hamburguesa, cierra el menú
+    if (!isSubmenu && !isMenu && !isHamburger) {
         document.querySelector('nav').classList.remove('open');
     }
 });
+
 
 // ============================
 //        MODAL DE JUEGO
