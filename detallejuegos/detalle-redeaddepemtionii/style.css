@@ -985,8 +985,8 @@ footer nav a:hover {
 /* -------------------- MODAL -------------------- */
 @media (max-width: 768px) {
     .modal-content {
-        width: 85%;  /* Ajustar el tamaño del modal */
-        max-width: 320px;  /* Máximo tamaño en pantallas móviles */
+        width: 85%;  /* Ajuste del tamaño del modal */
+        max-width: 320px;
         padding: 8px;
         border-radius: 10px;
         position: fixed;
@@ -1055,14 +1055,14 @@ footer nav a:hover {
     }
 
     .detalle-juego img {
-        width: 80%;  /* Reducido un poco */
+        width: 80%;
         height: auto;
     }
 
     .detalle-juego iframe {
-        width: 50%; /* Mucho más pequeño horizontalmente */
+        width: 30%; /* Reducción mucho más extrema horizontalmente */
         height: auto;
-        max-width: 220px;  /* Reducción aún mayor para pantallas pequeñas */
+        max-width: 150px;  /* Mucho más pequeño */
         aspect-ratio: 16 / 9;
         margin-top: 10px;
         border-radius: 6px;
@@ -1089,7 +1089,7 @@ footer nav a:hover {
 @media (max-width: 480px) {
     .modal-content {
         width: 85%;
-        max-width: 280px;  /* Más pequeño para pantallas de smartphones */
+        max-width: 280px;
         padding: 8px;
         top: 58%;
         left: 50%;
@@ -1101,9 +1101,9 @@ footer nav a:hover {
     }
 
     .detalle-juego iframe {
-        width: 45%; /* Aumentado para pantallas muy pequeñas */
+        width: 25%; /* Reducción extrema aún más para pantallas muy pequeñas */
         height: auto;
-        max-width: 200px;
+        max-width: 120px;  /* Mucho más pequeño en pantallas muy pequeñas */
         aspect-ratio: 16 / 9;
     }
 
