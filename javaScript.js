@@ -74,9 +74,10 @@ document.addEventListener('click', function (event) {
 //        MENÚ HAMBURGUESA
 // ============================
 
+// Mostrar/ocultar el menú hamburguesa
 document.querySelector('.menu-hamburguesa').addEventListener('click', function () {
     const nav = document.querySelector('nav');
-    nav.classList.toggle('open');
+    nav.classList.toggle('open'); // Toggle para agregar o eliminar la clase "open"
 });
 
 document.addEventListener('click', function (event) {
