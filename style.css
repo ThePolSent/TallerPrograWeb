@@ -567,20 +567,24 @@ footer nav a:hover {
     header {
         height: auto;
         padding: 10px;
+        display: flex;
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center; /* Centra el logo y el menú */
+        justify-content: center;
+        text-align: center;
     }
 
     header .logo {
         width: 100%;
         display: flex;
-        justify-content: space-between;
+        flex-direction: column;
+        justify-content: center;
         align-items: center;
     }
 
     header .logo h1 {
-        font-size: 1em;
-        margin-left: 10px;
+        font-size: 1.2em;
+        margin-top: 10px;
     }
 
     .menu-hamburguesa {
@@ -595,11 +599,13 @@ footer nav a:hover {
 
     nav {
         width: 100%;
+        display: flex;
+        justify-content: center; /* Centra los elementos del menú */
     }
 
     nav ul {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center; /* Centra los elementos del menú en pantallas pequeñas */
         background-color: #333;
         width: 100%;
         display: none;
@@ -643,145 +649,3 @@ footer nav a:hover {
         width: 100%;
     }
 }
-
-/* -------------------- MODAL -------------------- */
-@media (max-width: 768px) {
-    .modal-content {
-        width: 95%;
-        max-width: 95%;
-        margin: 30px auto;
-        padding: 15px;
-        border-radius: 10px;
-        position: relative;
-    }
-
-    .modal-body {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .modal-body img {
-        max-width: 90%;
-        height: auto;
-    }
-
-    .info-container {
-        padding: 10px;
-    }
-
-    .description {
-        padding: 15px;
-        font-size: 0.9em;
-    }
-
-    .btn-details {
-        margin: 10px auto 0 auto;
-    }
-
-    /* Botón "X" para cerrar el modal */
-    .modal-content .close {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        font-size: 25px;
-        color: #fff;
-        background-color: transparent;
-        border: none;
-        cursor: pointer;
-    }
-
-    .modal-content .close:hover {
-        color: #f00;
-    }
-}
-
-/* -------------------- CARRUSEL -------------------- */
-@media (max-width: 768px) {
-    .carrusel-track {
-        gap: 10px;
-    }
-
-    .videojuego {
-        width: 45%;
-        max-width: none;
-    }
-
-    .videojuego img {
-        height: 250px;
-    }
-
-    .btn-izq,
-    .btn-der {
-        font-size: 1.5rem;
-        padding: 6px;
-    }
-}
-
-/* -------------------- VIDEOJUEGOS POPULARES -------------------- */
-@media (max-width: 768px) {
-    .Contenedor-videojuegos-populares {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 10px;
-    }
-
-    .image-popular {
-        height: 250px;  /* Igual que en el carrusel */
-        width: auto;
-        object-fit: cover;
-    }
-
-    /* Asegurando que las imágenes no se apilen de manera incorrecta */
-    .game-card {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        overflow: hidden;
-    }
-
-    .game-card img {
-        max-width: 100%;
-        height: auto;
-    }
-}
-
-/* -------------------- PANTALLAS MUY PEQUEÑAS -------------------- */
-@media (max-width: 480px) {
-    header .logo h1 {
-        font-size: 0.9em;
-    }
-
-    .Contenedor-videojuegos-populares {
-        grid-template-columns: 1fr;
-    }
-
-    .Contenedor-videojuegos {
-        grid-template-columns: 1fr;
-    }
-
-    .image-popular {
-        height: 180px;
-    }
-
-    .game-card img {
-        height: auto;
-    }
-
-    .modal-content {
-        padding: 10px;
-        width: 95%;
-    }
-
-    .modal-body {
-        gap: 8px;
-    }
-
-    .videojuego img {
-        height: 180px;
-    }
-
-    .description {
-        font-size: 0.85em;
-    }
-}
-
