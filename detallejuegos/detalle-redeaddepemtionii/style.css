@@ -877,18 +877,17 @@ footer nav a:hover {
 /* -------------------- MODAL -------------------- */
 @media (max-width: 768px) {
     .modal-content {
-        width: 75%;
-        max-width: 320px;
-        margin: auto;
-        padding: 10px;
-        border-radius: 8px;
+        width: 70%;
+        max-width: 300px;
+        padding: 12px;
+        border-radius: 10px;
         position: fixed;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
         background: #222;
         z-index: 1000;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
     }
 
     .modal-body {
@@ -930,8 +929,6 @@ footer nav a:hover {
         color: #f00;
     }
 }
-
-
 /* -------------------- CARRUSEL -------------------- */
 @media (max-width: 768px) {
     .carrusel-track {
@@ -1009,7 +1006,7 @@ footer nav a:hover {
 
     .detalle-juego iframe {
         width: 90%;
-        height: 180px;
+        height: 160px;
         margin-top: 10px;
         border-radius: 6px;
         object-fit: cover;
@@ -1017,7 +1014,7 @@ footer nav a:hover {
         display: block;
         margin-left: auto;
         margin-right: auto;
-        aspect-ratio: 16 / 9;
+        aspect-ratio: 16 / 6; /* recorte horizontal más agresivo */
     }
 
     .detalle-juego h5 {
@@ -1034,12 +1031,11 @@ footer nav a:hover {
     }
 }
 
-
 /* -------------------- PANTALLAS MUY PEQUEÑAS -------------------- */
 @media (max-width: 480px) {
     .modal-content {
         width: 85%;
-        max-width: 280px;
+        max-width: 270px;
         padding: 8px;
     }
 
@@ -1049,9 +1045,10 @@ footer nav a:hover {
 
     .detalle-juego iframe {
         width: 95%;
-        height: 160px;
+        height: 140px;
         object-fit: cover;
         object-position: center;
+        aspect-ratio: 16 / 6;
     }
 
     .detalle-juego .descripcion,
