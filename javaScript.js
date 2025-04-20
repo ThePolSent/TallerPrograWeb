@@ -78,6 +78,16 @@ document.querySelector('.menu-hamburguesa').addEventListener('click', function (
     const nav = document.querySelector('nav');
     nav.classList.toggle('open');
 });
+
+document.addEventListener('click', function (event) {
+    const isNav = event.target.closest('nav');
+    const isHamburguesa = event.target.closest('.menu-hamburguesa');
+
+    if (!isNav && !isHamburguesa) {
+        document.querySelector('nav').classList.remove('open');
+    }
+});
+
 // ============================
 //        MODAL DE JUEGO
 // ============================
