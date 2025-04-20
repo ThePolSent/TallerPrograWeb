@@ -787,7 +787,7 @@ footer nav a:hover {
     cursor: pointer;
 }
 
-/* -------------------- RESPONSIVE -------------------- */
+
 /* -------------------- RESPONSIVE -------------------- */
 
 /* -------------------- HEADER -------------------- */
@@ -986,6 +986,12 @@ footer nav a:hover {
         gap: 10px;
     }
 
+    .detalle-juego h5 {
+        font-size: 1.1em;
+        text-align: center;
+        margin-bottom: 5px;
+    }
+
     .detalle-juego .media {
         display: flex;
         flex-direction: column;
@@ -1001,6 +1007,7 @@ footer nav a:hover {
         width: 100%;
         height: 200px;
         margin-top: 10px;
+        border-radius: 8px;
     }
 
     .detalle-juego .descripcion,
@@ -1046,6 +1053,10 @@ footer nav a:hover {
 
     .description {
         font-size: 0.85em;
+    }
+
+    .detalle-juego h5 {
+        font-size: 1em;
     }
 
     .detalle-juego iframe {
