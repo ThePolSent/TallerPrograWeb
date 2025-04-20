@@ -728,12 +728,11 @@ footer nav a:hover {
     }
 
     .image-popular {
-        height: 250px;  /* Igual que en el carrusel */
-        width: auto;
+        height: 250px;  /* Iguala la altura de las imágenes a un tamaño consistente */
+        width: 100%;
         object-fit: cover;
     }
 
-    /* Asegurando que las imágenes no se apilen de manera incorrecta */
     .game-card {
         display: flex;
         justify-content: center;
@@ -741,9 +740,14 @@ footer nav a:hover {
         overflow: hidden;
     }
 
-    .game-card img {
-        max-width: 100%;
-        height: auto;
+    .overlay-text {
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        color: white;
+        font-size: 1rem;
+        background: rgba(0, 0, 0, 0.6);
+        padding: 5px;
     }
 }
 
