@@ -786,6 +786,7 @@ footer nav a:hover {
     border: none;
     cursor: pointer;
 }
+
 /* -------------------- RESPONSIVE -------------------- */
 
 /* -------------------- HEADER -------------------- */
@@ -872,6 +873,56 @@ footer nav a:hover {
     }
 }
 
+/* -------------------- MODAL -------------------- */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 90%; /* Reducido el ancho */
+        max-width: 90%; /* Ajuste para mantener el tamaño */
+        margin: 30px auto;
+        padding: 12px; /* Reducido el padding */
+        border-radius: 10px;
+        position: relative;
+    }
+
+    .modal-body {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .modal-body img {
+        max-width: 90%;
+        height: auto;
+    }
+
+    .info-container {
+        padding: 8px; /* Reducido padding */
+    }
+
+    .description {
+        padding: 12px;
+        font-size: 0.85em; /* Reducido el tamaño de la fuente */
+    }
+
+    .btn-details {
+        margin: 10px auto 0 auto;
+    }
+
+    .modal-content .close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 20px; /* Reducido el tamaño */
+        color: #fff;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
+
+    .modal-content .close:hover {
+        color: #f00;
+    }
+}
+
 /* -------------------- CARRUSEL -------------------- */
 @media (max-width: 768px) {
     .carrusel-track {
@@ -926,155 +977,93 @@ footer nav a:hover {
     }
 }
 
-/* -------------------- MODAL -------------------- */
-@media (max-width: 768px) {
-    .modal-content {
-        width: 70%; /* Aumentado para agrandar más el modal */
-        max-width: 320px; /* Ajuste máximo para evitar que el modal se haga demasiado grande */
-        padding: 12px;
-        border-radius: 10px;
-        position: fixed;
-        top: 55%;
-        left: 35%;
-        transform: translate(-50%, -50%);
-        background: #222;
-        z-index: 1000;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-    }
-
-    .modal-body {
-        flex-direction: column;
-        gap: 8px;
-        align-items: center;
-    }
-
-    .modal-body img {
-        max-width: 85%;
-        height: auto;
-    }
-
-    .info-container {
-        padding: 6px;
-    }
-
-    .description {
-        padding: 8px;
-        font-size: 0.85em;
-    }
-
-    .btn-details {
-        margin: 10px auto 0 auto;
-    }
-
-    .modal-content .close {
-        position: absolute;
-        top: 6px;
-        right: 6px;
-        font-size: 20px;
-        color: #fff;
-        background-color: transparent;
-        border: none;
-        cursor: pointer;
-    }
-
-    .modal-content .close:hover {
-        color: #f00;
-    }
-}
-
 /* -------------------- DETALLE DEL VIDEOJUEGO -------------------- */
 @media (max-width: 768px) {
     .detalle-juego {
         flex-direction: column;
         padding: 10px;
         gap: 10px;
-        align-items: center;
     }
 
     .detalle-juego .media {
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 100%;
     }
 
     .detalle-juego img {
-        width: 85%;
+        width: 90%;
         height: auto;
     }
 
     .detalle-juego iframe {
-        width: 90%;
-        max-width: 320px;
-        height: auto;
-        aspect-ratio: 16 / 9;
+        width: 100%;
+        height: 20px;
         margin-top: 10px;
-        border-radius: 6px;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .detalle-juego h5 {
-        font-size: 0.95rem;
-        text-align: center;
     }
 
     .detalle-juego .descripcion,
     .detalle-juego .requisitos,
     .detalle-juego .categorias {
         width: 100%;
-        font-size: 0.85em;
-        padding: 8px;
+        font-size: 0.9em;
+        padding: 10px;
+    }
+
+    /* Reducir h5 */
+    .detalle-juego h5 {
+        font-size: 0.9rem; /* Reducido tamaño de h5 */
     }
 }
 
 /* -------------------- PANTALLAS MUY PEQUEÑAS -------------------- */
 @media (max-width: 480px) {
+    header .logo h1 {
+        font-size: 0.9em;
+    }
+
+    .Contenedor-videojuegos-populares,
+    .Contenedor-videojuegos {
+        grid-template-columns: 1fr;
+    }
+
+    .image-popular {
+        height: 180px;
+    }
+
+    .game-card img {
+        height: auto;
+    }
+
     .modal-content {
-        width: 80%;
-        max-width: 260px;
-        padding: 8px;
-        top: 58%;
-        left: 32%;
+        padding: 10px;
+        width: 95%;
     }
 
     .modal-body {
-        gap: 6px;
+        gap: 8px;
+    }
+
+    .videojuego img {
+        height: 180px;
+    }
+
+    .description {
+        font-size: 0.85em;
     }
 
     .detalle-juego iframe {
-        width: 95%;
-        max-width: 300px;
-        height: auto;
-        aspect-ratio: 16 / 9;
+        height: 20px;
     }
 
     .detalle-juego .descripcion,
     .detalle-juego .requisitos,
     .detalle-juego .categorias {
-        font-size: 0.8em;
+        font-size: 0.85em;
     }
 
     .detalle-juego h5 {
-        font-size: 0.9rem;
+        font-size: 0.8rem; /* Reducido aún más el tamaño en pantallas pequeñas */
     }
 }
 
-/* -------------------- MODO HORIZONTAL (Pantallas grandes) -------------------- */
-@media (min-width: 768px) and (orientation: landscape) {
-    /* Modal */
-    .modal-content {
-        width: 65%; /* Agrandado aún más el modal */
-        max-width: 700px; /* Aumentado para hacerlo aún más ancho */
-        padding: 20px; /* Más padding para mejorar la apariencia */
-    }
-
-    /* Video (iframe) */
-    .detalle-juego iframe {
-        width: 70%; /* Reduce el tamaño del video */
-        max-width: 480px; /* Limita el máximo del ancho */
-        height: auto;
-        aspect-ratio: 16 / 9; /* Mantén la relación de aspecto */
-    }
-}
