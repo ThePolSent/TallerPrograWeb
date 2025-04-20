@@ -786,7 +786,6 @@ footer nav a:hover {
     border: none;
     cursor: pointer;
 }
-
 /* -------------------- RESPONSIVE -------------------- */
 
 /* -------------------- HEADER -------------------- */
@@ -976,7 +975,6 @@ footer nav a:hover {
         padding: 5px;
     }
 }
-
 /* -------------------- DETALLE DEL VIDEOJUEGO -------------------- */
 @media (max-width: 768px) {
     .detalle-juego {
@@ -998,8 +996,15 @@ footer nav a:hover {
 
     .detalle-juego iframe {
         width: 100%;
-        height: 200px;
+        max-width: 100%;
+        aspect-ratio: 16 / 9;
         margin-top: 10px;
+        border-radius: 6px;
+    }
+
+    .detalle-juego h5 {
+        font-size: 0.85rem;
+        text-align: center;
     }
 
     .detalle-juego .descripcion,
@@ -1009,51 +1014,19 @@ footer nav a:hover {
         font-size: 0.9em;
         padding: 10px;
     }
-
-    /* Reducir h5 */
-    .detalle-juego h5 {
-        font-size: 0.9rem; /* Reducido tamaño de h5 */
-    }
 }
 
 /* -------------------- PANTALLAS MUY PEQUEÑAS -------------------- */
 @media (max-width: 480px) {
-    header .logo h1 {
-        font-size: 0.9em;
-    }
-
-    .Contenedor-videojuegos-populares,
-    .Contenedor-videojuegos {
-        grid-template-columns: 1fr;
-    }
-
-    .image-popular {
-        height: 180px;
-    }
-
-    .game-card img {
+    .detalle-juego iframe {
+        width: 100%;
+        max-width: 100%;
+        aspect-ratio: 16 / 9;
         height: auto;
     }
 
-    .modal-content {
-        padding: 10px;
-        width: 95%;
-    }
-
-    .modal-body {
-        gap: 8px;
-    }
-
-    .videojuego img {
-        height: 180px;
-    }
-
-    .description {
-        font-size: 0.85em;
-    }
-
-    .detalle-juego iframe {
-        height: 180px;
+    .detalle-juego h5 {
+        font-size: 0.8rem;
     }
 
     .detalle-juego .descripcion,
@@ -1061,9 +1034,4 @@ footer nav a:hover {
     .detalle-juego .categorias {
         font-size: 0.85em;
     }
-
-    .detalle-juego h5 {
-        font-size: 0.8rem; /* Reducido aún más el tamaño en pantallas pequeñas */
-    }
 }
-
