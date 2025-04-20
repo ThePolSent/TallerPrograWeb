@@ -26,22 +26,14 @@ body.dark-mode .submenu {
     color: #fff;
 }
 
-body.dark-mode button {
+body.dark-mode button,
+body.dark-mode input {
     background-color: #333;
     color: #fff;
     border: 1px solid #555;
 }
 
-body.dark-mode input {
-    background-color: #222;
-    color: #fff;
-    border: 1px solid #444;
-}
-
-body.dark-mode .description {
-    background-color: #222;
-}
-
+body.dark-mode .description,
 body.dark-mode .modal-content {
     background-color: #333;
     color: #fff;
@@ -53,18 +45,18 @@ body.dark-mode .btn-details {
 }
 
 body.dark-mode .close-btn {
-    color: #fff; /* Color blanco para cerrar en modo oscuro */
-    background-color: #333; /* Fondo oscuro para el botón en modo oscuro */
+    color: #fff;
+    background-color: #333;
 }
 
 body.dark-mode .close-btn:hover {
     color: red;
 }
 
-/* -------------------- MODO CLARO (BLANCO) -------------------- */
+/* -------------------- MODO CLARO -------------------- */
 body:not(.dark-mode) .close-btn {
-    color: #000; /* Color negro para cerrar en modo blanco */
-    background-color: #f1f1f1; /* Fondo claro para el botón en modo blanco */
+    color: #000;
+    background-color: #f1f1f1;
 }
 
 body:not(.dark-mode) .close-btn:hover {
@@ -89,14 +81,11 @@ input,
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 /* -------------------- CONTENEDOR PRINCIPAL -------------------- */
-.container {
-    padding: 20px;
-}
-
+.container,
 .mostrador {
-    max-width: 1200px;
-    margin: 0 auto;
     padding: 20px;
+    margin: 0 auto;
+    max-width: 1200px;
 }
 
 /* -------------------- HEADER -------------------- */
@@ -104,39 +93,34 @@ header {
     height: 70px;
     position: fixed;
     top: 0;
-    left: 0;
     width: 100%;
-    z-index: 1; /* menos prioridad cuando está en tope */
+    z-index: 10;
     background-color: #333;
     color: white;
     padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    transition: box-shadow 0.3s ease, z-index 0.3s ease;
-    z-index: 10;
 }
 
-
 header.scrolled {
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5); /* sombra visible */
-    background-color: #333; /* Asegura que el fondo siga opaco */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+    background-color: #333;
     z-index: 1000;
 }
 
-
 header .logo h1 {
-    margin-left: 50px;
     display: flex;
     align-items: center;
     gap: 10px;
     font-size: 1em;
     font-family: 'Press Start 2P', cursive;
-    background: linear-gradient(to right, rgb(255, 255, 255) 66%, rgb(255, 255, 255) 0%);
+    background: linear-gradient(to right, #fff 66%, #fff 0%);
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
     -webkit-text-fill-color: transparent;
+    margin-left: 50px;
 }
 
 header .logo h1 img {
@@ -148,7 +132,6 @@ header .logo h1 img {
 #dark-mode-toggle {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
-
 
 /* -------------------- NAVEGACIÓN -------------------- */
 header nav {
@@ -214,12 +197,8 @@ nav ul li a:hover {
 }
 
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 /* -------------------- LOGIN -------------------- */
@@ -262,11 +241,179 @@ nav ul li a:hover {
     background-color: #218838;
 }
 
+/* -------------------- SECCION DETALLE JUEGO -------------------- */
+section {
+    margin-bottom: 60px;
+}
+
+section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.detalle-juego {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    background-color: #f5f5f5; /* Fondo claro */
+    color: #000; /* Color texto claro */
+    transition: background-color 0.5s ease, color 0.5s ease; /* Transición para el modo */
+}
+
+body.dark-mode .detalle-juego {
+    background-color: #121212; /* Fondo oscuro */
+    color: #ffffff; /* Texto blanco */
+}
+
+/* -------------------- IMAGEN Y VIDEO -------------------- */
+.imagen-video {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    max-width: 100%;
+}
+
+.portada-juego {
+    width: 250px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #000;
+    object-fit: cover;
+}
+
+body.dark-mode .portada-juego {
+    box-shadow: 0 0 10px #444; /* Sombra diferente para el modo oscuro */
+}
+
+.video-juego {
+    flex: 1;
+    min-width: 600px;
+    max-width: 1000px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #000;
+    object-fit: cover;
+    aspect-ratio: 16 / 9;
+}
+
+body.dark-mode .video-juego {
+    box-shadow: 0 0 10px #444; /* Sombra diferente para el modo oscuro */
+}
+
+/* -------------------- DESCRIPCIÓN DEL JUEGO -------------------- */
+.descripcion-juego {
+    background-color: #2c2c2c;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.1);
+    font-size: 1rem;
+    text-align: center;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    color: #fff; /* Texto blanco por defecto */
+}
+
+body.dark-mode .descripcion-juego {
+    background-color: #444; /* Fondo más oscuro para el modo oscuro */
+    color: #fff; /* Texto blanco */
+}
+
+/* -------------------- REQUISITOS -------------------- */
+.requisitos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    text-align: center;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.requisitos h3 {
+    margin-top: 0;
+    color: #ffcc00;
+    text-shadow: 1px 1px #000;
+}
+
+body.dark-mode .requisitos h3 {
+    color: #ffcc00; /* Mantener el color de encabezado en modo oscuro */
+}
+
+.minimos,
+.recomendados {
+    flex: 1;
+    min-width: 250px;
+    background-color: #292929;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #000;
+    max-width: 350px;
+    width: 100%;
+}
+
+body.dark-mode .minimos,
+body.dark-mode .recomendados {
+    background-color: #444; /* Fondo más oscuro en modo oscuro */
+}
+
+/* -------------------- CATEGORÍAS -------------------- */
+.categorias-juego {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.categorias-juego h3 {
+    color: #00ffff;
+    margin: 0;
+    text-align: center;
+}
+
+body.dark-mode .categorias-juego h3 {
+    color: #00ffff; /* Mantener el color en modo oscuro */
+}
+
+.categoria {
+    display: inline-block;
+    background-color: #444;
+    color: #fff;
+    padding: 5px 12px;
+    border-radius: 20px;
+    margin-right: 10px;
+    font-size: 0.9rem;
+    text-shadow: 1px 1px #000;
+    transition: background-color 0.3s;
+    text-align: center;
+}
+
+body.dark-mode .categoria {
+    background-color: #666; /* Fondo ligeramente más claro para las categorías */
+}
+
+.categoria:hover {
+    background-color: #666;
+}
+
+body.dark-mode .categoria:hover {
+    background-color: #888; /* Cambio en el hover en modo oscuro */
+}
+
+
+/*-----------------------------------------*/
+
 /* -------------------- MODAL -------------------- */
 .modal {
     display: none;
     position: fixed;
-    z-index: 1000; /* Modal tiene un z-index alto para estar encima del header */
+    z-index: 1000;
     left: 0;
     top: 0;
     width: 100%;
@@ -295,14 +442,13 @@ nav ul li a:hover {
     position: relative;
     overflow: auto;
     max-height: 90vh;
-    text-align: center; /* Alinea todo el contenido al centro */
-    animation: fadeIn 0.5s ease-out; /* Animación para el contenido */
+    text-align: center;
+    animation: fadeIn 0.5s ease-out;
 }
 
-/* Asegurarse de que el título esté centrado */
 .modal-content h2 {
-    margin: 0; /* Elimina márgenes innecesarios */
-    font-size: 1.5em; /* Ajusta el tamaño del título si es necesario */
+    margin: 0;
+    font-size: 1.5em;
 }
 
 .close-btn {
@@ -328,7 +474,6 @@ nav ul li a:hover {
     min-height: 300px;
     margin: 0 auto;
     text-align: center;
-    
 }
 
 .modal-body img {
@@ -337,7 +482,6 @@ nav ul li a:hover {
     height: auto;
     border-radius: 5px;
     object-fit: contain;
-    
 }
 
 .info-container {
@@ -381,6 +525,61 @@ body.modal-open {
     overflow: hidden;
 }
 
+/* Animación de deslizamiento (slide-down) para el modal */
+@keyframes slide-down {
+    0% {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Animación de desvanecimiento (fadeIn) para el contenido del modal */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Mostrar submenú cuando el padre tiene la clase .open */
+.has-submenu.open .submenu {
+    display: block;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Estilos para los submenús */
+.submenu {
+    display: none;
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+    background-color: #333;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 200px;
+    border-radius: 5px;
+    z-index: 100;
+}
+
+.submenu a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.submenu a:hover {
+    background-color: #555;
+}
+
 /* -------------------- CATÁLOGO -------------------- */
 #VideojuegosPopulares h2,
 #VideojuegosCategoriaAccion,
@@ -391,14 +590,6 @@ body.modal-open {
     font-size: 2em;
     margin-bottom: 20px;
     text-align: center;
-}
-
-#VideojuegosCategoriaAccion,
-#VideojuegosCategoriaAventura,
-#VideojuegosCategoriaSimulacion,
-#VideojuegosCategoriaEstrategia,
-#VideojuegosCategoriaMundoAbierto {
-    font-size: 1.5em;
 }
 
 .Contenedor-videojuegos-populares {
@@ -451,11 +642,6 @@ section {
     margin-bottom: 60px;
 }
 
-section h2 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
 .overlay-text {
     position: absolute;
     top: 50%;
@@ -484,8 +670,7 @@ section h2 {
     overflow: hidden;
     width: 100%;
     position: relative;
-    margin-top: 40px;
-    margin-bottom: 40px;
+    margin: 40px 0;
 }
 
 .carrusel-track {
@@ -498,7 +683,6 @@ section h2 {
     flex-shrink: 0;
     width: calc(25% - 20px);
     max-width: 250px;
-    margin: 0;
 }
 
 .videojuego img {
@@ -523,13 +707,8 @@ section h2 {
     user-select: none;
 }
 
-.btn-izq {
-    left: 5%;
-}
-
-.btn-der {
-    right: 5%;
-}
+.btn-izq { left: 5%; }
+.btn-der { right: 5%; }
 
 /* -------------------- FOOTER -------------------- */
 footer {
@@ -550,37 +729,26 @@ footer nav a:hover {
     text-decoration: underline;
 }
 
-/* -------------------- Menu Hamburguesa -------------------- */
-
+/* -------------------- MENÚ HAMBURGUESA -------------------- */
 .menu-hamburguesa {
-    display: none;  /* Ocultar por defecto */
+    display: none;
     font-size: 30px;
     color: white;
     background: none;
     border: none;
     cursor: pointer;
 }
-/* -------------------- RESPONSIVE -------------------- */
 
-/* -------------------- HEADER -------------------- */
+/* -------------------- RESPONSIVE -------------------- */
 @media (max-width: 768px) {
     header {
-        height: auto;
-        padding: 10px;
         flex-direction: column;
         align-items: flex-start;
     }
 
     header .logo {
         width: 100%;
-        display: flex;
         justify-content: space-between;
-        align-items: center;
-    }
-
-    header .logo h1 {
-        font-size: 1em;
-        margin-left: 10px;
     }
 
     .menu-hamburguesa {
@@ -589,19 +757,17 @@ footer nav a:hover {
         top: 15px;
         right: 20px;
         font-size: 28px;
-        cursor: pointer;
         z-index: 1001;
     }
 
     nav {
         width: 100%;
-        display: flex;
-        justify-content: center; /* Centra los elementos del menú */
+        justify-content: center;
     }
 
     nav ul {
         flex-direction: column;
-        align-items: center; /* Centra los elementos del menú en pantallas pequeñas */
+        align-items: center;
         background-color: #333;
         width: 100%;
         display: none;
@@ -614,8 +780,8 @@ footer nav a:hover {
 
     nav ul li {
         margin: 10px 0;
-        padding: 0 20px;
         width: 100%;
+        padding: 0 20px;
     }
 
     .has-submenu .submenu {
@@ -628,33 +794,15 @@ footer nav a:hover {
         width: 100%;
         display: none;
         flex-direction: column;
-        padding: 0;
     }
 
     .has-submenu.open .submenu {
         display: flex;
     }
 
-    .submenu li {
-        padding: 10px 20px;
-    }
-
-    .submenu li a {
-        padding: 8px 0;
-        display: block;
-        width: 100%;
-    }
-}
-
-/* -------------------- MODAL -------------------- */
-@media (max-width: 768px) {
     .modal-content {
         width: 95%;
-        max-width: 95%;
-        margin: 30px auto;
         padding: 15px;
-        border-radius: 10px;
-        position: relative;
     }
 
     .modal-body {
@@ -664,129 +812,15 @@ footer nav a:hover {
 
     .modal-body img {
         max-width: 90%;
-        height: auto;
-    }
-
-    .info-container {
-        padding: 10px;
     }
 
     .description {
-        padding: 15px;
         font-size: 0.9em;
+        padding: 15px;
     }
 
     .btn-details {
-        margin: 10px auto 0 auto;
-    }
-
-    /* Botón "X" para cerrar el modal */
-    .modal-content .close {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        font-size: 25px;
-        color: #fff;
-        background-color: transparent;
-        border: none;
-        cursor: pointer;
-    }
-
-    .modal-content .close:hover {
-        color: #f00;
+        margin: 10px auto 0;
     }
 }
 
-/* -------------------- CARRUSEL -------------------- */
-@media (max-width: 768px) {
-    .carrusel-track {
-        gap: 10px;
-    }
-
-    .videojuego {
-        width: 45%;
-        max-width: none;
-    }
-
-    .videojuego img {
-        height: 250px;
-    }
-
-    .btn-izq,
-    .btn-der {
-        font-size: 1.5rem;
-        padding: 6px;
-    }
-}
-
-/* -------------------- VIDEOJUEGOS POPULARES -------------------- */
-@media (max-width: 768px) {
-    .Contenedor-videojuegos-populares {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 10px;
-    }
-
-    .image-popular {
-        height: 250px;  /* Iguala la altura de las imágenes a un tamaño consistente */
-        width: 100%;
-        object-fit: cover;
-    }
-
-    .game-card {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        overflow: hidden;
-    }
-
-    .overlay-text {
-        position: absolute;
-        bottom: 10px;
-        left: 10px;
-        color: white;
-        font-size: 1rem;
-        background: rgba(0, 0, 0, 0.6);
-        padding: 5px;
-    }
-}
-
-/* -------------------- PANTALLAS MUY PEQUEÑAS -------------------- */
-@media (max-width: 480px) {
-    header .logo h1 {
-        font-size: 0.9em;
-    }
-
-    .Contenedor-videojuegos-populares {
-        grid-template-columns: 1fr;
-    }
-
-    .Contenedor-videojuegos {
-        grid-template-columns: 1fr;
-    }
-
-    .image-popular {
-        height: 180px;
-    }
-
-    .game-card img {
-        height: auto;
-    }
-
-    .modal-content {
-        padding: 10px;
-        width: 95%;
-    }
-
-    .modal-body {
-        gap: 8px;
-    }
-
-    .videojuego img {
-        height: 180px;
-    }
-
-    .description {
-        font-size: 0.85em;
-    }
-}
