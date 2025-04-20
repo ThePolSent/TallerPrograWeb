@@ -873,7 +873,59 @@ footer nav a:hover {
         width: 100%;
     }
 }
+/* -------------------- CARRUSEL -------------------- */
+@media (max-width: 768px) {
+    .carrusel-track {
+        gap: 10px;
+    }
 
+    .videojuego {
+        width: 45%;
+        max-width: none;
+    }
+
+    .videojuego img {
+        height: 250px;
+    }
+
+    .btn-izq,
+    .btn-der {
+        font-size: 1.5rem;
+        padding: 6px;
+    }
+}
+
+/* -------------------- VIDEOJUEGOS POPULARES -------------------- */
+@media (max-width: 768px) {
+    .Contenedor-videojuegos-populares {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+
+    .image-popular {
+        height: 250px;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .game-card {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    .overlay-text {
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        color: white;
+        font-size: 1rem;
+        background: rgba(0, 0, 0, 0.6);
+        padding: 5px;
+    }
+}
 /* -------------------- MODAL -------------------- */
 @media (max-width: 768px) {
     .modal-content {
@@ -929,57 +981,61 @@ footer nav a:hover {
         color: #f00;
     }
 }
-/* -------------------- CARRUSEL -------------------- */
+
+
+/* -------------------- MODAL -------------------- */
 @media (max-width: 768px) {
-    .carrusel-track {
+    .modal-content {
+        width: 80%;
+        max-width: 380px; /* Hacerlo un poco más pequeño */
+        padding: 12px;
+        border-radius: 10px;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        background: #222;
+        z-index: 1000;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    }
+
+    .modal-body {
+        flex-direction: column;
         gap: 10px;
+        align-items: center;
     }
 
-    .videojuego {
-        width: 45%;
-        max-width: none;
+    .modal-body img {
+        max-width: 90%;
+        height: auto;
     }
 
-    .videojuego img {
-        height: 250px;
-    }
-
-    .btn-izq,
-    .btn-der {
-        font-size: 1.5rem;
+    .info-container {
         padding: 6px;
     }
-}
 
-/* -------------------- VIDEOJUEGOS POPULARES -------------------- */
-@media (max-width: 768px) {
-    .Contenedor-videojuegos-populares {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 10px;
+    .description {
+        padding: 8px;
+        font-size: 0.85em;
     }
 
-    .image-popular {
-        height: 250px;
-        width: 100%;
-        object-fit: cover;
+    .btn-details {
+        margin: 10px auto 0 auto;
     }
 
-    .game-card {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        overflow: hidden;
-    }
-
-    .overlay-text {
+    .modal-content .close {
         position: absolute;
-        bottom: 10px;
-        left: 10px;
-        color: white;
-        font-size: 1rem;
-        background: rgba(0, 0, 0, 0.6);
-        padding: 5px;
+        top: 6px;
+        right: 6px;
+        font-size: 20px;
+        color: #fff;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
+
+    .modal-content .close:hover {
+        color: #f00;
     }
 }
 
@@ -1005,9 +1061,9 @@ footer nav a:hover {
     }
 
     .detalle-juego iframe {
-        width: 70%;
+        width: 60%; /* Reducido para hacerlo más pequeño */
         height: auto;
-        max-width: 400px;
+        max-width: 350px; /* Tamaño ajustado */
         aspect-ratio: 16 / 9;
         margin-top: 10px;
         border-radius: 6px;
@@ -1046,7 +1102,7 @@ footer nav a:hover {
     }
 
     .detalle-juego iframe {
-        width: 85%;
+        width: 75%; /* Reducido más */
         height: auto;
         max-width: 320px;
         aspect-ratio: 16 / 9;
