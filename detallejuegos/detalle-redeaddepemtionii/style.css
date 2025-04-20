@@ -250,6 +250,11 @@ section h2 {
     text-align: center;
     margin-bottom: 20px;
 }
+section h5 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 50px;
+}
 .detalle-juego {
     max-width: 1200px;
     margin: 40px auto;
@@ -287,7 +292,7 @@ body.dark-mode .detalle-juego {
 }
 
 body.dark-mode .portada-juego {
-    box-shadow: 0 0 10px #444; /* Sombra diferente para el modo oscuro */
+    box-shadow: 0 0 20px #444; /* Sombra diferente para el modo oscuro */
 }
 
 .video-juego {
@@ -317,11 +322,14 @@ body.dark-mode .video-juego {
     width: 100%;
     margin: 0 auto;
     color: #fff; /* Texto blanco por defecto */
+    line-height: 1.8; /* ↑ Espaciado entre líneas para más claridad */
+    white-space: pre-line; /* ↑ Detecta saltos de línea (enter) dentro del texto */
 }
 
 body.dark-mode .descripcion-juego {
     background-color: #444; /* Fondo más oscuro para el modo oscuro */
     color: #fff; /* Texto blanco */
+    box-shadow: 0 0 20px #444;
 }
 
 /* -------------------- REQUISITOS -------------------- */
@@ -351,7 +359,7 @@ body.dark-mode .requisitos h3 {
     flex: 1;
     min-width: 250px;
     background-color: #292929;
-    padding: 25px;
+    padding: 30px;
     border-radius: 10px;
     box-shadow: 0 0 20px #000;
     max-width: 350px;
@@ -361,6 +369,7 @@ body.dark-mode .requisitos h3 {
 body.dark-mode .minimos,
 body.dark-mode .recomendados {
     background-color: #444; /* Fondo más oscuro en modo oscuro */
+    box-shadow: 0 0 20px #444;
 }
 
 /* -------------------- CATEGORÍAS -------------------- */

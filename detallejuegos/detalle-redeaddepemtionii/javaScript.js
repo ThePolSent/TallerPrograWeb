@@ -191,3 +191,20 @@ if (header) {
         }
     });
 }
+
+function toggleDescripcion() {
+    const descripcion = document.querySelector('.descripcion-juego');
+    const botonVerMas = document.querySelector('.ver-mas-btn');
+
+    if (descripcion && botonVerMas) {
+        if (descripcion.classList.contains('colapsada')) {
+            descripcion.classList.remove('colapsada');
+            botonVerMas.textContent = 'Ver menos';
+        } else {
+            descripcion.classList.add('colapsada');
+            botonVerMas.textContent = 'Ver más';
+        }
+    }
+}
+
+
