@@ -83,6 +83,9 @@ document.addEventListener('click', function (event) {
 //        MENÚ HAMBURGUESA
 // ============================
 
+// ============================
+//        MENÚ HAMBURGUESA
+// ============================
 const menuHamburguesa = document.querySelector('.menu-hamburguesa');
 
 if (menuHamburguesa) {
