@@ -99,7 +99,6 @@ input,
     margin: 0 auto;
     padding: 20px;
 }
-
 /* -------------------- HEADER -------------------- */
 header {
     height: 70px;
@@ -107,7 +106,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1; /* menos prioridad cuando está en tope */
+    z-index: 1;
     background-color: #333;
     color: white;
     padding: 10px 20px;
@@ -118,13 +117,11 @@ header {
     z-index: 10;
 }
 
-
 header.scrolled {
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5); /* sombra visible */
-    background-color: #333; /* Asegura que el fondo siga opaco */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+    background-color: #333;
     z-index: 1000;
 }
-
 
 header .logo h1 {
     margin-left: 50px;
@@ -146,9 +143,62 @@ header .logo h1 img {
     margin-right: 10px;
 }
 
-#dark-mode-toggle {
-    transition: background-color 0.3s ease, color 0.3s ease;
+/* -------------------- CONTENEDOR DE BOTONES -------------------- */
+header .actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0px; /* Asegura que no haya espacio entre los botones */
+    margin: 0; /* Elimina cualquier margen extra */
 }
+
+/* Aseguramos que los íconos estén correctamente alineados */
+#login-btn, #theme-toggle {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    margin: 0; /* Eliminamos márgenes extra */
+    padding: 0; /* Eliminamos padding adicional */
+}
+
+/* Ajuste del tamaño de los íconos */
+header .actions ion-icon {
+    font-size: 24px;
+    color: white;
+}
+
+/* Ajustes al ícono del botón de iniciar sesión */
+#login-btn ion-icon {
+    font-size: 28px;
+}
+
+
+body.dark-mode #login-btn:hover {
+    background-color: #292828; /* Hover en el botón de login */
+}
+
+
+
+body:not(.dark-mode) #login-btn:hover {
+    background-color: #757474; /* Hover en el botón de login */
+}
+
+/* Ajustes de la posición y visibilidad del formulario de login */
+#login-form {
+    display: none;
+    background-color: #444;
+    padding: 20px;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 200;
+    color: white;
+}
+
+
 
 /* -------------------- NAVEGACIÓN -------------------- */
 header nav {
@@ -533,14 +583,23 @@ footer nav a:hover {
     border: none;
     cursor: pointer;
 }
-/* -------------------- RESPONSIVE -------------------- */
-
-
+/*---------------------RESPONSIVE------------------*/
 /* -------------------- HEADER -------------------- */
 @media (max-width: 768px) {
     header {
         height: auto;
         padding: 10px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background-color: #111;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.6);
+    }
+
+    body {
+        padding-top: 80px; /* Espacio para que el body no quede tapado por el header */
     }
 
     header .logo h1 {
@@ -548,7 +607,6 @@ footer nav a:hover {
     }
 
     nav ul {
-        display: flex;
         flex-direction: column;
         padding: 10px;
         align-items: center;
@@ -568,8 +626,7 @@ footer nav a:hover {
         display: block;
     }
 
-    /* Mostrar el menú cuando el usuario haga clic */
-    nav.open {
+    nav.open ul {
         display: flex;
     }
 }
@@ -577,77 +634,116 @@ footer nav a:hover {
 /* -------------------- MODAL -------------------- */
 @media (max-width: 768px) {
     .modal-content {
-        width: 90%;
+        width: 90%; /* Ajustamos el ancho */
         max-width: 90%;
-        margin: 0 5%;
+        margin: 20px auto; /* Reducimos el margen superior */
+        padding: 15px;
+        border-radius: 10px;
+        position: relative;
     }
 
-    .game-card {
-        width: 100%;
-    }
-
-    header .logo h1 {
-        font-size: 1.2em;
-    }
-
-    nav ul {
-        display: none;
-    }
-
-    nav.open ul {
-        display: flex;
+    .modal-body {
         flex-direction: column;
-        align-items: center;
+        gap: 15px; /* Aumentamos el espacio entre los elementos */
+    }
+
+    .modal-body img {
+        max-width: 100%; /* Aumentamos el tamaño de la imagen */
+        height: auto;
+        border-radius: 8px; /* Le damos un borde redondeado */
+    }
+
+    .info-container {
+        padding: 15px;
+    }
+
+    .description {
+        padding: 15px;
+        font-size: 1em; /* Ajustamos el tamaño de la fuente */
+    }
+
+    .btn-details {
+        margin: 10px auto 0 auto;
+    }
+
+    .modal-content .close {
         position: absolute;
-        top: 70px;
-        left: 0;
-        right: 0;
-        background-color: #333;
+        top: 10px;
+        right: 10px;
+        font-size: 25px;
+        color: #fff;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
     }
 
-    .menu-hamburguesa {
-        display: block;
+    .modal-content .close:hover {
+        color: #f00;
+    }
+}
+
+/* -------------------- CARRUSEL -------------------- */
+@media (max-width: 768px) {
+    .carrusel-track {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+        grid-template-rows: repeat(4, auto);  /* 4 filas */
+        gap: 15px;
+        justify-items: center;
+        padding: 10px;
     }
 
-    .carrusel {
-        gap: 5px;
-        flex-wrap: nowrap;
+    .videojuego {
+        width: 100%; /* Aprovechar todo el ancho disponible en su celda */
+        max-width: 100%;
     }
 
-    .carrusel img {
-        max-width: 180px;
+    .videojuego img {
+        width: 100%;
+        height: 220px; /* Tamaño adecuado para mostrar bien la imagen */
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+    .btn-izq,
+    .btn-der {
+        display: none; /* Opcional: ocultamos botones de navegación en este modo */
     }
 }
 
 /* -------------------- PANTALLAS MUY PEQUEÑAS -------------------- */
 @media (max-width: 480px) {
     header .logo h1 {
-        font-size: 1.1em;
+        font-size: 0.9em;
     }
 
-    .Contenedor-videojuegos-populares {
-        grid-template-columns: repeat(1, 1fr); /* Una columna */
-    }
-
+    .Contenedor-videojuegos-populares,
     .Contenedor-videojuegos {
-        grid-template-columns: repeat(1, 1fr); /* Una columna */
+        grid-template-columns: 1fr;
+    }
+
+    .image-popular {
+        height: 180px;
     }
 
     .game-card img {
-        width: 100%;
         height: auto;
     }
 
     .modal-content {
-        width: 100%;
         padding: 10px;
+        width: 95%;
     }
 
     .modal-body {
-        gap: 5px;
+        gap: 8px;
     }
 
-    .carrusel img {
-        width: 70%;
+    .videojuego img {
+        height: 180px;
+    }
+
+    .description {
+        font-size: 0.85em;
     }
 }

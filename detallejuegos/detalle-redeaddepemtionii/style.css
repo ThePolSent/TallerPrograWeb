@@ -95,7 +95,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1; /* menos prioridad cuando está en tope */
+    z-index: 1;
     background-color: #333;
     color: white;
     padding: 10px 20px;
@@ -106,13 +106,11 @@ header {
     z-index: 10;
 }
 
-
 header.scrolled {
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5); /* sombra visible */
-    background-color: #333; /* Asegura que el fondo siga opaco */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+    background-color: #333;
     z-index: 1000;
 }
-
 
 header .logo h1 {
     margin-left: 50px;
@@ -134,9 +132,61 @@ header .logo h1 img {
     margin-right: 10px;
 }
 
-#dark-mode-toggle {
-    transition: background-color 0.3s ease, color 0.3s ease;
+/* -------------------- CONTENEDOR DE BOTONES -------------------- */
+header .actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0px; /* Asegura que no haya espacio entre los botones */
+    margin: 0; /* Elimina cualquier margen extra */
 }
+
+/* Aseguramos que los íconos estén correctamente alineados */
+#login-btn, #theme-toggle {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    margin: 0; /* Eliminamos márgenes extra */
+    padding: 0; /* Eliminamos padding adicional */
+}
+
+/* Ajuste del tamaño de los íconos */
+header .actions ion-icon {
+    font-size: 24px;
+    color: white;
+}
+
+/* Ajustes al ícono del botón de iniciar sesión */
+#login-btn ion-icon {
+    font-size: 28px;
+}
+
+
+body.dark-mode #login-btn:hover {
+    background-color: #292828; /* Hover en el botón de login */
+}
+
+
+
+body:not(.dark-mode) #login-btn:hover {
+    background-color: #757474; /* Hover en el botón de login */
+}
+
+/* Ajustes de la posición y visibilidad del formulario de login */
+#login-form {
+    display: none;
+    background-color: #444;
+    padding: 20px;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 200;
+    color: white;
+}
+
 
 
 /* -------------------- NAVEGACIÓN -------------------- */

@@ -18,53 +18,51 @@
         </div>
     <!-- Menu de navegación -->
     <div class="container">
-    <nav>
-        <ul id="nav-list">
-            <li><a href="../../index.html">Inicio</a></li>
-            <li class="has-submenu">
+        <nav>
+            <ul id="nav-list">
+                <li><a href="../../index.html"><ion-icon name="newspaper-outline"></ion-icon>Inicio</a></li>
+                <li class="has-submenu">
+                    <a href="# onclick="toggleSubmenu(event)>Categorías</a>
+                    <ion-icon name="grid-outline"></ion-icon>
+                    <ul class="submenu">
+                        <li><a href="/categorias/accion/accion.html"><ion-icon name="flash-outline"></ion-icon>Acción</a></li>
+                        <li><a href="/categorias/aventura/aventura.html"><ion-icon name="compass-outline"></ion-icon>Aventura</a></li>
+                        <li><a href="/categorias/simulacion/simulacion.html"><ion-icon name="hardware-chip-outline"></ion-icon>Simulación</a></li>
+                        <li><a href="/categorias/estrategia/estrategia.html"><ion-icon name="analytics-outline"></ion-icon>Estrategia</a></li>
+                        <li><a href="/categorias/mundoabierto/mundoabierto.html"><ion-icon name="earth-outline"></ion-icon>Mundo Abierto</a></li>                                                                                                          
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="# onclick="toggleSubmenu(event)>Redes Sociales</a>
+                    <ion-icon name="share-social-outline"></ion-icon>
+                    <ul class="submenu">
+                        <li><a href="#"><ion-icon name="logo-facebook"></ion-icon> Facebook</a></li>
+                        <li><a href="#"><ion-icon name="logo-twitter"></ion-icon> Twitter</a></li>
+                        <li><a href="#"><ion-icon name="logo-instagram"></ion-icon> Instagram</a></li>
+                    </ul>
+                </li>
+            </ul>
+                <!-- Menú hamburguesa -->
+                <div id="menu-toggle" class="menu-hamburguesa">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </div>
+        </nav>
+        </div>
+        <!-- Contenedor de acciones -->
+        <div class="actions">
+            <!-- Botón Modo Oscuro -->
+            <button id="theme-toggle" class="btn-theme">
+                <ion-icon id="theme-icon" name="moon-outline"></ion-icon>
+            </button>
 
-                <a href="#Noticias" toggleSubmenu(event)>Noticias</a>
-                <ul class="submenu">
-                    <li><a href="#ultimas">Últimas Noticias</a></li>
-                    <li><a href="#populares">Populares</a></li>
-                </ul>
-            </li>
-            <li class="has-submenu">
-                <a href="# onclick="toggleSubmenu(event)>Categorías</a>
-                <ul class="submenu">
-                    <li><a href="/categorias/accion/accion.html">Acción</a></li>
-                    <li><a href="/categorias/aventura/aventura.html">Aventura</a></li>
-                    <li><a href="/categorias/simulacion/simulacion.html">Simulación</a></li>
-                    <li><a href="/categorias/estrategia/estrategia.html">Estrategia</a></li>
-                    <li><a href="/categorias/mundoabierto/mundoabierto.html">Mundo Abierto</a></li>                                                                                                            
-                </ul>
-            </li>
-            <li><a href="#Solicitud">Reporte</a></li>
-            <li class="has-submenu">
-                <a href="# onclick="toggleSubmenu(event)>Redes Sociales</a>
-                <ul class="submenu">
-                    <li><a href="#accion">Facebook</a></li>
-                    <li><a href="#aventura">Twitter</a></li>
-                    <li><a href="#deportes">Instagram</a></li>
-                </ul>
-            </li>
-            
-        </ul>
-        <!-- Menú hamburguesa -->
-        <div id="menu-toggle" class="menu-hamburguesa">&#9776;</div>
-    </nav>
-    </div>
-    <div class="login">
-
-    <button id="theme-toggle" class="btn-theme">🌙</button>
-    <button id="login-btn" onclick="toggleLoginForm()">Iniciar sesión</button>
-    <div id="login-form" class="login-form">
-        <input type="text" id="username" placeholder="Usuario" required>
-        <input type="password" id="password" placeholder="Contraseña" required>
-        <button onclick="login()">Ingresar</button>
-    </div>
-    </div>
-        </header>
+            <!-- Botón Iniciar Sesión -->
+            <button id="login-btn" onclick="toggleLoginForm()">
+                <a href="login.html" id="login-icon">
+                    <ion-icon name="person-circle-outline"></ion-icon>
+                </a>
+            </button>            
+        </div>
+    </header>
     <!-- Cuerpo -->
     <main class ="mostrador">
         <section id="VideojuegosCategoriaAccion">

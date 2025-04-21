@@ -1,37 +1,49 @@
 // ============================
-//        FORMULARIO LOGIN
+//         MODO USUARIO
 // ============================
+document.addEventListener('DOMContentLoaded', () => {
+    const user = localStorage.getItem('usuario');
+    const loginIcon = document.getElementById('login-icon');
+    const userMenu = document.getElementById('userMenu');
 
-// Mostrar/ocultar el formulario de inicio de sesión
-function toggleLoginForm() {
-    const loginForm = document.getElementById('login-form');
-    loginForm.style.display = (loginForm.style.display === 'none' || loginForm.style.display === '') ? 'block' : 'none';
-}
-
-// Simulación de inicio de sesión
-function login() {
-    const username = document.getElementById('username').value;
-    const password = document.getElementById('password').value;
-
-    if (username && password) {
-        alert('Inicio de sesión exitoso');
-        document.getElementById('login-form').style.display = 'none';
-    } else {
-        alert('Por favor, complete ambos campos.');
+    if (user) {
+        if (loginIcon) loginIcon.style.display = 'none';
+        if (userMenu) {
+            userMenu.style.display = 'block';
+            document.getElementById('usernameDisplay').textContent = user;
+        }
     }
-}
 
-// ============================
-//         TEMA OSCURO
-// ============================
+    const logoutBtn = document.getElementById('logoutButton');
+    if (logoutBtn) {
+        logoutBtn.addEventListener('click', () => {
+            localStorage.removeItem('usuario');
+            window.location.reload();
+        });
+    }
 
-const themeBtn = document.getElementById('theme-toggle');
-const body = document.body;
+    // ============================
+    //         TEMA OSCURO
+    // ============================
+    const themeBtn = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+    const body = document.body;
 
-themeBtn.addEventListener('click', () => {
-    body.classList.toggle('dark-mode');
-    themeBtn.textContent = body.classList.contains('dark-mode') ? '☀️' : '🌙';
+    const temaGuardado = localStorage.getItem('tema');
+    if (temaGuardado === 'oscuro') {
+        body.classList.add('dark-mode');
+        themeIcon.setAttribute('name', 'sunny-outline');
+    } else {
+        themeIcon.setAttribute('name', 'moon-outline');
+    }
+
+    themeBtn.addEventListener('click', () => {
+        const esOscuro = body.classList.toggle('dark-mode');
+        localStorage.setItem('tema', esOscuro ? 'oscuro' : 'claro');
+        themeIcon.setAttribute('name', esOscuro ? 'sunny-outline' : 'moon-outline');
+    });
 });
+
 
 // ============================
 //        MENÚ DESPLEGABLE
@@ -82,8 +94,6 @@ if (menuHamburguesa) {
         nav.classList.toggle('open');
     });
 }
-
-
 
 // ============================
 //        MODAL DE JUEGO

@@ -1,43 +1,52 @@
 // ============================
-//        FORMULARIO LOGIN
+//         MODO USUARIO
 // ============================
+document.addEventListener('DOMContentLoaded', () => {
+    const user = localStorage.getItem('usuario');
+    const loginIcon = document.getElementById('login-icon');
+    const userMenu = document.getElementById('userMenu');
 
-// Mostrar/ocultar el formulario de inicio de sesión
-function toggleLoginForm() {
-    const loginForm = document.getElementById('login-form');
-    loginForm.style.display = (loginForm.style.display === 'none' || loginForm.style.display === '') ? 'block' : 'none';
-}
-
-// Simulación de inicio de sesión
-function login() {
-    const username = document.getElementById('username').value;
-    const password = document.getElementById('password').value;
-
-    if (username && password) {
-        alert('Inicio de sesión exitoso');
-        document.getElementById('login-form').style.display = 'none';
-    } else {
-        alert('Por favor, complete ambos campos.');
+    if (user) {
+        if (loginIcon) loginIcon.style.display = 'none';
+        if (userMenu) {
+            userMenu.style.display = 'block';
+            document.getElementById('usernameDisplay').textContent = user;
+        }
     }
-}
 
-// ============================
-//         TEMA OSCURO
-// ============================
+    const logoutBtn = document.getElementById('logoutButton');
+    if (logoutBtn) {
+        logoutBtn.addEventListener('click', () => {
+            localStorage.removeItem('usuario');
+            window.location.reload();
+        });
+    }
 
-const themeBtn = document.getElementById('theme-toggle');
-const body = document.body;
+    // ============================
+    //         TEMA OSCURO
+    // ============================
+    const themeBtn = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+    const body = document.body;
 
-themeBtn.addEventListener('click', () => {
-    body.classList.toggle('dark-mode');
-    themeBtn.textContent = body.classList.contains('dark-mode') ? '☀️' : '🌙';
+    const temaGuardado = localStorage.getItem('tema');
+    if (temaGuardado === 'oscuro') {
+        body.classList.add('dark-mode');
+        themeIcon.setAttribute('name', 'sunny-outline');
+    } else {
+        themeIcon.setAttribute('name', 'moon-outline');
+    }
+
+    themeBtn.addEventListener('click', () => {
+        const esOscuro = body.classList.toggle('dark-mode');
+        localStorage.setItem('tema', esOscuro ? 'oscuro' : 'claro');
+        themeIcon.setAttribute('name', esOscuro ? 'sunny-outline' : 'moon-outline');
+    });
 });
 
 // ============================
 //        MENÚ DESPLEGABLE
 // ============================
-
-// Mostrar/ocultar submenús (cerrando los otros)
 function toggleSubmenu(event) {
     event.preventDefault();
     event.stopPropagation();
@@ -53,12 +62,10 @@ function toggleSubmenu(event) {
     parentLi.classList.toggle('open');
 }
 
-// Asignar eventos a enlaces con submenús
 document.querySelectorAll('.has-submenu > a').forEach(link => {
     link.addEventListener('click', toggleSubmenu);
 });
 
-// Cerrar submenús y login al hacer clic fuera
 document.addEventListener('click', function (event) {
     const isSubmenu = event.target.closest('.has-submenu');
     const isLoginForm = event.target.closest('#login-form');
@@ -66,14 +73,14 @@ document.addEventListener('click', function (event) {
 
     if (!isSubmenu && !isLoginForm && !isLoginButton) {
         document.querySelectorAll('.has-submenu').forEach(item => item.classList.remove('open'));
-        document.getElementById('login-form').style.display = 'none';
+        const loginForm = document.getElementById('login-form');
+        if (loginForm) loginForm.style.display = 'none';
     }
 });
 
 // ============================
 //        MENÚ HAMBURGUESA
 // ============================
-
 const menuHamburguesa = document.querySelector('.menu-hamburguesa');
 
 if (menuHamburguesa) {
@@ -83,21 +90,9 @@ if (menuHamburguesa) {
     });
 }
 
-document.querySelectorAll("nav ul li").forEach(item => {
-    item.addEventListener("click", () => {
-        const submenu = item.querySelector(".submenu");
-        if (submenu) {
-            submenu.classList.toggle("open");
-        }
-    });
-});
-
-
 // ============================
 //        MODAL DE JUEGO
 // ============================
-
-// Abrir modal desde cualquier tarjeta de juego
 const gameCards = document.querySelectorAll(".game-card");
 
 gameCards.forEach((card) => {
@@ -119,19 +114,16 @@ gameCards.forEach((card) => {
     };
 });
 
-// Función para cerrar el modal
 function cerrarModal() {
     const modal = document.getElementById("modal");
     modal.classList.remove('show');
     document.body.classList.remove('modal-open');
 }
 
-// Botón cerrar modal
 document.querySelectorAll(".close-btn").forEach((btn) => {
     btn.onclick = cerrarModal;
 });
 
-// Cerrar modal al hacer clic fuera del contenido
 window.onclick = function (event) {
     const modal = document.getElementById("modal");
     if (event.target === modal) {
@@ -139,7 +131,6 @@ window.onclick = function (event) {
     }
 };
 
-// Cerrar modal con tecla ESC
 document.addEventListener("keydown", function(event) {
     if (event.key === "Escape") {
         cerrarModal();
@@ -149,7 +140,6 @@ document.addEventListener("keydown", function(event) {
 // ============================
 //     CARRUSEL DE JUEGOS
 // ============================
-
 document.querySelectorAll('.carrusel-wrapper').forEach(wrapper => {
     const track = wrapper.querySelector('.carrusel-track');
     const btnIzq = wrapper.querySelector('.btn-izq');
@@ -157,7 +147,7 @@ document.querySelectorAll('.carrusel-wrapper').forEach(wrapper => {
     const items = wrapper.querySelectorAll('.videojuego');
 
     const visibleItems = 4;
-    const itemWidth = items[0].getBoundingClientRect().width + 20; // Ajusta según tu gap
+    const itemWidth = items[0].getBoundingClientRect().width + 20;
     let scrollIndex = 0;
     const maxScrollIndex = Math.max(0, items.length - visibleItems);
 
@@ -189,7 +179,6 @@ document.querySelectorAll('.carrusel-wrapper').forEach(wrapper => {
 // ============================
 //      HEADER SCROLL FIX
 // ============================
-
 const header = document.querySelector('header');
 
 window.addEventListener('scroll', () => {
