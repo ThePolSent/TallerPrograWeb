@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Playsent | Videojuegos y más</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>    
+    <!-- Cabecera -->
+    <header>
+        <div class="logo">
+            <h1>
+                <img src="../../../contenido/imagenes/logo/logojoystick.png" alt="Logo de PlaySent">
+                <a href="../../index.html">PlaySent</a>
+            </h1>
+        </div>
+<!-- Menu de navegación -->
+<div class="container">
+    <nav>
+        <ul id="nav-list">
+            <li><a href="../../../index.html"><ion-icon name="newspaper-outline"></ion-icon>Inicio</a></li>
+            <li class="has-submenu">
+                <a href="# onclick="toggleSubmenu(event)>Categorías</a>
+                <ion-icon name="grid-outline"></ion-icon>
+                <ul class="submenu">
+                    <li><a href="/categorias/accion/accion.html"><ion-icon name="flash-outline"></ion-icon>Acción</a></li>
+                    <li><a href="/categorias/aventura/aventura.html"><ion-icon name="compass-outline"></ion-icon>Aventura</a></li>
+                    <li><a href="/categorias/simulacion/simulacion.html"><ion-icon name="hardware-chip-outline"></ion-icon>Simulación</a></li>
+                    <li><a href="/categorias/estrategia/estrategia.html"><ion-icon name="analytics-outline"></ion-icon>Estrategia</a></li>
+                    <li><a href="/categorias/mundoabierto/mundoabierto.html"><ion-icon name="earth-outline"></ion-icon>Mundo Abierto</a></li>                                                                                                          
+                </ul>
+            </li>
+            <li class="has-submenu">
+                <a href="# onclick="toggleSubmenu(event)>Redes Sociales</a>
+                <ion-icon name="share-social-outline"></ion-icon>
+                <ul class="submenu">
+                    <li><a href="#"><ion-icon name="logo-facebook"></ion-icon> Facebook</a></li>
+                    <li><a href="#"><ion-icon name="logo-twitter"></ion-icon> Twitter</a></li>
+                    <li><a href="#"><ion-icon name="logo-instagram"></ion-icon> Instagram</a></li>
+                </ul>
+            </li>
+        </ul>
+        <!-- Menú hamburguesa -->
+        <div id="menu-toggle" class="menu-hamburguesa">
+            <ion-icon name="menu-outline"></ion-icon>
+        </div>
+    </nav>
+        </div>
+        <!-- Contenedor de acciones -->
+        <div class="actions">
+            <!-- Botón Audio -->
+            <button id="audio-toggle" class="btn-audio">
+                <ion-icon id="audio-icon" name="volume-mute-outline"></ion-icon>
+            </button>
+            <audio id="audio-player" src="../../../contenido/audio/audio-principal/principal.mp3"></audio>
+
+            <!-- Botón Modo Oscuro -->
+            <button id="theme-toggle" class="btn-theme">
+                <ion-icon id="theme-icon" name="moon-outline"></ion-icon>
+            </button>
+
+            <!-- Botón Iniciar Sesión -->
+            <button id="login-btn" onclick="toggleLoginForm()">
+                <a href="login.html" id="login-icon">
+                    <ion-icon name="person-circle-outline"></ion-icon>
+                </a>
+            </button>  
+        </div>
+
+        <div class="user-menu" id="userMenu" style="display: none;">
+            <button id="userButton">
+                <ion-icon name="person-circle-outline"></ion-icon>
+            </button>
+            <div class="submenu">
+                <p id="usernameDisplay"></p>
+                <button id="logoutButton">Cerrar sesión</button>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- Cuerpo -->
+    <main class ="mostrador">
+        <section id="detalleJuegoContainer">
+            <div class="detalle-juego">
+                <h5>STARDEW VALLEY</h5>
+                <!-- Sección de imagen y video -->
+                <section class="imagen-video">
+                    <img src="https://i.pinimg.com/736x/93/57/62/935762480e67e4b749994a315b4f7e8f.jpg" alt="Portada Stardew Valley" class="portada-juego">
+                    <iframe class="video-juego" src="https://www.youtube.com/embed/ot7uXNQskhs" frameborder="0" allowfullscreen></iframe>
+                </section>
+
+                <!-- Descripción del juego -->
+                <h2>Descripcion</h2>
+                <section class="descripcion-juego">
+                    <p>
+                        <strong>Stardew Valley</strong> Cultiva, socializa, explora. Una tranquila vida en el campo te espera.
+                
+                        En Stardew Valley, heredas una vieja granja de tu abuelo en un pequeño pueblo lleno de personajes entrañables. De ti depende restaurarla, cultivando la tierra, criando animales, pescando, cocinando y forjando amistades (¡o incluso romances!) con los aldeanos.
+                
+                        Además de las labores agrícolas, puedes explorar minas llenas de recursos y peligros, participar en festivales del pueblo, mejorar tu casa y contribuir al renacimiento del Centro Comunitario, el corazón del valle.
+                
+                        Con una estética pixel art encantadora, una banda sonora relajante y una jugabilidad que mezcla simulación de vida con rol y gestión, Stardew Valley es una experiencia envolvente que invita a relajarse y disfrutar de los pequeños placeres del campo.
+                    </p>
+                </section>
+                
+                <!-- Fecha técnica -->
+                <section class="fecha-tecnica">
+                    <h2>Fecha Técnica</h2>
+                    <ul>
+                        <li><strong>Fecha de lanzamiento:</strong> 26 de febrero de 2016</li>
+                        <li><strong>Desarrollador:</strong> ConcernedApe</li>
+                        <li><strong>Editor:</strong> ConcernedApe / Chucklefish (PC)</li>
+                        <li><strong>Género:</strong> Simulación, Rol, Agricultura</li>
+                        <li><strong>Plataformas:</strong> PC, Mac, Linux, Android, iOS, PlayStation, Xbox, Nintendo Switch</li>
+                    </ul>
+                </section>
+                
+                <!-- Requisitos del sistema -->
+                <h2>Requisitos</h2>
+                <section class="requisitos-tabla">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Requisitos</th>
+                                <th>Mínimo</th>
+                                <th>Recomendado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Sistema Operativo</td>
+                                <td>Windows Vista o superior</td>
+                                <td>Windows 10</td>
+                            </tr>
+                            <tr>
+                                <td>Procesador</td>
+                                <td>Intel Core 2 Duo 2.0 GHz</td>
+                                <td>Intel Core i5 o superior</td>
+                            </tr>
+                            <tr>
+                                <td>RAM</td>
+                                <td>2 GB</td>
+                                <td>4 GB</td>
+                            </tr>
+                            <tr>
+                                <td>Tarjeta Gráfica</td>
+                                <td>256 MB de memoria de video, compatible con Shader Model 3.0+</td>
+                                <td>512 MB o superior, dedicada</td>
+                            </tr>
+                            <tr>
+                                <td>Espacio en disco</td>
+                                <td colspan="2">Al menos 500 MB</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                
+
+                <!-- Categorías -->
+                <section class="categorias-juego">
+                    <h3>Categorías</h3>
+                    <span class="categoria">Simulación</span>
+                    <span class="categoria">Agricultura</span>
+                    <span class="categoria">Rol</span>
+                    <span class="categoria">Pixel Art</span>
+                    <span class="categoria">Un jugador</span>
+                </section>
+            </div>
+        </section>
+
+        <section id="VideojuegosCategoriaSimulacion">
+            <h2>Los mejores juegos de simulacion</h2>
+            <div class="carrusel-wrapper">
+                <button class="btn-izq">&#10094;</button>
+                <div class="carrusel-track" id="carruselTrack">
+                    <div class="videojuego">
+                        <div class="game-card">
+                            <img src="https://i.pinimg.com/736x/93/57/62/935762480e67e4b749994a315b4f7e8f.jpg" 
+                            data-title="Stardew Valley"
+                            alt="Videojuego-stardewvalley"
+                            class= "image-carrusel"
+                            data-description="Stardew Valley es un juego de simulación en el que el jugador hereda una granja en ruinas y debe restaurarla a su antigua gloria. 
+                            A lo largo del juego, los jugadores cultivan, crían animales, exploran minas y forjan relaciones con los habitantes del pueblo. La historia se centra 
+                            en la vida en la granja, pero también incluye elementos de aventura y misterio. Con un enfoque relajante y de ritmo lento, Stardew Valley ofrece un 
+                            mundo abierto lleno de actividades y posibilidades."
+                            data-details-link="">
+                            <div class="overlay-text">Stardew Valley</div>
+                        </div>
+                    </div>
+                    <div class="videojuego">
+                        <div class ="game-card">
+                            <img src="https://i.pinimg.com/736x/c8/cc/44/c8cc44624d8cf36ecf08f5fcafad57b4.jpg" 
+                            data-title="Minecraft"
+                            alt="Videojuego-Minecraft" 
+                            class="image-carrusel"
+                            data-description="Minecraft es un juego de mundo abierto donde los jugadores pueden explorar, construir, recolectar recursos y sobrevivir en un entorno 
+                            generado aleatoriamente. Sin una historia lineal, ofrece libertad total para crear estructuras, combatir criaturas y descubrir biomas. Su estilo visual 
+                            en bloques y su jugabilidad creativa lo convierten en una experiencia única para jugadores de todas las edades."
+                            data-details-link="detalle-cod.html">
+                            <div class="overlay-text">Minecraft (2009)</div>
+                        </div>
+                    </div>
+                    <div class="videojuego">
+                        <div class="game-card">
+                            <img src="https://i.pinimg.com/736x/49/77/7d/49777dde93ea8caf5702d91550ed5521.jpg" 
+                            data-title="Cities: Skylines"
+                            alt="Videojuego-citiesskylines"
+                            class= "image-carrusel"
+                            data-description="Cities: Skylines es un juego de simulación de construcción de ciudades que pone al jugador en el rol de alcalde y urbanista. 
+                            El objetivo es desarrollar una metrópolis funcional desde cero, gestionando aspectos como el tráfico, servicios públicos, zonas residenciales, 
+                            comerciales e industriales. El juego destaca por su nivel de realismo, incluyendo sistemas de impuestos, planificación urbana, medio ambiente 
+                            y bienestar ciudadano. Con herramientas detalladas y una comunidad activa que ofrece mods y contenido adicional, Cities: Skylines ofrece una 
+                            experiencia profunda y personalizable para los amantes de la gestión y la estrategia urbana."
+                            data-details-link="">
+                            <div class="overlay-text">Cities: Skylines</div>
+                        </div>
+                    </div>
+                    <div class="videojuego">
+                        <div class="game-card">
+                            <img src="https://i.pinimg.com/736x/87/0e/1f/870e1f0427082552668f4a5224fc42ac.jpg" 
+                            data-title="The Sims 4"
+                            alt="Videojuego-thesims4"
+                            class= "image-carrusel"
+                            data-description="The Sims 4 es un juego de simulación de vida que permite a los jugadores crear y controlar personajes en un mundo virtual donde 
+                            pueden desarrollar relaciones, construir casas y vivir distintas historias. Con un sistema de emociones más profundo y herramientas creativas mejoradas, 
+                            los Sims reaccionan de forma más realista a su entorno y decisiones. Los jugadores pueden personalizar a fondo la apariencia, personalidad y aspiraciones 
+                            de sus Sims, así como diseñar hogares únicos. La experiencia se expande con múltiples paquetes y contenido adicional que agregan nuevas actividades, 
+                            profesiones y mundos por descubrir."
+                            data-details-link="">
+                            <div class="overlay-text">The Sims 4</div>
+                        </div>
+                    </div>
+                    <div class="videojuego">
+                        <div class="game-card">
+                            <img src="https://i.pinimg.com/736x/b9/37/9d/b9379d741930976c70cf15fefb9ddac0.jpg"
+                            data-title="Planet Zoo"
+                            alt="Videojuego-planetzoo"
+                            class= "image-carrusel"
+                            data-description="Planet Zoo es un simulador de gestión de zoológicos donde el jugador construye y administra un parque lleno de vida salvaje. Con un 
+                            enfoque en el bienestar animal, el juego permite diseñar hábitats detallados, cuidar las necesidades físicas y emocionales de cada especie, y supervisar 
+                            el comportamiento social y ecológico. Además de la gestión financiera, los jugadores deben abordar temas como la conservación, la educación ambiental y 
+                            la sostenibilidad. Con gráficos realistas y un profundo nivel de personalización, Planet Zoo ofrece una experiencia inmersiva para los amantes de la 
+                            naturaleza y la simulación estratégica."
+                            data-details-link="">
+                            <div class="overlay-text">Planet Zoo</div>
+                        </div>
+                    </div>
+                    <div class="videojuego">
+                        <div class="game-card">
+                            <img src="https://i.pinimg.com/736x/8b/eb/d6/8bebd6a1007cab6d33e7ec5c2acfbccb.jpg" 
+                            data-title="Planet Coaster 2"
+                            alt="Videojuego-planetcoaster2"
+                            class= "image-carrusel"
+                            data-description="Planet Coaster 2 lleva la construcción y gestión de parques de atracciones al siguiente nivel, permitiendo a los jugadores diseñar 
+                            desde montañas rusas extremas hasta complejos parques temáticos. Con herramientas más intuitivas y detalladas, puedes personalizar cada aspecto del 
+                            parque, desde la decoración hasta las rutas de los visitantes. La simulación se enfoca en la experiencia del cliente, la rentabilidad del negocio y la 
+                            creatividad ilimitada. Además, incluye nuevas opciones climáticas, integración multijugador y desafíos dinámicos que hacen evolucionar constantemente tu 
+                            parque. Es ideal para quienes disfrutan crear y gestionar con precisión."
+                            data-details-link="">
+                            <div class="overlay-text">Planet Coaster 2</div>
+                        </div>
+                    </div>
+                    <div class="videojuego">
+                        <div class="game-card">
+                            <img src="https://i.pinimg.com/736x/59/ae/9c/59ae9ccff1ff1880843de001400f62ac.jpg" 
+                            data-title="Farming Simulator 22"
+                            alt="Videojuego-farmingsimulator22"
+                            class= "image-carrusel"
+                            data-description="Farming Simulator 22 te ofrece la oportunidad de gestionar tu propia granja en un mundo abierto, donde podrás sembrar, cosechar, 
+                            criar animales y operar una variedad de maquinaria agrícola realista. El juego incluye un sistema de estaciones dinámicas, permitiendo a los jugadores 
+                            experimentar las estaciones del año, lo que influye en la cosecha y los animales. Además, puedes expandir tu granja y trabajar en proyectos agrícolas 
+                            más complejos, como la producción de vino o la silvicultura. Con una amplia gama de vehículos y herramientas de marcas auténticas, Farming Simulator 22 o
+                            frece una experiencia realista y detallada para quienes buscan sumergirse en el mundo rural."
+                            data-details-link="">
+                            <div class="overlay-text">Farming Simulator 22</div>
+                        </div>
+                    </div>
+                    <div class="videojuego">
+                        <div class="game-card">
+                            <img src="https://i.pinimg.com/736x/8a/63/32/8a633257479afe64d7eb8adbd0572313.jpg" 
+                            data-title="Power Wash Simulator"
+                            alt="Videojuego-powerwashsimulator"
+                            class= "image-carrusel"
+                            data-description="PowerWash Simulator es un juego relajante en el que te conviertes en un experto en limpieza de alta presión. Con una potente hidrolavadora, 
+                            debes limpiar todo tipo de superficies, desde patios y vehículos hasta edificios completos y monumentos. El juego ofrece una experiencia de satisfacción visual 
+                            al eliminar suciedad y manchas acumuladas, mientras desbloqueas nuevas herramientas y equipos para hacerlo más eficiente. A medida que avanzas, puedes enfrentarte 
+                            a desafíos más grandes y complejos, todo mientras disfrutas de una atmósfera tranquila y sin estrés, ideal para quienes buscan una experiencia de juego relajante y 
+                            gratificante."
+                            data-details-link="">
+                            <div class="overlay-text">Power Wash Simulator</div>
+                        </div>
+                    </div>
+                    <div class="videojuego">
+                        <div class="game-card">
+                            <img src="https://i.pinimg.com/736x/e3/41/31/e341317e548b9e80cef3bc165597c47c.jpg" 
+                            data-title="Euro Truck Simulator 2"
+                            alt="Videojuego-eurotrucksimulator"
+                            class= "image-carrusel"
+                            data-description="Euro Truck Simulator 2 es un simulador de conducción en el que los jugadores asumen el rol de un conductor de camión que recorre Europa realizando 
+                            entregas de mercancías. Desde transportar carga pesada hasta productos delicados, los jugadores deben gestionar tanto su vehículo como su negocio, mejorando su flota, 
+                            contratando empleados y expandiendo su imperio. El juego destaca por su realismo en los detalles de la conducción, el entorno y la economía, permitiendo a los jugadores
+                            explorar ciudades y carreteras europeas mientras disfrutan de una experiencia de simulación profunda. Además, Euro Truck Simulator 2 ofrece una amplia variedad de camiones 
+                            personalizables y una comunidad activa de mods que enriquece la experiencia."
+                            data-details-link="">
+                            <div class="overlay-text">Euro Truck Simulator 2</div>
+                        </div>
+                    </div>
+                    <div class="videojuego">
+                        <div class="game-card">
+                            <img src="https://i.pinimg.com/736x/41/d3/75/41d375a92b1df8101196909f60d7ab3b.jpg" 
+                            data-title="House Flipper"
+                            alt="Videojuego-houseflipper"
+                            class= "image-carrusel"
+                            data-description="House Flipper es un juego de simulación en el que los jugadores asumen el rol de un renovador de viviendas. El objetivo es comprar propiedades en mal 
+                            estado, renovarlas y luego venderlas para obtener ganancias. Los jugadores pueden realizar una variedad de tareas, desde pintar y limpiar hasta realizar reparaciones más 
+                            complejas, como cambiar pisos o reparar sistemas eléctricos y de fontanería. Con una mecánica centrada en la personalización y la decoración, los jugadores tienen la libertad 
+                            de rediseñar las casas a su gusto, transformándolas en espacios modernos y atractivos para los futuros compradores. A medida que avanzan, pueden mejorar sus habilidades, 
+                            desbloquear nuevas herramientas y enfrentar proyectos de renovación más ambiciosos."
+                            data-details-link="">
+                            <div class="overlay-text">House Flipper</div>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn-der">&#10095;</button>
+            </div>
+        </section>
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; PlaySent. Todos los derechos reservados.</p>
+        <nav>
+            <a href="#">Política de Privacidad</a> |
+            <a href="#">Términos y Condiciones</a>
+        </nav>
+    </footer>
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h3 id="modal-title"></h3>
+            <div class="modal-body">
+                <img src="" alt="Imagen Modal" id="modal-image">
+                <div class="info-container"> 
+                    <div class="description">
+                        <p id="modal-description"></p>
+                    </div>
+                    <a href="#" class="btn-details" id="modal-button">Más detalles</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="javaScript.js"></script>
+</body>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</html>
