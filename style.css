@@ -199,7 +199,7 @@ header .actions {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    gap: 10px; /* Asegura que no haya espacio entre los botones */
+    gap: 20px; /* Asegura que no haya espacio entre los botones */
     margin: 0; /* Elimina cualquier margen extra */
 }
 
@@ -673,9 +673,10 @@ footer nav a:hover {
 @media (max-width: 768px) {
     header {
         height: auto;
+        padding: 5px;
         position: fixed;
         top: 0;
-        left: 40;
+        left: 0;
         right: 0;
         z-index: 1000;
         background-color: #111;
