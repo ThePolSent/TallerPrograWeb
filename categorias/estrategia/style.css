@@ -173,7 +173,7 @@ header .actions {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    gap: 0px; /* Asegura que no haya espacio entre los botones */
+    gap: 10px; /* Asegura que no haya espacio entre los botones */
     margin: 0; /* Elimina cualquier margen extra */
 }
 
