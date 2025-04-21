@@ -76,11 +76,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+
 // ============================
 //        MENÚ DESPLEGABLE
 // ============================
 
-// Mostrar/ocultar submenús (cerrando los otros)
 function toggleSubmenu(event) {
     event.preventDefault();
     event.stopPropagation();
@@ -96,12 +96,10 @@ function toggleSubmenu(event) {
     parentLi.classList.toggle('open');
 }
 
-// Asignar eventos a enlaces con submenús
 document.querySelectorAll('.has-submenu > a').forEach(link => {
     link.addEventListener('click', toggleSubmenu);
 });
 
-// Cerrar submenús y login al hacer clic fuera
 document.addEventListener('click', function (event) {
     const isSubmenu = event.target.closest('.has-submenu');
     const isLoginForm = event.target.closest('#login-form');
@@ -117,6 +115,9 @@ document.addEventListener('click', function (event) {
 //        MENÚ HAMBURGUESA
 // ============================
 
+// ============================
+//        MENÚ HAMBURGUESA
+// ============================
 const menuHamburguesa = document.querySelector('.menu-hamburguesa');
 
 if (menuHamburguesa) {
@@ -126,57 +127,66 @@ if (menuHamburguesa) {
     });
 }
 
+document.querySelectorAll("nav ul li").forEach(item => {
+    item.addEventListener("click", () => {
+        const submenu = item.querySelector(".submenu");
+        if (submenu) {
+            submenu.classList.toggle("open");
+        }
+    });
+});
+
+
 // ============================
 //        MODAL DE JUEGO
 // ============================
 
-// Abrir modal desde cualquier tarjeta de juego
 const gameCards = document.querySelectorAll(".game-card");
 
-gameCards.forEach((card) => {
-    card.onclick = function () {
-        const image = card.querySelector(".image-popular, .image-carrusel");
-        const modal = document.getElementById("modal");
-        const modalImage = document.getElementById("modal-image");
-        const modalButton = document.getElementById("modal-button");
-        const modalDescription = document.getElementById("modal-description");
-        const modalTitle = document.getElementById("modal-title");
+function abrirModal(imageData) {
+    const modal = document.getElementById("modal");
+    const modalImage = document.getElementById("modal-image");
+    const modalButton = document.getElementById("modal-button");
+    const modalDescription = document.getElementById("modal-description");
+    const modalTitle = document.getElementById("modal-title");
 
-        modal.classList.add('show');
-        document.body.classList.add('modal-open');
+    modal.classList.add('show');
+    document.body.classList.add('modal-open');
 
-        modalImage.src = image.src;
-        modalDescription.textContent = image.dataset.description;
-        modalButton.href = image.dataset.detailsLink;
-        modalTitle.textContent = image.dataset.title;
-    };
-});
+    modalImage.src = imageData.src;
+    modalDescription.textContent = imageData.dataset.description;
+    modalButton.href = imageData.dataset.detailsLink;
+    modalTitle.textContent = imageData.dataset.title;
+}
 
-// Función para cerrar el modal
 function cerrarModal() {
     const modal = document.getElementById("modal");
     modal.classList.remove('show');
     document.body.classList.remove('modal-open');
 }
 
-// Botón cerrar modal
-document.querySelectorAll(".close-btn").forEach((btn) => {
-    btn.onclick = cerrarModal;
+// Agregar el evento de click para abrir el modal en las tarjetas de juego
+gameCards.forEach(card => {
+    card.addEventListener('click', () => {
+        const image = card.querySelector(".image-popular, .image-carrusel");
+        if (image) abrirModal(image);
+    });
 });
 
-// Cerrar modal al hacer clic fuera del contenido
-window.onclick = function (event) {
-    const modal = document.getElementById("modal");
-    if (event.target === modal) {
-        cerrarModal();
-    }
-};
+// Evento para cerrar el modal al hacer clic en el botón de cierre (X)
+document.querySelectorAll(".close-btn").forEach(btn => {
+    btn.addEventListener('click', cerrarModal);
+});
 
-// Cerrar modal con tecla ESC
-document.addEventListener("keydown", function(event) {
-    if (event.key === "Escape") {
-        cerrarModal();
-    }
+// Evento para cerrar el modal al hacer clic fuera del modal
+window.addEventListener('click', (event) => {
+    const modal = document.getElementById("modal");
+    if (event.target === modal) cerrarModal();
+});
+
+// Evento para cerrar el modal al presionar la tecla Escape
+document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") cerrarModal();
 });
 
 // ============================
@@ -190,7 +200,7 @@ document.querySelectorAll('.carrusel-wrapper').forEach(wrapper => {
     const items = wrapper.querySelectorAll('.videojuego');
 
     const visibleItems = 4;
-    const itemWidth = items[0].getBoundingClientRect().width + 20; // Ajusta según tu gap
+    const itemWidth = items[0].getBoundingClientRect().width + 20;
     let scrollIndex = 0;
     const maxScrollIndex = Math.max(0, items.length - visibleItems);
 
@@ -225,12 +235,31 @@ document.querySelectorAll('.carrusel-wrapper').forEach(wrapper => {
 
 const header = document.querySelector('header');
 
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 10) {
-        header.classList.add('scrolled');
-        header.style.zIndex = '1000';
-    } else {
-        header.classList.remove('scrolled');
-        header.style.zIndex = '1';
+if (header) {
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 10) {
+            header.classList.add('scrolled');
+            header.style.zIndex = '1000';
+        } else {
+            header.classList.remove('scrolled');
+            header.style.zIndex = '1';
+        }
+    });
+}
+
+function toggleDescripcion() {
+    const descripcion = document.querySelector('.descripcion-juego');
+    const botonVerMas = document.querySelector('.ver-mas-btn');
+
+    if (descripcion && botonVerMas) {
+        if (descripcion.classList.contains('colapsada')) {
+            descripcion.classList.remove('colapsada');
+            botonVerMas.textContent = 'Ver menos';
+        } else {
+            descripcion.classList.add('colapsada');
+            botonVerMas.textContent = 'Ver más';
+        }
     }
-});
+}
+
+
