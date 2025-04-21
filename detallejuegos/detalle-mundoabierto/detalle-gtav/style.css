@@ -133,6 +133,31 @@ header .logo h1 img {
 }
 
 /* -------------------- CONTENEDOR DE BOTONES -------------------- */
+/* -------------------- BOTÓN DE AUDIO -------------------- */
+#audio-toggle {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    margin: 0; /* Igual que los demás */
+    padding: 0; /* Sin padding adicional */
+}
+
+/* Tamaño del ícono igual que los otros botones */
+#audio-toggle ion-icon {
+    font-size: 24px;
+    color: white;
+}
+
+/* Hover en modo oscuro */
+body.dark-mode #audio-toggle:hover {
+    background-color: #292828;
+}
+
+/* Hover en modo claro */
+body:not(.dark-mode) #audio-toggle:hover {
+    background-color: #757474;
+}
+/*--------------------------------------------------------------*/
 header .actions {
     display: flex;
     justify-content: flex-end;

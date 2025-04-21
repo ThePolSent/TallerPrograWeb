@@ -43,6 +43,37 @@ document.addEventListener('DOMContentLoaded', () => {
         themeIcon.setAttribute('name', esOscuro ? 'sunny-outline' : 'moon-outline');
     });
 });
+// ============================
+//        BOTÓN DE AUDIO
+// ============================
+document.addEventListener('DOMContentLoaded', () => {
+    const audioBtn = document.getElementById('audio-toggle');
+    const audioIcon = document.getElementById('audio-icon');
+    const audioPlayer = document.getElementById('audio-player');
+    let isPlaying = false;
+
+    audioBtn.addEventListener('click', () => {
+        if (isPlaying) {
+            audioPlayer.pause();
+            audioIcon.setAttribute('name', 'volume-mute-outline');
+        } else {
+            audioPlayer.play();
+            audioIcon.setAttribute('name', 'volume-high-outline');
+        }
+        isPlaying = !isPlaying;
+    });
+
+    // Asegurarse de que el ícono vuelva a mute si se pausa de otra forma
+    audioPlayer.addEventListener('pause', () => {
+        audioIcon.setAttribute('name', 'volume-mute-outline');
+        isPlaying = false;
+    });
+
+    audioPlayer.addEventListener('play', () => {
+        audioIcon.setAttribute('name', 'volume-high-outline');
+        isPlaying = true;
+    });
+});
 
 // ============================
 //        MENÚ DESPLEGABLE

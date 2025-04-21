@@ -12,7 +12,7 @@
     <header>
         <div class="logo">
             <h1>
-                <img src="https://img.freepik.com/vector-premium/icono-joystick-pixel-art-juego-8-bits-sobre-fondo-blanco_360488-222.jpg?w=740" alt="Logo de PlaySent">
+                <img src="../../../contenido/imagenes/logo/logojoystick.png" alt="Logo de PlaySent">
                 PlaySent
             </h1>
         </div>
@@ -47,31 +47,38 @@
             <ion-icon name="menu-outline"></ion-icon>
         </div>
     </nav>
-</div>
-<!-- Contenedor de acciones -->
-<div class="actions">
-    <!-- Botón Modo Oscuro -->
-    <button id="theme-toggle" class="btn-theme">
-        <ion-icon id="theme-icon" name="moon-outline"></ion-icon>
-    </button>
+        </div>
+        <!-- Contenedor de acciones -->
+        <div class="actions">
 
-    <!-- Botón Iniciar Sesión -->
-    <button id="login-btn" onclick="toggleLoginForm()">
-        <a href="login.html" id="login-icon">
-            <ion-icon name="person-circle-outline"></ion-icon>
-        </a>
-    </button>  
-</div>
+            <!-- Botón Audio -->
+            <button id="audio-toggle" class="btn-audio">
+                <ion-icon id="audio-icon" name="volume-mute-outline"></ion-icon>
+            </button>
+            <audio id="audio-player" src="../../../contenido/audio/audio-principal/principal.mp3"></audio>
+            
+            <!-- Botón Modo Oscuro -->
+            <button id="theme-toggle" class="btn-theme">
+                <ion-icon id="theme-icon" name="moon-outline"></ion-icon>
+            </button>
 
-<div class="user-menu" id="userMenu" style="display: none;">
-    <button id="userButton">
-        <ion-icon name="person-circle-outline"></ion-icon>
-    </button>
-    <div class="submenu">
-        <p id="usernameDisplay"></p>
-        <button id="logoutButton">Cerrar sesión</button>
-    </div>
-</div>
+            <!-- Botón Iniciar Sesión -->
+            <button id="login-btn" onclick="toggleLoginForm()">
+                <a href="login.html" id="login-icon">
+                    <ion-icon name="person-circle-outline"></ion-icon>
+                </a>
+            </button>  
+        </div>
+
+        <div class="user-menu" id="userMenu" style="display: none;">
+            <button id="userButton">
+                <ion-icon name="person-circle-outline"></ion-icon>
+            </button>
+            <div class="submenu">
+                <p id="usernameDisplay"></p>
+                <button id="logoutButton">Cerrar sesión</button>
+            </div>
+        </div>
 </header>
 
 
