@@ -456,6 +456,10 @@ nav ul li a:hover {
     animation: fadeIn 0.5s ease-out; /* Animación para el contenido */
 }
 
+#modal-description{
+    color: white;
+}
+
 /* Asegurarse de que el título esté centrado */
 .modal-content h2 {
     margin: 0; /* Elimina márgenes innecesarios */

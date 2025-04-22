@@ -190,7 +190,7 @@ body:not(.dark-mode) #login-btn:hover {
     background-color: #757474;
 }
 
-/* -------------------- FORMULARIO DE REGISTRO -------------------- */
+/* -------------------- FORMULARIO DE INICIO DE SESIÓN -------------------- */
 .login-container {
     display: flex;
     justify-content: center;
@@ -199,156 +199,69 @@ body:not(.dark-mode) #login-btn:hover {
     background-color: #f5f5f5;
     padding: 20px;
     box-sizing: border-box;
+    font-family: Arial, sans-serif; /* Fuente general para todo menos los inputs */
 }
 
 .login-form {
     background-color: #444;
-    padding: 30px;
-    width: 100%;
-    max-width: 450px; /* Ancho mayor similar a Steam */
+    padding: 20px;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 200;
     color: white;
-    font-family: 'Press Start 2P', cursive;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    margin-top: 20px;
 }
 
-/* Estilo para el encabezado */
-.form-header {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.form-header h2 {
-    font-size: 2em;
-    color: #28a745;
-}
-
-/* Estilo para los campos de formulario */
-.form-group {
+.login-form h2 {
+    font-size: 1.5em;
     margin-bottom: 20px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 5px;
-    font-size: 12px;
+    text-align: center;
     color: white;
 }
 
-.form-group input {
+.login-form input {
     width: 100%;
-    padding: 12px;
-    border-radius: 8px;
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 5px;
     border: 1px solid #888;
     background-color: #333;
     color: white;
-    font-size: 14px;
+    font-family: 'Press Start 2P', cursive; /* Solo en los campos de entrada */
+    font-size: 10px;
 }
 
-/* Estilo para el botón */
 .login-form button {
     width: 100%;
     background-color: #28a745;
     color: white;
-    padding: 15px;
+    padding: 12px;
     border: none;
-    border-radius: 8px;
+    border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
-    margin-top: 20px;
+    font-family: Arial, sans-serif; /* Fuente estándar para el botón */
 }
 
 .login-form button:hover {
     background-color: #218838;
 }
 
-/* Estilo de los enlaces de registro */
 .register-link {
-    font-size: 1em;
+    font-size: 0.9em;
     color: #ddd;
     text-align: center;
-    margin-top: 30px;
+    margin-top: 15px;
+    font-family: Arial, sans-serif; /* Fuente estándar para el texto del enlace */
 }
 
 .register-link a {
     color: #28a745;
     text-decoration: none;
-    font-weight: bold;
 }
 
 .register-link a:hover {
     text-decoration: underline;
-}
-
-/* Estilo para el campo de checkbox */
-.login-form input[type="checkbox"] {
-    margin-right: 10px;
-}
-
-/* Estilo para el campo de fecha */
-.login-form input[type="date"] {
-    padding: 12px;
-    border-radius: 8px;
-    border: 1px solid #888;
-    background-color: #333;
-    color: white;
-    font-size: 14px;
-}
-
-/* Mejorar la presentación de los campos */
-.login-form .form-group input {
-    font-size: 14px;
-}
-
-/* Diseño más limpio para los campos */
-.login-form input[type="email"], 
-.login-form input[type="password"],
-.login-form input[type="text"] {
-    font-size: 14px;
-}
-
-/* Diseño centrado del formulario */
-.login-container {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-direction: column;
-    min-height: 100vh;
-    background-color: #f5f5f5;
-    padding: 20px;
-    box-sizing: border-box;
-}
-
-.login-container .form-header {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-/* Añadir sombra y suavizar el diseño */
-.login-form {
-    width: 100%;
-    max-width: 500px; /* Aumentamos aún más el tamaño */
-    padding: 30px;
-    background-color: #444;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-}
-
-/* Campos con bordes más suaves */
-.login-form input {
-    border: 1px solid #555;
-    background-color: #333;
-}
-
-/* Centrado y espaciado entre elementos */
-.login-form .form-group {
-    margin-bottom: 25px;
-}
-
-.login-form .form-group label {
-    font-size: 14px;
-    color: #bbb;
 }
 
 

@@ -2,48 +2,42 @@
 //         MODO USUARIO
 // ============================
 document.addEventListener('DOMContentLoaded', () => {
-    const user = localStorage.getItem('usuario');
-    const loginIcon = document.getElementById('login-icon');
-    const userMenu = document.getElementById('userMenu');
+    const registerForm = document.querySelector('form');
 
-    if (user) {
-        if (loginIcon) loginIcon.style.display = 'none';
-        if (userMenu) {
-            userMenu.style.display = 'block';
-            document.getElementById('usernameDisplay').textContent = user;
-        }
-    }
+    if (registerForm) {
+        registerForm.addEventListener('submit', (e) => {
+            e.preventDefault(); // Prevenir envío tradicional
 
-    const logoutBtn = document.getElementById('logoutButton');
-    if (logoutBtn) {
-        logoutBtn.addEventListener('click', () => {
-            localStorage.removeItem('usuario');
-            window.location.reload();
+            const fullName = document.getElementById('full-name').value.trim();
+            const username = document.getElementById('username').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const birthdate = document.getElementById('birthdate').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+
+            // Validación simple
+            if (!fullName || !username || !email || !birthdate || !password || !confirmPassword) {
+                alert('Por favor, completa todos los campos.');
+                return;
+            }
+
+            if (password !== confirmPassword) {
+                alert('Las contraseñas no coinciden.');
+                return;
+            }
+
+            // Aquí podrías guardar los datos en localStorage o enviarlos a un backend
+            localStorage.setItem('usuario', username);
+            localStorage.setItem('email', email);
+
+            alert('¡Registro exitoso!');
+
+            // Redirigir a la última página visitada o una por defecto
+            const lastVisited = localStorage.getItem('lastVisitedURL');
+            window.location.href = lastVisited ? lastVisited : '../../../../index.html';
         });
     }
-
-    // ============================
-    //         TEMA OSCURO
-    // ============================
-    const themeBtn = document.getElementById('theme-toggle');
-    const themeIcon = document.getElementById('theme-icon');
-    const body = document.body;
-
-    const temaGuardado = localStorage.getItem('tema');
-    if (temaGuardado === 'oscuro') {
-        body.classList.add('dark-mode');
-        themeIcon.setAttribute('name', 'sunny-outline');
-    } else {
-        themeIcon.setAttribute('name', 'moon-outline');
-    }
-
-    themeBtn.addEventListener('click', () => {
-        const esOscuro = body.classList.toggle('dark-mode');
-        localStorage.setItem('tema', esOscuro ? 'oscuro' : 'claro');
-        themeIcon.setAttribute('name', esOscuro ? 'sunny-outline' : 'moon-outline');
-    });
 });
-
 // ============================
 //        BOTÓN DE AUDIO
 // ============================

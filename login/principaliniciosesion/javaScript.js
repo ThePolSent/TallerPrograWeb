@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (lastVisited) {
                     window.location.href = lastVisited;
                 } else {
-                    window.location.href = '/index.html'; // O la página por defecto que prefieras
+                    window.location.href = '../../../../index.html'; // O la página por defecto que prefieras
                 }
             } else {
                 alert('Por favor ingresa usuario y contraseña.');

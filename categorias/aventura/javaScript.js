@@ -5,44 +5,69 @@ document.addEventListener('DOMContentLoaded', () => {
     const user = localStorage.getItem('usuario');
     const loginIcon = document.getElementById('login-icon');
     const userMenu = document.getElementById('userMenu');
+    const userButton = document.getElementById('userButton');
+    const logoutBtn = document.getElementById('logoutButton');
+    const usernameDisplay = document.getElementById('usernameDisplay');
 
+    // Si el usuario está logueado
     if (user) {
-        if (loginIcon) loginIcon.style.display = 'none';
+        if (loginIcon) loginIcon.style.display = 'none'; // Ocultar ícono de login
         if (userMenu) {
-            userMenu.style.display = 'block';
-            document.getElementById('usernameDisplay').textContent = user;
+            userMenu.style.display = 'block'; // Mostrar menú de usuario
+            usernameDisplay.textContent = user; // Mostrar nombre de usuario
         }
+    } else {
+        // Si no hay usuario, mostrar el icono de login
+        if (loginIcon) loginIcon.style.display = 'block'; // Mostrar icono de login
+        if (userMenu) userMenu.style.display = 'none'; // No mostrar el menú de usuario
     }
 
-    const logoutBtn = document.getElementById('logoutButton');
-    if (logoutBtn) {
-        logoutBtn.addEventListener('click', () => {
-            localStorage.removeItem('usuario');
-            window.location.reload();
+    // Función para mostrar/ocultar el menú de usuario al hacer clic en el ícono
+    if (userButton) {
+        userButton.addEventListener('click', () => {
+            userMenu.querySelector('.submenu').classList.toggle('open');
         });
     }
 
-    // ============================
-    //         TEMA OSCURO
-    // ============================
-    const themeBtn = document.getElementById('theme-toggle');
-    const themeIcon = document.getElementById('theme-icon');
-    const body = document.body;
-
-    const temaGuardado = localStorage.getItem('tema');
-    if (temaGuardado === 'oscuro') {
-        body.classList.add('dark-mode');
-        themeIcon.setAttribute('name', 'sunny-outline');
-    } else {
-        themeIcon.setAttribute('name', 'moon-outline');
+    // Función para cerrar sesión
+    if (logoutBtn) {
+        logoutBtn.addEventListener('click', () => {
+            localStorage.removeItem('usuario');
+            window.location.reload(); // Recargar la página para reflejar el estado de no logueado
+        });
     }
 
-    themeBtn.addEventListener('click', () => {
-        const esOscuro = body.classList.toggle('dark-mode');
-        localStorage.setItem('tema', esOscuro ? 'oscuro' : 'claro');
-        themeIcon.setAttribute('name', esOscuro ? 'sunny-outline' : 'moon-outline');
-    });
+    // Redirigir al inicio de sesión si el usuario hace clic en el icono de login
+    if (loginIcon) {
+        loginIcon.addEventListener('click', () => {
+            localStorage.setItem('lastVisitedURL', window.location.href); // Guardar la última URL visitada
+            window.location.href = '../../login/principaliniciosesion/iniciarsesion.html'; // Redirigir a la página de login
+        });
+    }
+
 });
+
+// ============================
+//         TEMA OSCURO
+// ============================
+const themeBtn = document.getElementById('theme-toggle');
+const themeIcon = document.getElementById('theme-icon');
+const body = document.body;
+
+const temaGuardado = localStorage.getItem('tema');
+if (temaGuardado === 'oscuro') {
+    body.classList.add('dark-mode');
+    themeIcon.setAttribute('name', 'sunny-outline');
+} else {
+    themeIcon.setAttribute('name', 'moon-outline');
+}
+
+themeBtn.addEventListener('click', () => {
+    const esOscuro = body.classList.toggle('dark-mode');
+    localStorage.setItem('tema', esOscuro ? 'oscuro' : 'claro');
+    themeIcon.setAttribute('name', esOscuro ? 'sunny-outline' : 'moon-outline');
+});
+
 
 // ============================
 //        BOTÓN DE AUDIO

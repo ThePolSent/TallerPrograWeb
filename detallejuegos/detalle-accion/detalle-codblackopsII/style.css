@@ -287,44 +287,99 @@ nav ul li a:hover {
 }
 
 /* -------------------- LOGIN -------------------- */
-.login-form {
-    display: none;
-    background-color: #444;
-    padding: 20px;
+/* Estilo para el menú de usuario */
+.user-menu {
+    position: relative;
+}
+
+/* Submenú con el contenido del usuario */
+.user-menu .submenu {
+    display: none; /* Por defecto oculto */
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
     position: absolute;
-    top: 60px;
-    right: 20px;
-    width: 300px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    z-index: 200;
-    color: white;
+    top: 50px; /* Ajusta esta propiedad si es necesario */
+    right: 0;
+    width: 250px;
+    max-width: 90vw; /* Asegura que el submenú no se salga de la pantalla */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Sombra para un efecto flotante */
+    z-index: 999;
+    opacity: 0;
+    transform: translateY(-10px); /* Efecto de entrada */
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-.login-form input {
-    width: 100%;
-    margin-bottom: 15px;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #888;
-    background-color: #333;
-    color: white;
+/* Cuando se da click, muestra el submenú */
+.user-menu .submenu.open {
+    display: block; /* Muestra el submenú */
+    opacity: 1;
+    transform: translateY(0); /* Efecto de entrada */
 }
 
-.login-form button {
-    width: 100%;
-    background-color: #28a745;
-    color: white;
-    padding: 12px;
+/* Botón del usuario siempre visible */
+.user-menu button {
+    background: none;
     border: none;
-    border-radius: 5px;
-    font-size: 16px;
     cursor: pointer;
+    padding: 10px;
+    font-size: 24px;
+    color: #333;
+    display: block; /* Asegura que el botón se vea todo el tiempo */
 }
 
-.login-form button:hover {
-    background-color: #218838;
+/* Texto del nombre de usuario */
+.user-menu p {
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    font-size: 16px;
+    color: #333;
+    text-align: center;
 }
+
+/* Estilo del botón de logout */
+#logoutButton {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+#logoutButton:hover {
+    background-color: #d32f2f;
+}
+
+/* Mejorar apariencia del icono */
+.user-menu button ion-icon {
+    font-size: 24px;
+    color: #333;
+}
+
+/* Mejorar estilo al pasar el cursor sobre el icono */
+.user-menu button:hover ion-icon {
+    color: #f44336;
+}
+
+/* Aseguramos que el submenú no se salga de la pantalla */
+.user-menu {
+    overflow: visible; /* Aseguramos que el submenú se muestre correctamente */
+}
+
+/* Hacer que el submenú no se desborde */
+.user-menu .submenu {
+    right: auto;
+    left: 0;
+    transform-origin: top left; /* Asegura que se alinee a la izquierda */
+}
+
 /* -------------------- SECCION DETALLE JUEGO -------------------- */
 /* Aplicar fuente retro a todos los títulos */
 h1, h2,  h4, h5 {
@@ -600,6 +655,10 @@ body.dark-mode .categoria:hover {
     max-height: 90vh;
     text-align: center;
     animation: fadeIn 0.5s ease-out;
+}
+
+#modal-description{
+    color: white;
 }
 
 .modal-content h2 {

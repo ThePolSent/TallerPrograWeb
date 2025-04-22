@@ -10,17 +10,17 @@
 <body>
     <!-- Cabecera -->
     <header>
-        <div class="logo">
-            <h1>
-                <img src="../../../contenido/imagenes/logo/logojoystick.png" alt="Logo de PlaySent">
-                <a href="../../index.html">PlaySent</a>
-            </h1>
-        </div>
+            <div class="logo">
+                <h1>
+                    <img src="../../../contenido/imagenes/logo/logojoystick.png" alt="Logo de PlaySent">
+                    <a href="../../index.html">PlaySent</a>
+                </h1>
+            </div>
     <!-- Menu de navegación -->
     <div class="container">
         <nav>
             <ul id="nav-list">
-                <li><a href="../../../index.html"><ion-icon name="newspaper-outline"></ion-icon>Inicio</a></li>
+                <li><a href="../../index.html"><ion-icon name="newspaper-outline"></ion-icon>Inicio</a></li>
                 <li class="has-submenu">
                     <a href="# onclick="toggleSubmenu(event)>Categorías</a>
                     <ion-icon name="grid-outline"></ion-icon>
@@ -36,20 +36,21 @@
                     <a href="# onclick="toggleSubmenu(event)>Redes Sociales</a>
                     <ion-icon name="share-social-outline"></ion-icon>
                     <ul class="submenu">
-                        <li><a href="#"><ion-icon name="logo-facebook"></ion-icon> Facebook</a></li>
-                        <li><a href="#"><ion-icon name="logo-twitter"></ion-icon> Twitter</a></li>
-                        <li><a href="#"><ion-icon name="logo-instagram"></ion-icon> Instagram</a></li>
+                        <li><a href="https://www.facebook.com/"><ion-icon name="logo-facebook"></ion-icon> Facebook</a></li>
+                        <li><a href="https://x.com/home"><ion-icon name="logo-twitter"></ion-icon> Twitter</a></li>
+                        <li><a href="https://www.instagram.com/"><ion-icon name="logo-instagram"></ion-icon> Instagram</a></li>
                     </ul>
                 </li>
             </ul>
-                <!-- Menú hamburguesa -->
-                <div id="menu-toggle" class="menu-hamburguesa">
-                    <ion-icon name="menu-outline"></ion-icon>
-                </div>
+
         </nav>
+        <!-- Menú hamburguesa -->
+        <div id="menu-toggle" class="menu-hamburguesa">
+        <ion-icon name="menu-outline"></ion-icon>
         </div>
+    </div>
         <!-- Contenedor de acciones -->
-        <div class="actions">
+    <div class="actions">
             <!-- Botón Audio -->
             <button id="audio-toggle" class="btn-audio">
                 <ion-icon id="audio-icon" name="volume-mute-outline"></ion-icon>
@@ -62,13 +63,23 @@
             </button>
 
             <!-- Botón Iniciar Sesión -->
-            <button id="login-btn" onclick="toggleLoginForm()">
-                <a href="login.html" id="login-icon">
-                    <ion-icon name="person-circle-outline"></ion-icon>
-                </a>
-            </button>            
+            <a href="javascript:redirectToLogin()" id="login-icon">
+                <ion-icon name="person-circle-outline"></ion-icon>
+            </a>        
         </div>
+
+        <div class="user-menu" id="userMenu" style="display: none;">
+            <button id="userButton">
+                <ion-icon name="person-circle-outline"></ion-icon>
+            </button>
+            <div class="submenu">
+                <p id="usernameDisplay"></p>
+                <button id="logoutButton">Cerrar sesión</button>
+            </div>
+        </div>
+    </div>
     </header>
+
     <!-- Cuerpo -->
     <main class ="mostrador">
         <section id="VideojuegosCategoriaAccion">
