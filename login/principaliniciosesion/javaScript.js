@@ -2,29 +2,41 @@
 //         MODO USUARIO
 // ============================
 document.addEventListener('DOMContentLoaded', () => {
-    const user = localStorage.getItem('usuario');
-    const loginIcon = document.getElementById('login-icon');
-    const userMenu = document.getElementById('userMenu');
+    const loginForm = document.getElementById('formulario-login');
+    
+    // Verificar si el formulario está presente
+    if (loginForm) {
+        loginForm.addEventListener('submit', (e) => {
+            e.preventDefault(); // Prevenir que el formulario se envíe de forma tradicional
 
-    if (user) {
-        if (loginIcon) loginIcon.style.display = 'none';
-        if (userMenu) {
-            userMenu.style.display = 'block';
-            document.getElementById('usernameDisplay').textContent = user;
-        }
-    }
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
 
-    const logoutBtn = document.getElementById('logoutButton');
-    if (logoutBtn) {
-        logoutBtn.addEventListener('click', () => {
-            localStorage.removeItem('usuario');
-            window.location.reload();
+            // Aquí harías la validación de usuario y contraseña
+            if (username && password) {
+                // Si el login es exitoso, guardamos el usuario en localStorage
+                localStorage.setItem('usuario', username);
+
+                // Redirigir a la última página visitada o a una predeterminada
+                const lastVisited = localStorage.getItem('lastVisitedURL');
+                if (lastVisited) {
+                    window.location.href = lastVisited;
+                } else {
+                    window.location.href = '/index.html'; // O la página por defecto que prefieras
+                }
+            } else {
+                alert('Por favor ingresa usuario y contraseña.');
+            }
         });
     }
+});
 
-    // ============================
-    //         TEMA OSCURO
-    // ============================
+
+
+
+// ============================
+//         TEMA OSCURO
+// ============================
     const themeBtn = document.getElementById('theme-toggle');
     const themeIcon = document.getElementById('theme-icon');
     const body = document.body;
@@ -42,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('tema', esOscuro ? 'oscuro' : 'claro');
         themeIcon.setAttribute('name', esOscuro ? 'sunny-outline' : 'moon-outline');
     });
-});
+
 
 // ============================
 //        BOTÓN DE AUDIO
