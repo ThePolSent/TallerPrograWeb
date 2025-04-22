@@ -673,34 +673,108 @@ footer.dark-mode{
 }
 /* -------------------- RESPONSIVE -------------------- */
 
-/* -------------------- HEADER -------------------- */
 @media (max-width: 768px) {
-    .Contenedor-videojuegos {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .Contenedor-videojuegos-populares {
-        grid-template-columns: 1fr;
-    }
-
-    .image-popular {
+    header {
         height: auto;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background-color: #111;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.6);
+        transition: background-color 0.3s ease-in-out;
     }
 
-    .modal-body {
+    body {
+        padding-top: 80px; /* Espacio para que el body no quede tapado por el header */
+    }
+
+    header .logo h1 {
+        font-size: 1.2em;
+        color: white;
+    }
+
+    /* Menu Hamburguesa */
+    .menu-hamburguesa {
+        display: block;
+        font-size: 2rem;
+        cursor: pointer;
+        color: white;
+        padding: 10px;
+        z-index: 2000;
+    }
+
+    nav ul {
         flex-direction: column;
+        padding: 10px;
+        align-items: center;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background-color: #333;
+        display: none;
+        width: 100%;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+        border-radius: 8px 8px 0 0; /* Bordes redondeados en la parte superior */
+        transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
     }
 
-    .modal-body img {
-        max-width: 100%;
+    nav.open ul {
+        display: flex;
+        max-height: 500px; /* Ajusta según el tamaño de tus elementos */
+        opacity: 1;
     }
 
-    .btn-details {
-        margin-left: 0;
-        align-self: center;
+    nav ul li {
+        margin: 15px 0;
+        text-align: center;
+    }
+
+    nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 1.2em;
+        padding: 10px 20px; /* Ampliamos el padding para que los elementos sean más grandes */
+        display: block;
+        transition: background-color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+        background-color: #444;
+    }
+
+    /* Ajuste del menú para hacerlo más ancho */
+    nav.open ul {
+        width: 90%; /* Menú un poco más estrecho que el 100% */
+        margin: 0 auto; /* Centrar el menú en la pantalla */
+    }
+
+    /* Transiciones del ícono hamburguesa */
+    .menu-hamburguesa.open {
+        transform: rotate(90deg);
+    }
+
+    /* Opcional: un fondo oscuro detrás del menú para que no se vea todo el contenido al abrir */
+    .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+    }
+
+    .overlay.open {
+        display: block;
     }
 }
-
 /* -------------------- MODAL -------------------- */
 @media (max-width: 768px) {
     .modal-content {
@@ -770,15 +844,6 @@ footer.dark-mode{
     .btn-der {
         font-size: 1.5rem;
         padding: 6px;
-        z-index: 10; /* Asegura que los botones estén por encima del contenido */
-    }
-
-    .btn-izq {
-        left: 5px;
-    }
-
-    .btn-der {
-        right: 5px;
     }
 }
 
@@ -855,12 +920,5 @@ footer.dark-mode{
 
     .description {
         font-size: 0.85em;
-    }
-
-    /* Ajustes para los botones del carrusel en pantallas muy pequeñas */
-    .btn-izq,
-    .btn-der {
-        font-size: 1.2rem;
-        padding: 5px;
     }
 }
