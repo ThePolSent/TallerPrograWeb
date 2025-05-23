@@ -20,8 +20,7 @@ body.dark-mode {
 }
 
 body.dark-mode header,
-body.dark-mode nav,
-body.dark-mode .submenu,
+body.dark-mode ul,
 body.dark-mode main,
 body.dark-mode footer {
     background-color: #1e1e1e;
@@ -371,7 +370,7 @@ footer nav a:hover {
 @media (max-width: 768px) {
     header {
         height: auto;
-        padding: 10px;
+        padding: 1px;
     }
 
     header .logo h1 {
@@ -381,10 +380,10 @@ footer nav a:hover {
     nav ul {
         display: flex;
         flex-direction: column;
-        padding: 10px;
+        padding: 50px;
         align-items: center;
         position: absolute;
-        top: 70px;
+        top: 40px;
         left: 0;
         right: 0;
         background-color: #333;

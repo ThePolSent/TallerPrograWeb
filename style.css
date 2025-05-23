@@ -741,6 +741,7 @@ footer.dark-mode{
 @media (max-width: 768px) {
     header {
         height: auto;
+        padding: 1px;
         position: fixed;
         top: 0;
         left: 0;

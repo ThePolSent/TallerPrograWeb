@@ -17,63 +17,53 @@
                 <a href="../../../index.html">PlaySent</a>
             </h1>
         </div>
-<!-- Menu de navegación -->
-<div class="container">
-    <nav>
-        <ul id="nav-list">
-            <li><a href="../../../index.html"><ion-icon name="newspaper-outline"></ion-icon>Inicio</a></li>
-            <li class="has-submenu">
-                <a href="# onclick="toggleSubmenu(event)>Categorías</a>
-                <ion-icon name="grid-outline"></ion-icon>
-                <ul class="submenu">
-                    <li><a href="/categorias/accion/accion.html"><ion-icon name="flash-outline"></ion-icon>Acción</a></li>
-                    <li><a href="/categorias/aventura/aventura.html"><ion-icon name="compass-outline"></ion-icon>Aventura</a></li>
-                    <li><a href="/categorias/simulacion/simulacion.html"><ion-icon name="hardware-chip-outline"></ion-icon>Simulación</a></li>
-                    <li><a href="/categorias/estrategia/estrategia.html"><ion-icon name="analytics-outline"></ion-icon>Estrategia</a></li>
-                    <li><a href="/categorias/mundoabierto/mundoabierto.html"><ion-icon name="earth-outline"></ion-icon>Mundo Abierto</a></li>                                                                                                          
-                </ul>
-            </li>
-            <li class="has-submenu">
-                <a href="# onclick="toggleSubmenu(event)>Redes Sociales</a>
-                <ion-icon name="share-social-outline"></ion-icon>
-                <ul class="submenu">
-                    <li><a href="#"><ion-icon name="logo-facebook"></ion-icon> Facebook</a></li>
-                    <li><a href="#"><ion-icon name="logo-twitter"></ion-icon> Twitter</a></li>
-                    <li><a href="#"><ion-icon name="logo-instagram"></ion-icon> Instagram</a></li>
-                </ul>
-            </li>
-        </ul>
+    <!-- Menu de navegación -->
+    <div class="container">
+        <nav>
+            <ul id="nav-list">
+                <li><a href="/categorias/accion/accion.html"><ion-icon name="flash-outline"></ion-icon>Acción</a></li>
+                <li><a href="/categorias/aventura/aventura.html"><ion-icon name="compass-outline"></ion-icon>Aventura</a></li>
+                <li><a href="/categorias/simulacion/simulacion.html"><ion-icon name="hardware-chip-outline"></ion-icon>Simulación</a></li>
+                <li><a href="/categorias/estrategia/estrategia.html"><ion-icon name="analytics-outline"></ion-icon>Estrategia</a></li>
+                <li><a href="/categorias/mundoabierto/mundoabierto.html"><ion-icon name="earth-outline"></ion-icon>Mundo Abierto</a></li>                                                                                                          
+            </ul>
+
+        </nav>
         <!-- Menú hamburguesa -->
         <div id="menu-toggle" class="menu-hamburguesa">
-            <ion-icon name="menu-outline"></ion-icon>
+        <ion-icon name="menu-outline"></ion-icon>
         </div>
-    </nav>
-        </div>
-        <!-- Contenedor de acciones -->
-        <div class="actions">
-            <!-- Botón Audio -->
-            <button id="audio-toggle" class="btn-audio">
-                <ion-icon id="audio-icon" name="volume-mute-outline"></ion-icon>
-            </button>
-            <audio id="audio-player" src="../../../contenido/audio/audio-principal/principal.mp3"></audio>
+    </div>
+    <!-- Contenedor de acciones -->
+    <div class="actions">
+        <!-- Botón Audio -->
+        <button id="audio-toggle" class="btn-audio">
+            <ion-icon id="audio-icon" name="volume-mute-outline"></ion-icon>
+        </button>
+        <audio id="audio-player" src="../../../contenido/audio/audio-principal/principal.mp3"></audio>
 
-            <!-- Botón Modo Oscuro -->
-            <button id="theme-toggle" class="btn-theme">
-                <ion-icon id="theme-icon" name="moon-outline"></ion-icon>
-            </button>
-        </div>
 
-        <div class="user-menu" id="userMenu" style="display: none;">
-            <button id="userButton">
-                <ion-icon name="person-circle-outline"></ion-icon>
-            </button>
-            <div class="submenu">
-                <p id="usernameDisplay"></p>
-                <button id="logoutButton">Cerrar sesión</button>
-            </div>
+        <!-- Botón Modo Oscuro -->
+        <button id="theme-toggle" class="btn-theme">
+            <ion-icon id="theme-icon" name="moon-outline"></ion-icon>
+        </button>
+
+        <!-- Botón Iniciar Sesión -->
+        <a href="javascript:redirectToLogin()" id="login-icon">
+            <ion-icon name="person-circle-outline"></ion-icon>
+        </a>        
+    </div>
+
+    <div class="user-menu" id="userMenu" style="display: none;">
+        <button id="userButton">
+            <ion-icon name="person-circle-outline"></ion-icon>
+        </button>
+        <div class="submenu">
+            <p id="usernameDisplay"></p>
+            <button id="logoutButton">Cerrar sesión</button>
         </div>
+    </div>
     </header>
-
 
     <!-- Cuerpo -->
     <main class="login-container">
@@ -117,6 +107,11 @@
 
     <!-- Footer -->
     <footer>
+        <nav>
+            <a href="https://www.facebook.com/"><ion-icon name="logo-facebook"></ion-icon> Facebook</a>
+            <a href="https://x.com/home"><ion-icon name="logo-twitter"></ion-icon> Twitter</a>
+            <a href="https://www.instagram.com/"><ion-icon name="logo-instagram"></ion-icon> Instagram</a>
+        </nav>
         <p>&copy; PlaySent. Todos los derechos reservados.</p>
         <nav>
             <a href="#">Política de Privacidad</a> |

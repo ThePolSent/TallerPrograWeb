@@ -20,8 +20,7 @@ body.dark-mode {
 }
 
 body.dark-mode header,
-body.dark-mode nav,
-body.dark-mode .submenu,
+body.dark-mode ul,
 body.dark-mode main,
 body.dark-mode footer {
     background-color: #1e1e1e;
